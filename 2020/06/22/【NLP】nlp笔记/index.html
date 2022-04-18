@@ -137,7 +137,24 @@
 </li>
 </ul>
 <p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gusztuwfmcj60ow0reaci02.jpg" alt="image-20210925171804749"></p>
+<h2 id="Transformer"><a href="#Transformer" class="headerlink" title="Transformer"></a>Transformer</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=TQQlZhbC5ps">Transformer Neural Networks - EXPLAINED! (Attention is all you need)</a></li>
+</ul>
+<p>transformer整体结构如下：</p>
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h17e2ru9jej20x40pedhy.jpg" alt="img"></p>
+<p><strong>多头机制</strong></p>
+<p>设计特点：可以保证词向量之间的足够交融，也就是考虑上下文信息。也意味着词向量会更能体现具体的语境</p>
+<p>注意，多头机制会对输入的原始向量进行reshape，产生(Q,K,V)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Split the embedding into self.heads different pieces</span></span><br><span class="line">values = values.reshape(N, value_len, self.heads, self.head_dim)</span><br><span class="line">keys = keys.reshape(N, key_len, self.heads, self.head_dim)</span><br><span class="line">query = query.reshape(N, query_len, self.heads, self.head_dim)</span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h17e4fq8p0j20w60ekjs7.jpg" alt="img"></p>
 <h2 id="预训练"><a href="#预训练" class="headerlink" title="预训练"></a>预训练</h2><ul>
+<li>BERT</li>
+</ul>
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h17ecwnlmmj21ap0u0wjb.jpg" alt="image-20200705000546978"></p>
+<ul>
 <li>Fine-tune之后的NLP新范式：Prompt</li>
 </ul>
 <p>论文地址：<a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2107.13586.pdf">https://arxiv.org/pdf/2107.13586.pdf</a></p>
