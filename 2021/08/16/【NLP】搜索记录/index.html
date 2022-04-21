@@ -7,7 +7,18 @@
 <h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><ul>
 <li>倒排索引</li>
 </ul>
-<h2 id="Lucene"><a href="#Lucene" class="headerlink" title="Lucene"></a>Lucene</h2><h2 id="谷歌搜索原理"><a href="#谷歌搜索原理" class="headerlink" title="谷歌搜索原理"></a>谷歌搜索原理</h2><p>1.<a target="_blank" rel="noopener" href="https://www.google.com/search/howsearchworks/">Google 搜索的工作方式</a></p>
+<h2 id="Lucene"><a href="#Lucene" class="headerlink" title="Lucene"></a>Lucene</h2><p><strong>分词器</strong></p>
+<ul>
+<li>标准分词器</li>
+</ul>
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h1hqlsf8lwj21640343yt.jpg" alt="image-20220421225958836"></p>
+<p>下面函数是如何引用执行的？</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">protected</span> TokenStreamComponents <span class="title">createComponents</span><span class="params">(String fieldName)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">final</span> StandardTokenizer src = <span class="keyword">new</span> StandardTokenizer();</span><br><span class="line">    src.setMaxTokenLength(<span class="keyword">this</span>.maxTokenLength);</span><br><span class="line">    TokenStream tok = <span class="keyword">new</span> LowerCaseFilter(src);</span><br><span class="line">    TokenStream tok = <span class="keyword">new</span> StopFilter(tok, <span class="keyword">this</span>.stopwords);</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> TokenStreamComponents(src, tok) &#123;</span><br><span class="line">        <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">setReader</span><span class="params">(Reader reader)</span> </span>&#123;</span><br><span class="line">            src.setMaxTokenLength(StandardAnalyzer.<span class="keyword">this</span>.maxTokenLength);</span><br><span class="line">            <span class="keyword">super</span>.setReader(reader);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h1hqqlymtcj20qw070q3l.jpg" alt="image-20220421230302947"></p>
+<p>e.g. </p>
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h1hqr6mp5bj20wu0akt9o.jpg" alt="image-20220421230515620"></p>
+<h2 id="谷歌搜索原理"><a href="#谷歌搜索原理" class="headerlink" title="谷歌搜索原理"></a>谷歌搜索原理</h2><p>1.<a target="_blank" rel="noopener" href="https://www.google.com/search/howsearchworks/">Google 搜索的工作方式</a></p>
 <p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gtk5clpcd1j61it0u0q9m02.jpg"></p>
 <ol start="2">
 <li><p><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=0eKVizvYSUQ&ab_channel=Google">How Google Search Works (in 5 minutes)</a></p>
