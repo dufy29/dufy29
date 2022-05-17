@@ -7,6 +7,7 @@
 <li>4B板子</li>
 </ul>
 <p><a target="_blank" rel="noopener" href="https://www.sohu.com/a/488104216_100135627">以树莓派4B为例认识树莓派接口和结构 </a></p>
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h1wjzowluhj20pa0fcq4v.jpg" alt="img"></p>
 <p><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h0no5zsw01j20sg0j440b.jpg" alt="img"></p>
 <h2 id="登录"><a href="#登录" class="headerlink" title="登录"></a>登录</h2><p><strong>OS资源下载</strong></p>
 <p><a target="_blank" rel="noopener" href="https://link.segmentfault.com/?enc=SYdBXQMUet9OaWkQvbzaJw==.U0/Giy0C8KU06MigZXGGvDlUQTKUDnN1oo3eSpuXPn8VSxzWvCCOOTG32muvRetW">树莓派（raspberrypi）常用镜像高速下载</a> ：收集了超过12种树莓派系统镜像，同时带有介绍，你可以选择一个最佳的树莓派系统，在页面即可下载系统镜像，非常方便。</p>
@@ -28,7 +29,7 @@
 <p>priority:连接优先级，数字越大优先级越高（不可以是负数）</p>
 <p>scan_ssid:连接隐藏WiFi时需要指定该值为1</p>
 </blockquote>
-<p>后续可以登录后，wifi 配置文件在：etc/wpa_supplicant/wpa_supplicant.conf </p>
+<p>后续可以登录后，wifi 配置文件在：etc/wpa_supplicant/wpa_supplicant.conf</p>
 <p><strong>ssh 登录</strong></p>
 <p>简单说，SSH是一种网络协议，用于计算机之间的加密登录。SSH是每一台Linux电脑的标准配置。</p>
 <p>首先要获取树莓派ip</p>
@@ -50,7 +51,7 @@
 <ul>
 <li>登录桌面版</li>
 </ul>
-<p>vnc viewer 连接</p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/98080664">vnc viewer 连接</a></p>
 <p><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h0ncx72vwbj21dn0u0q8d.jpg" alt="image-20220326161940563"></p>
 <h2 id="文件传输"><a href="#文件传输" class="headerlink" title="文件传输"></a>文件传输</h2><p><strong>scp 命令</strong></p>
 <p>本地电脑执行从树莓派下载：</p>
@@ -100,6 +101,7 @@
 <h2 id="拓展"><a href="#拓展" class="headerlink" title="拓展"></a>拓展</h2><ul>
 <li>pytorch 环境配置</li>
 </ul>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_41071754/article/details/113731699">树莓派更换国内源(清华源)</a></p>
 <p>树莓派64位操作系统镜像：<a target="_blank" rel="noopener" href="https://downloads.raspberrypi.org/raspios_arm64/images/">https://downloads.raspberrypi.org/raspios_arm64/images/</a></p>
 <p>☆<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44966641/article/details/122101076">树莓派4B (aarch64) 安装PyTorch 1.8 的可行方案</a></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 install torch-<span class="number">1.8</span><span class="number">.0</span>a0-cp37-cp37m-linux_aarch64.whl</span><br></pre></td></tr></table></figure>

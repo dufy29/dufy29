@@ -65,15 +65,12 @@
 <p>《Python编程快速上手 让繁琐工作自动化》</p>
 <p>《面向对象分析与设计》</p>
 <p>《python源码剖析》，这本书是python的源代码，c语言写的，精通python必读</p>
-<h2 id="Cpython-源码学习"><a href="#Cpython-源码学习" class="headerlink" title="Cpython 源码学习"></a>Cpython 源码学习</h2><p><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1036428">怎么样才算是精通 Python？</a></p>
-<p><img src="https://tva1.sinaimg.cn/large/008eGmZEgy1gppgjcjlkcj31hh0u0e82.jpg" alt="image-20210419231132649"></p>
-<p><a target="_blank" rel="noopener" href="https://realpython.com/cpython-source-code-guide/">Your Guide to the CPython Source Code</a></p>
-<p>中文翻译：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/79656976">https://zhuanlan.zhihu.com/p/79656976</a></p>
-<p>Github: <a target="_blank" rel="noopener" href="https://github.com/python/cpython">https://github.com/python/cpython</a></p>
-<ul>
-<li>《Python 3 源码剖析》</li>
-</ul>
-<p><a target="_blank" rel="noopener" href="https://flaggo.github.io/python3-source-code-analysis/">https://flaggo.github.io/python3-source-code-analysis/</a></p>
+<h2 id="Cpython-源码"><a href="#Cpython-源码" class="headerlink" title="Cpython 源码"></a>Cpython 源码</h2><p><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1036428">怎么样才算是精通 Python？</a></p>
+<p><a target="_blank" rel="noopener" href="https://realpython.com/cpython-source-code-guide/">Your Guide to the CPython Source Code</a>，中文翻译：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/79656976">https://zhuanlan.zhihu.com/p/79656976</a></p>
+<img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h2bs3d6ms7j21hh0u045o.jpg" alt="image-20210419231132649" style="zoom: 23%;" />
+
+<p>cpython实现官网: <a target="_blank" rel="noopener" href="https://github.com/python/cpython">https://github.com/python/cpython</a></p>
+<p>陈儒📚《Python源码剖析》以及相应的github: <a target="_blank" rel="noopener" href="https://flaggo.github.io/python3-source-code-analysis/">https://flaggo.github.io/python3-source-code-analysis/</a></p>
 <h2 id="for…-else"><a href="#for…-else" class="headerlink" title="for….else"></a>for….else</h2><p>在 python 中，for … else 表示这样的意思，for 中的语句和普通的没有区别，else 中的语句会在循环正常执行完（即 for 不是通过 break 跳出而中断的）的情况下执行，while … else 也是一样。</p>
 <p>e.g.，如下两个程序结果不一样：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">3</span>):</span><br><span class="line">    <span class="keyword">if</span> i==<span class="number">2</span>:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    <span class="built_in">print</span>(i)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;!!!&#x27;</span>)</span><br><span class="line"><span class="number">0</span></span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure>

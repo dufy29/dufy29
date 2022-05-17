@@ -124,19 +124,37 @@
 </ul>
 <p><a target="_blank" rel="noopener" href="https://www.bookstack.cn/books/fasttext-doc-zh">https://www.bookstack.cn/books/fasttext-doc-zh</a></p>
 <h2 id="CNN"><a href="#CNN" class="headerlink" title="CNN"></a>CNN</h2><p><img src="https://miro.medium.com/max/1400/0*0efgxnFIaLTZ2qkY" alt="img"></p>
-<h2 id="RNN"><a href="#RNN" class="headerlink" title="RNN"></a>RNN</h2><h3 id="普通RNN"><a href="#普通RNN" class="headerlink" title="普通RNN"></a>普通RNN</h3><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_37788308/article/details/80632809">结构</a>：</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gstlc3g1stj31aq0i6jsr.jpg" alt="image-20210725230129775"></p>
-<p>$$<br>O_t =g(V \cdot S_t)\<br>S_t = f(U \cdot X_t+W \cdot S_{t-1})<br>$$</p>
-<h3 id="LSTM"><a href="#LSTM" class="headerlink" title="LSTM"></a>LSTM</h3><p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gusyprm0l2j61q10nbgow02.jpg" alt="A LSTM neural network."><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gusypslygej60qe04xt8y02.jpg" alt="img"></p>
-<p>from: <a target="_blank" rel="noopener" href="http://colah.github.io/posts/2015-08-Understanding-LSTMs/">Understanding LSTM Networks</a></p>
+<h2 id="RNN"><a href="#RNN" class="headerlink" title="RNN"></a>RNN</h2><p><strong><a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_37788308/article/details/80632809">普通RNN</a></strong></p>
+<img src="https://tva1.sinaimg.cn/large/008i3skNgy1gstlc3g1stj31aq0i6jsr.jpg" alt="image-20210725230129775" style="zoom:33%;" />
+$$
+O_t =g(V \cdot S_t)\\
+S_t = f(U \cdot X_t+W \cdot S_{t-1})
+$$
+
+<p><strong>LSTM</strong></p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gusyprm0l2j61q10nbgow02.jpg" alt="A LSTM neural network." style="zoom: 25%;" /><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gusypslygej60qe04xt8y02.jpg" alt="img" style="zoom:25%;" /></p>
+<p>from <a target="_blank" rel="noopener" href="http://colah.github.io/posts/2015-08-Understanding-LSTMs/">Understanding LSTM Networks</a></p>
 <p>当然，LSTM 也可以堆叠增加深度，一般不会太深：</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gusyk0mlz9j60j80fht9e02.jpg" alt="img"></p>
+<img src="https://tva1.sinaimg.cn/large/008i3skNgy1gusyk0mlz9j60j80fht9e02.jpg" alt="img"  />
+
 <ul>
 <li><p>双向</p>
 <p><a target="_blank" rel="noopener" href="https://aclanthology.org/Q16-1026.pdf">https://aclanthology.org/Q16-1026.pdf</a></p>
 </li>
 </ul>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gusztuwfmcj60ow0reaci02.jpg" alt="image-20210925171804749"></p>
+<img src="https://tva1.sinaimg.cn/large/008i3skNgy1gusztuwfmcj60ow0reaci02.jpg" alt="image-20210925171804749" style="zoom: 50%;" />
+
+
+
+<p><strong>seq2seq</strong></p>
+<p>由2个rnn 组成，也称为encoder-decoder结构，可用于处理NLG问题，如机器翻译等</p>
+<img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h2135dvq0kj212s0joq4b.jpg" alt="image-20220508163944874" style="zoom: 33%;" />
+
+<p>但是，这里有一个基本假设：原始序列的最后一个h（上图红圈处）包含了该序列的去全部信息，实际上这很难做到，由此提出了 <u>注意力模型</u></p>
+<p>注意力模型引入了encoder端更多的信息</p>
+<blockquote>
+<p>注意力机制早在上世纪九十年代就有研究，到2014年Volodymyr的《Recurrent Models of Visual Attention》一文中将其<strong>应用在视觉领域</strong>，后来伴随着2017年Ashish Vaswani的《Attention is all you need》中Transformer结构的提出，注意力机制在NLP,CV相关问题的网络设计上被广泛应用。</p>
+</blockquote>
 <h2 id="Transformer"><a href="#Transformer" class="headerlink" title="Transformer"></a>Transformer</h2><ul>
 <li><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=TQQlZhbC5ps">Transformer Neural Networks - EXPLAINED! (Attention is all you need)</a></li>
 </ul>
