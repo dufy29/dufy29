@@ -501,24 +501,24 @@
 <p>贪心+ 广度优先思想</p>
 <p><a target="_blank" rel="noopener" href="https://www.92python.com/view/364.html">https://www.92python.com/view/364.html</a></p>
 <p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gz0cka51yoj30q411c0x8.jpg" alt="image-20220203151715859"></p>
-<h2 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h2><p>掌握程度:轻松写出二叉树遍历、八皇后、背包问题、DFS 的递归代码</p>
-<ul>
-<li>递归的理解</li>
-</ul>
+<h2 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h2><blockquote>
+<p>掌握程度:轻松写出二叉树遍历、八皇后、背包问题、DFS 的递归代码</p>
+</blockquote>
 <p>递归表示函数在定义中调用自身</p>
 <p>递归包括两个过程 ，去的过程叫’递‘，回来的过程叫’归‘，自顶向下。</p>
 <p> 所谓递归，就是有去有回。</p>
 <ul>
 <li>特点</li>
 </ul>
-<p>1）调用自身</p>
-<p>2）结束条件</p>
-<p>3）子问题拆分</p>
-<p><strong>编写递归代码的关键是，只要遇到递归，我们就把它抽象成一个递推公式，不用想一层层的调用 关系，不要试图用人脑去分解递归的每个步骤</strong>。</p>
+<p>1） 基线条件： 函数不再调用自己</p>
+<p>2） 递归条件：函数调用自己</p>
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h2cys1eccbj20s808igma.jpg" alt="image-20220518231520416"></p>
 <p>递归要警惕堆栈溢出和重复计算(👇)</p>
-<ul>
-<li>递归函数的非递归化</li>
-</ul>
+<p><strong>递归与迭代</strong></p>
+<p>注意递归的缺点</p>
+<blockquote>
+<p>如果使用循环，程序的性能可能更高；如果使用递归，程序可能更容易理解。如何选择要看什么对你来说更重要。”<br> 参见<a target="_blank" rel="noopener" href="http://stackoverflow.com/a/72694/139117">http://stackoverflow.com/a/72694/139117</a></p>
+</blockquote>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/bobbypollo/article/details/79891556">理解递归的本质：递归与栈</a></p>
 <p>采用数据栈</p>
 <blockquote>
@@ -563,8 +563,9 @@
 <td align="left">相对更复杂</td>
 </tr>
 </tbody></table>
+<p><strong>应用举例</strong></p>
 <ul>
-<li>应用举例：找最终推荐人</li>
+<li>找最终推荐人</li>
 </ul>
 <p>一般来说，我们会通过数据库来记录这种推荐关系。在数据库表中，我们可以记录两行数据，其中 actor_id 表示用户 id，referrer_id 表示推荐人 id。</p>
 <table>
@@ -813,8 +814,14 @@
 <p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gqck0ezmfoj316s0u07wj.jpg" alt="image-20210509223800911"></p>
 <p>所以，最终的编码为</p>
 <p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gqck1wrsyqj30zk0jqx0x.jpg" alt="image-20210509224139300"></p>
-<h3 id="分治"><a href="#分治" class="headerlink" title="分治"></a>分治</h3><p>分治算法核心思想：分而治之 ，也就是将原问题划分成 n 个 规模较小，并且结构与原问题相似的子问题，<strong>递归</strong>地解决这些子问题，然后再合并其结果，就得到原问 题的解。</p>
+<p><strong>分治，divide and conquer</strong></p>
+<p><del>分治算法核心思想：分而治之 ，也就是将原问题划分成 n 个 规模较小，并且结构与原问题相似的子问题，<strong>递归</strong>地解决这些子问题，然后再合并其结果，就得到原问 题的解。</del></p>
+<p>使用 D&amp;C 解决问题的过程包括两个步骤（递归）：</p>
+<p>1） 找到基线条件 ，尽可能简单</p>
+<p>2）不断将问题分解（缩小规模），直到符合基线条件</p>
+<blockquote>
 <p><strong>分治算法子问题之间没有相关性，这一点是跟动态规划的明显区别</strong></p>
+</blockquote>
 <ul>
 <li>股票最佳交易</li>
 </ul>
