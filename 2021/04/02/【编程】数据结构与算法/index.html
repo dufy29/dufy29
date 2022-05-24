@@ -457,9 +457,20 @@
 
 
 <p><strong>搜索</strong></p>
-<p>DFS: 栈，更省内存</p>
-<p>BFS：队列，更快可能</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gyzb5fx8rpj30qg0cgt9y.jpg" alt="image-20220202174431733"></p>
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h2jssliptxj20qg0cgt9y.jpg" alt="image-20220202174431733"></p>
+<ul>
+<li>DFS: 栈，更省内存</li>
+</ul>
+<p>伪代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//从第v个顶点出发递归地深度优先遍历图G</span><br><span class="line">void DFS(Graph G, int v)</span><br><span class="line">&#123;</span><br><span class="line">    VisitFunction(v); //访问v点，并将其标记为访问过的节点;</span><br><span class="line">    for_each(vi: v的所有邻接点)//遍历v的所有邻接点</span><br><span class="line">    &#123;</span><br><span class="line">        if(vi没有被访问过)</span><br><span class="line">            DFS(G, vi);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>BFS：队列，更快可能</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">void BFS(Graph G, int v)</span><br><span class="line">&#123;</span><br><span class="line">    for_each(vi: v的所有邻接点)//遍历v的所有邻接点</span><br><span class="line">    &#123;</span><br><span class="line">        if(vi没有被访问过)</span><br><span class="line">        &#123;</span><br><span class="line">            VisitFunction(vi); //访问v点;</span><br><span class="line">            EnQueue(Q, vi); //vi入队列</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    while(!QueueEmpty(Q))</span><br><span class="line">    &#123;</span><br><span class="line">        DeQueue(Q, u);  //队头元素出队并置为u</span><br><span class="line">        BFS(G, u);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
 <ul>
 <li>BFS查找朋友中是否有芒果商</li>
 </ul>
