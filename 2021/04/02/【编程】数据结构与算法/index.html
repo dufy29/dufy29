@@ -9,23 +9,32 @@
 <p>当我们遇到一个实际问题时，首先需要解决两件事：</p>
 <p>（1）如何将数据存储在计算机中；</p>
 <p>（2）用什么方法和策略解决问题。</p>
-<p><strong>前者是数据结构，后者是算法。</strong></p>
-<p><strong>数据</strong>是一切能输入计算机中的信息的总和，<strong>结构</strong>是指数据之间的关系。<strong>数据结构</strong>就是将数据及其之间的关系有效地存储在计算机中并进行基本操作。<strong>算法</strong>是对特定问题求解步骤的一种描述，通俗讲就是解决问题的方法和策略。</p>
+<p>前者是数据结构，后者是算法。</p>
+<p>数据是一切能输入计算机中的信息的总和，结构是指数据之间的关系。数据结构就是将数据及其之间的关系有效地存储在计算机中并进行基本操作。算法是对特定问题求解步骤的一种描述，通俗讲就是解决问题的方法和策略。</p>
+<p><strong>数据结构分类</strong></p>
 <ul>
-<li>二者关系</li>
+<li>逻辑结构</li>
 </ul>
-<p>数据结构和算法是相辅相成的。<strong>数据结构是为算法服务的，算法要作用在特定的数据结构之上</strong>。 因此，我们无法孤立数据结构来讲算法，也无法孤立算法来讲数据结构。</p>
+<p>依据数据元素之间的关系划分</p>
+<img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h2pfy5atvjj21700r8gou.jpg" alt="image-20220529181610809" style="zoom:50%;" />
+
+<ul>
+<li>物理结构</li>
+</ul>
+<p>数据的逻辑结构在计算机中的存储形式</p>
+<p>包括顺序存储结构、链式存储结构</p>
+<p>各种逻辑结构，均是在这两种基础上的组合，以实现最佳的效果</p>
+<p><strong>二者关系</strong></p>
+<p>数据结构和算法是相辅相成的。数据结构是为算法服务的，算法要作用在特定的数据结构之上。 因此，我们无法孤立数据结构来讲算法，也无法孤立算法来讲数据结构。</p>
 <p>比如，因为数组因为具有随机访问的特点，二分查找就需要用数组来存储数据。如果选择链表，则二分查找算法就无法工作了</p>
 <p>只有数据结构没有算法，相当于只把数据存储到计算机中，而没有有效的方法去处理，就像一幢只有框架的烂尾楼；若只有算法，没有数据结构，就像沙漠里的海市蜃楼，只不过是空中楼阁罢了。</p>
 <p>在遇到一个实际问题时，要充分利用自己所学的数据结构，将数据及其之间的关系有效地存储在计算机中，然后选择合适的算法策略，并用程序高效地实现。这就是Niklaus Wirth教授所说的：“数据结构+算法＝程序”。</p>
-<ul>
-<li>学习原则</li>
-</ul>
-<p><strong>要学习它的“来历”“自身的特点”“适合解决的问题”以及“实际的应用场景”</strong></p>
-<p><strong>很多时候我们并不是要去死记硬背某个数据结构或者算法，而是要学习它背后的思想和处理技巧，这些东西才是最有价值的</strong>。</p>
+<p><strong>学习原则</strong></p>
+<p>要学习它的“来历”“自身的特点”“适合解决的问题”以及“实际的应用场景”</p>
+<p>很多时候我们并不是要去死记硬背某个数据结构或者算法，而是要学习它背后的思想和处理技巧，这些东西才是最有价值的。</p>
 <p>学习数据结构最难的不是理解和掌握原理，而是能灵活地将各种场景和问题抽象成对应的数据结构和算法</p>
 <p>学习数据结构和算法，并不是为了死记硬背几个知识点。我们的目的是建立时间复杂度、空间复杂 度意识，写出高质量的代码，能够设计基础架构，提升编程技能，训练逻辑思维，积攒人生经验，以此 获得工作回报，实现你的价值，完善你的人生。</p>
-<p><strong>掌握了数据结构与算法，你看待问题的深度，解决问题的⻆度就会完全不一样</strong>。因为这样的你，就像是 站在巨人的肩膀上，拿着生存利器行走世界。数据结构与算法，会为你的编程之路，甚至人生之路打开 一扇通往新世界的大⻔。</p>
+<p>掌握了数据结构与算法，你看待问题的深度，解决问题的⻆度就会完全不一样。因为这样的你，就像是 站在巨人的肩膀上，拿着生存利器行走世界。数据结构与算法，会为你的编程之路，甚至人生之路打开 一扇通往新世界的大⻔。</p>
 <p>学习一个算法可分为三步：</p>
 <p>​    1)先了解算法本身解决什么问题</p>
 <p>​    2)然后学习它的解决策略</p>
@@ -39,153 +48,81 @@
 <p>换句话说，不要浮在表面、只看到链表二叉树之类东西；而是要深入进去，把它们统统拆散了、揉碎了、忘记了——你要做它们的发明者，不要做它们的使用者。</p>
 <p>你要学的，是最高效率把玩海量数据的思路；你不仅要能因地制宜的给出解决方案、还要有能力给出综合最优的方案（并作出证明）——停留在链表这个表面上，那是连门在哪都没摸到，谈何入门。</p>
 </blockquote>
-<h2 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><blockquote>
-<p>注意递推公式和递归树求递归复杂度</p>
-</blockquote>
-<ul>
-<li>重要性</li>
-</ul>
-<p>复杂度分析究竟有多􏰀要呢?可以这么说，它几乎占了数据结构和算法这⻔课的半壁江山，是数据结构和算法学习的<strong>精髓</strong>。</p>
-<p>数据结构和算法解决的是如何更省、更快地存储和处理数据的问题，因此，我们就需要一个考􏰁效率和 资源消耗的方法，这就是复杂度分析方法。所以，如果你只掌握了数据结构和算法的特点、用法，但是 没有学会复杂度分析，那就相当于只知道操作口诀，而没掌握心法。<strong>只有把心法了然于胸，才能做到无 招胜有招!</strong></p>
-<ul>
-<li>O() 复杂度</li>
-</ul>
-<p>要理解O() 复杂度 的含义，O()并不表示代码真正的执行时间，而是表示<strong>代码执行时间随数据规模增长的变化趋势</strong>，所以大O时间复杂度，也叫渐进时间复杂度，简称时间复杂度。</p>
-<blockquote>
+<h2 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><p>要理解O() 复杂度 的含义，O()并不表示代码真正的执行时间，而是表示代码执行时间随数据规模增长的变化趋势，所以大O时间复杂度，也叫渐进时间复杂度，简称时间复杂度。</p>
 <p>更详细的参考：<a target="_blank" rel="noopener" href="http://bigocheatsheet.com/">Know Thy Complexities!</a>：</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gqk4qum5uyj31hu0t2npd.jpg" alt="image-20210516115644557"><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gqk4v64747j315a0oy4qp.jpg" alt="image-20210516120055333"></p>
-</blockquote>
-<ul>
-<li>时间复杂度量级</li>
-</ul>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gqk4qum5uyj31hu0t2npd.jpg" alt="image-20210516115644557"></p>
+<p><strong>时间复杂度量级</strong></p>
 <p>分为：</p>
-<p>1）多项式量级 </p>
-<p>2）非多项式量级（NP, non-deterministic polynomial）</p>
-<p><img src="https://tva1.sinaimg.cn/large/008eGmZEgy1gp979osnjzj313o0ibwqu.jpg" alt="IMG_E5863834E01F-1"></p>
 <ul>
-<li>空间复杂度</li>
+<li><p>多项式量级 </p>
+</li>
+<li><p>非多项式量级（NP, non-deterministic polynomial）</p>
+</li>
 </ul>
+<img src="https://tva1.sinaimg.cn/large/008eGmZEgy1gp979osnjzj313o0ibwqu.jpg" alt="IMG_E5863834E01F-1" style="zoom:50%;" />
+
+<p><strong>空间复杂度</strong></p>
 <p>我们说空间复杂度的时候<u>，是指除了原本的数据存储空间外</u>，算法运行还需要<strong>额外的</strong>存储空间。</p>
-<ul>
-<li>最好、最坏和平均情况时间复杂度</li>
-</ul>
-<p>e.g.</p>
+<p><strong>最好、最坏和平均情况时间复杂度</strong></p>
+<p>e.g. 在数组中查找变量 x 的位置</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// n表示数组array的长度</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">find</span><span class="params">(<span class="keyword">int</span>[] <span class="built_in">array</span>, <span class="keyword">int</span> n, <span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">int</span> pos = <span class="number">-1</span>;</span><br><span class="line">  <span class="keyword">for</span> (; i &lt; n; ++i) &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">array</span>[i] == x) &#123;</span><br><span class="line">       pos = i;</span><br><span class="line">       <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> pos;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>本例子代码用于在数组中查找变量 x 的位置</p>
 <p>对于最好情况，x 刚好在数组的第一个位置，则复杂度为O(1)；</p>
 <p>最差情况，不在数组中，则复杂度为O(n)；</p>
 <p>当然，这两种情况都比较极端，发生概率不大。考虑**<u>平均时间复杂度</u><strong>，引入</strong>概率分析**。（这里算的是期望）</p>
 <blockquote>
 <p>我们知道，要查找的变量 x，要么在数组里，要么就不在数组里。这两种情况对应的概率统计起来很麻烦，为了方便你理解，我们假设在数组中与不在数组中的概率都为 1/2。另外，要查找的数据出现在 0～n-1 这 n 个位置的概率也是一样的，为 1/n。所以，根据概率乘法法则，要查找的数据出现在 0～n-1 中任意位置的概率就是 1/(2n)。</p>
 <p>因此，前面的推导过程中存在的最大问题就是，没有将各种情况发生的概率考虑进去。如果我们把每种情况发生的概率也考虑进去，那平均时间复杂度的计算过程就变成了这样：</p>
-<p><img src="https://tva1.sinaimg.cn/large/008eGmZEgy1gp982ch8m0j313s0ccnap.jpg" alt="image-20210405220945927"></p>
+<img src="https://tva1.sinaimg.cn/large/008eGmZEgy1gp982ch8m0j313s0ccnap.jpg" alt="image-20210405220945927" style="zoom:33%;" />
 </blockquote>
 <p>则最后的平均时间复杂度仍为O(n)</p>
-<ul>
-<li>均摊时间复杂度</li>
-</ul>
-<p>对一个数据结构进行一组连续操作中，大部分情况下时间复杂度都很低，只有个别情况下时间复杂度比较高，而且这些操作之间<strong>存在前后连贯的时序关系</strong>，这个时候，我们就可以将这一组操作放在一块儿分析，看是否能将较高时间复杂度那次操作的耗时，平摊到其他那些时间复杂度比较低的操作上。而且，在能够应用均摊时间复杂度分析的场合，<strong>一般均摊时间复杂度就等于最好情况时间复杂度</strong>。</p>
-<h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><p><strong>数组（Array）是一种线性表数据结构。它用一组连续的内存空间，存储具有相同类型的数据。</strong>最大的特点就是支持随机访问，但插入、删除操作也因此变得比较低效，平均情况时间复杂度为 O(n)。</p>
-<p>这里需要注意以下几点：</p>
-<p>第一是<strong>线性表</strong>（Linear List）。顾名思义，线性表就是数据排成像一条线一样的结构。<strong>每个线性表上的数据最多只有前和后两个方向（前驱和后继）</strong>。其实除了数组，链表、队列、栈等也是线性表结构。【注意这里的‘前后’】</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gyntpi8xx1j312d0u0tbg.jpg" alt="image-20220123191948251"></p>
-<p>与之对应，<strong>有<u><em>’非线性表‘</em></u>，</strong>数据之间并不是简单的前后关系，如树，图等</p>
-<blockquote>
-<p>那么有了线性结构，我们为什么还需要非线性结构呢？ </p>
-<p>答案是为了高效地兼顾静态操作和动态操作，<strong>我们一般使用树去管理需要大量动态操作的数据</strong>。</p>
-</blockquote>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gv0utfbp1cj61960jajt702.jpg" alt="image-20211002122911606"></p>
-<ul>
-<li>第二个是连续的内存空间和相同类型的数据—–&gt;<strong>’随机访问‘</strong></li>
-</ul>
-<p>随机访问的公式如下：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a[i]_address = base_address + i * data_type_size</span><br></pre></td></tr></table></figure>
-
-<p>如下，内存块的首地址为 base_address =00, data_type_size=4B</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gynu3bnhnzj310q0880ud.jpg" alt="image-20220123193304934"></p>
-<ul>
-<li>插入</li>
-</ul>
-<p>对于插入，如果数组是有序的， 插入平均复杂度为O(n)【依据概率计算】：（1+2+…+n）/n=O(n)</p>
-<p>但是，如果数组存储的数据并没有任何规律，数组只是当做一个存储数据的集合，复杂度可以降为o(1)，如下：</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gyntl88fbkj313c0jcwg1.jpg" alt="image-20220123191537896"></p>
-<p>利用这种处理技巧，在特定场景下，在第 k 个位置插入一个元素的时间复杂度就会降为 O(1)。</p>
-<p>这个处理思想在<strong>快排中也会用到</strong></p>
-<ul>
-<li>删除</li>
-</ul>
-<p>和插入类似，如果删除数组末尾的数据，则最好情况时间复杂度为 O(1)；如果删除开头的数据，则最坏情况时间复杂度为 O(n)；平均情况时间复杂度也为 O(n)。</p>
 <h2 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h2><p>链表，不需要一块连续的内存空间，通过“指针”将零散的内存块串联起来使用</p>
-<ul>
-<li>单链表</li>
-</ul>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gqkhexjdpdj31fs0awe24.jpg" alt="image-20210516191501331"></p>
+<p><strong>单链表</strong></p>
+<img src="https://tva1.sinaimg.cn/large/008i3skNgy1gqkhexjdpdj31fs0awe24.jpg" alt="image-20210516191501331" style="zoom:33%;" />
+
 <p>代码实现：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 参考：https://jackkuo666.github.io/Data_Structure_with_Python_book/chapter3/section1.html</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Node</span>(<span class="params"><span class="built_in">object</span></span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, data</span>):</span></span><br><span class="line">        self.data = data</span><br><span class="line">        self.<span class="built_in">next</span>=<span class="literal">None</span></span><br><span class="line">        </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SingleLinkList</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>):</span></span><br><span class="line">        self.head = <span class="literal">None</span>   <span class="comment"># 初始化，创建头指针</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">add</span>(<span class="params">self, item</span>):</span></span><br><span class="line">        <span class="string">&#x27;&#x27;&#x27;头部插入元素&#x27;&#x27;&#x27;</span></span><br><span class="line">        node = Node(item)</span><br><span class="line">        node.<span class="built_in">next</span> = self.head</span><br><span class="line">        self.head = node</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">append</span>(<span class="params">self, item</span>):</span></span><br><span class="line">        <span class="string">&quot;&quot;&quot;尾部插入&quot;&quot;&quot;</span></span><br><span class="line">        node = Node(item)</span><br><span class="line">        <span class="keyword">if</span> self.is_empty():</span><br><span class="line">            self.head = node</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            cur = self.head</span><br><span class="line">            <span class="keyword">while</span> cur.<span class="built_in">next</span>:  <span class="comment"># 非None</span></span><br><span class="line">                cur = cur.<span class="built_in">next</span></span><br><span class="line">            cur.<span class="built_in">next</span> = node</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">is_empty</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="string">&quot;&quot;&quot;判断链表是否为空&quot;&quot;&quot;</span></span><br><span class="line">        <span class="keyword">return</span> self.head <span class="keyword">is</span> <span class="literal">None</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">travel</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="string">&#x27;&#x27;&#x27;遍历链表&#x27;&#x27;&#x27;</span></span><br><span class="line">        p = self.head</span><br><span class="line">        <span class="keyword">while</span> p:</span><br><span class="line">            <span class="built_in">print</span>(p.data)</span><br><span class="line">            p = p.<span class="built_in">next</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__repr__</span>(<span class="params">self</span>):</span></span><br><span class="line">        node = self.head</span><br><span class="line">        nodes = []</span><br><span class="line">        <span class="keyword">while</span> node <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">            nodes.append(node.data)</span><br><span class="line">            node = node.<span class="built_in">next</span></span><br><span class="line">        nodes.append(<span class="string">&quot;None&quot;</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot; -&gt; &quot;</span>.join(nodes)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">llist = SingleLinkList()</span><br><span class="line"><span class="built_in">print</span>(llist)</span><br><span class="line">llist.add(<span class="string">&#x27;a&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(llist)</span><br><span class="line">llist.add(<span class="string">&#x27;b&#x27;</span>)</span><br><span class="line">llist.add(<span class="string">&#x27;c&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(llist)</span><br><span class="line"></span><br><span class="line">llist = SingleLinkList()</span><br><span class="line"><span class="built_in">print</span>(llist)</span><br><span class="line">llist.append(<span class="string">&#x27;a&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(llist)</span><br><span class="line">llist.append(<span class="string">&#x27;b&#x27;</span>)</span><br><span class="line">llist.append(<span class="string">&#x27;c&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(llist)</span><br><span class="line"></span><br><span class="line"><span class="literal">None</span></span><br><span class="line">a -&gt; <span class="literal">None</span></span><br><span class="line">c -&gt; b -&gt; a -&gt; <span class="literal">None</span></span><br><span class="line"><span class="literal">None</span></span><br><span class="line">a -&gt; <span class="literal">None</span></span><br><span class="line">a -&gt; b -&gt; c -&gt; <span class="literal">None</span></span><br></pre></td></tr></table></figure>
 
 <p>注意头插和尾插的输出顺序</p>
-<ul>
-<li>插入、删除</li>
-</ul>
-<p>复杂度均为 O(1)</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gqkhhuvnggj31cu0cetpj.jpg" alt="image-20210516191749915"></p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gqkhi1d8r7j31b0098dun.jpg" alt="image-20210516191804109"></p>
-<ul>
-<li>循环链表</li>
-</ul>
+<p><strong>循环链表</strong></p>
 <p>跟单链表相比，区别是尾结点指针指向链表的头结点</p>
-<p><img src="https://tva1.sinaimg.cn/large/008eGmZEgy1gpah2ovka4j30vq0b33zb.jpg" alt="img"></p>
-<p><strong>循环链表</strong>的优点是从链尾到链头比较方便。</p>
-<p>当<strong>要处理的数据具有环型结构特点时，就特别适合采用循环链表</strong>。比如著名的约瑟夫问题。</p>
-<ul>
-<li>双向链表</li>
-</ul>
+<img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h2ph5rs5arj21da0bywfn.jpg" alt="image-20220529185802379" style="zoom:33%;" />
+
+<p>循环链表的优点是从链尾到链头比较方便。</p>
+<p>当要处理的数据具有环型结构特点时，就特别适合采用循环链表。比如著名的约瑟夫问题。</p>
+<p><strong>双向链表</strong></p>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq490691606/article/details/49948263">Python 实现双向链表（图解）</a></p>
 <p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gqls41wojpj31cu06snbl.jpg" alt="image-20210517221044722"></p>
 <p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gqltomwamrj313a07ygyn.jpg" alt="image-20210517230508499"></p>
-<ul>
-<li>数组 VS 链表</li>
-</ul>
-<p>正是因为内存存储的区别，它们插入、删除、随机访问操作的时间复杂度正好相反。</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gynwo0qrg8j30w00a0js7.jpg" alt="image-20220123210210524"></p>
-<p>链表本身没有大小 的限制，天然地支持动态扩容。</p>
-<p>除此之外，如果你的代码对内存的使用非常苛刻，那数组就更适合你。因为链表中的每个结点都需要消 耗额外的存储空间去存储一份指向下一个结点的指针，所以内存消耗会翻倍。而且，对链表进行频繁的 插入、删除操作，还会导致频繁的内存申请和释放，容易造成内存碎片，如果是 Java 语言，就有可能会 导致频繁的 GC(Garbage Collection，垃圾回收)。</p>
-<p>所以，在我们实际的开发中，针对不同类型的项目，要根据具体情况，权衡究竟是选择数组还是链表。</p>
 <h2 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h2><p>队列跟栈一样，也是一种操作受限的线性表数据结构。</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gv15cis0thj61cy084t9m02.jpg" alt="image-20211002183322757"></p>
-<ul>
-<li>数组实现</li>
-</ul>
+<img src="https://tva1.sinaimg.cn/large/008i3skNgy1gv15cis0thj61cy084t9m02.jpg" alt="image-20211002183322757" style="zoom:33%;" />
+
+<p><strong>数组实现</strong></p>
 <p>通过 移动head ,tail 控制入队和出队，当tail 移动到数组最右边，需要数据搬移</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gv1687k03lj610m0c8mys02.jpg" alt="image-20211002190353757"></p>
+<img src="https://tva1.sinaimg.cn/large/008i3skNgy1gv1687k03lj610m0c8mys02.jpg" alt="image-20211002190353757" style="zoom:50%;" />
+
 <p>如要避免数据搬移，可采用循环队列：</p>
 <p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gv16dbb5ivj619a0k20va02.jpg" alt="IMG_CA2CC59959D7-1"></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Queue</span>(<span class="params"><span class="built_in">object</span></span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, size=<span class="number">100</span></span>):</span></span><br><span class="line">        self.size = size</span><br><span class="line">        self.queue = [<span class="number">0</span> <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(size)]</span><br><span class="line">        self.front = <span class="number">0</span>  <span class="comment"># 队首</span></span><br><span class="line">        self.rear = <span class="number">0</span> <span class="comment"># 队尾</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">push</span>(<span class="params">self, element</span>):</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> self.is_filled():</span><br><span class="line">            self.rear =(self.rear+<span class="number">1</span>) % self.size</span><br><span class="line">            self.queue[self.rear] = element</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">raise</span> IndexError(<span class="string">&#x27;queue is filled&#x27;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">pop</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> self.is_empty():</span><br><span class="line">            self.front = (self.front+<span class="number">1</span>) % self.size</span><br><span class="line">            <span class="keyword">return</span> self.queue[self.front]</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">raise</span> IndexError(<span class="string">&#x27;queue is empty!!&#x27;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">is_empty</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="string">&quot;&quot;&quot;判断队空&quot;&quot;&quot;</span></span><br><span class="line">        <span class="keyword">return</span> self.rear==self.front</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">is_filled</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="string">&quot;&quot;&quot;判断队满&quot;&quot;&quot;</span></span><br><span class="line">        <span class="keyword">return</span> (self.rear+<span class="number">1</span>) % self.size == self.front</span><br><span class="line">---------------------------------------------</span><br><span class="line"></span><br><span class="line">q = Queue(<span class="number">5</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">4</span>):</span><br><span class="line">    q.push(i)</span><br><span class="line"><span class="built_in">print</span>(q.is_filled())</span><br><span class="line"><span class="built_in">print</span>(q.pop())</span><br><span class="line">q.push(<span class="number">4</span>)</span><br></pre></td></tr></table></figure>
 
+<p><strong>链表实现</strong></p>
+<img src="https://tva1.sinaimg.cn/large/008eGmZEgy1gpblrprhh3j312k0i847d.jpg" alt="IMG_A95FD02F8B3D-1" style="zoom:50%;" />
 
 
-<ul>
-<li>链表实现</li>
-</ul>
-<p><img src="https://tva1.sinaimg.cn/large/008eGmZEgy1gpblrprhh3j312k0i847d.jpg" alt="IMG_A95FD02F8B3D-1"></p>
-<ul>
-<li>阻塞队列</li>
-</ul>
+
+<p><strong>阻塞队列</strong></p>
 <p>阻塞 队列其实是在队列的基础上增加了阻塞操作。就是在队列为空的时候，从队头取数据会 被阻塞。因为此时还没有数据可取，直到队列中有了数据才能返回;如果队列已经满了，那么插入数据 的操作就会被阻塞，直到队列中有空闲位置后再插入数据，然后再返回。</p>
-<p><img src="https://tva1.sinaimg.cn/large/008eGmZEgy1gpcp7bk14nj31720hatu1.jpg" alt="image-20210408221918674"></p>
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h2pn9uyqcgj21fo0e8mys.jpg" alt="image-20220529222937315"></p>
 <p>利用阻塞队列可以轻松实现一个<strong>”生产者-消费者模型“</strong></p>
 <p>基于阻塞队列，我们还可以通过协调“生产者”和“消费者”的个数，来提高数据的处理效率</p>
-<p><img src="https://tva1.sinaimg.cn/large/008eGmZEgy1gpcpbogzv3j31dy0g4x4n.jpg" alt="image-20210408222332733"></p>
-<ul>
-<li>并发队列</li>
-</ul>
+<img src="https://tva1.sinaimg.cn/large/008eGmZEgy1gpcpbogzv3j31dy0g4x4n.jpg" alt="image-20210408222332733" style="zoom:50%;" />
+
+<p><strong>并发队列</strong></p>
 <p>在多线程情况下，会有多个线程同时操作队列，这个时候就会存在线程安全问题，那如何实现一个线程安全的队列呢?</p>
-<p>线程安全的队列我们叫作<strong>并发队列</strong>。最简单直接的实现方式是直接在 enqueue()、dequeue() 方法上加 锁，但是锁粒度大并发度会比较低，同一时刻仅允许一个存或者取操作。实际上，基于数组的循环队 列，利用 CAS 原子操作，可以实现非常高效的并发队列。这也是循环队列比链式队列应用更加广泛的原 因。</p>
+<p>线程安全的队列我们叫作并发队列。最简单直接的实现方式是直接在 enqueue()、dequeue() 方法上加 锁，但是锁粒度大并发度会比较低，同一时刻仅允许一个存或者取操作。实际上，基于数组的循环队 列，利用 CAS 原子操作，可以实现非常高效的并发队列。这也是循环队列比链式队列应用更加广泛的原 因。</p>
 <p>总之，阻塞队列就是入队、出队操作可以阻塞，并发队列就是队列的操作多线程安全</p>
-<ul>
-<li>内置模块</li>
-</ul>
+<p>？？？？</p>
+<p><strong>内置模块</strong></p>
 <p>双端队列</p>
 <img src="https://tva1.sinaimg.cn/large/008i3skNgy1gv17ma4kggj60yw0d8wgi02.jpg" alt="image-20210304235311165" style="zoom:50%;" />
 
@@ -197,17 +134,6 @@
 
 
 
-<h2 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h2><p>从栈的操作特性上来看，<strong>栈是一种</strong>“<strong>操作受限</strong>”<strong>的线性表</strong>，只允许在一端插入和删除数据。</p>
-<p>事实上，从功能上来说，数组或链表确实可以替代栈，但你要知道，特定的数据结构是对特定场景的抽象，而且，数组或链表暴露了太多的操作接口，操作上的确灵活自由，但使用时就比较不可控，自然也就更容易出错。</p>
-<p><strong>当某个数据集合只涉及在一端插入和删除数据，并且满足后进先出、先进后出的特性，这时我们就应该 首选</strong>“<strong>栈</strong>”<strong>这种数据结构</strong>。</p>
-<ul>
-<li>应用</li>
-</ul>
-<p>1）函数调用</p>
-<p>图中 显示的是，在执行到 add() 函数时，函数调用栈的情况。</p>
-<p><img src="https://tva1.sinaimg.cn/large/008eGmZEgy1gpbkmdba7yj31as0n2qv5.jpg" alt="image-20210407225513243"></p>
-<p>2）表达式求值</p>
-<p><img src="https://tva1.sinaimg.cn/large/008eGmZEgy1gpbkoah3ybj316r0u0kjl.jpg" alt="image-20210407225706163"></p>
 <h2 id="跳表"><a href="#跳表" class="headerlink" title="跳表"></a>跳表</h2><p>应用场景：Redis用跳表实现有序集合</p>
 <p>跳表是一种各方面性能都比较优秀的<strong>动态数据结构</strong>，可以支持快速地插入、删除、查找操作，写起来也不复杂，甚至可以替代红黑树(Red-black tree)。</p>
 <blockquote>
@@ -316,7 +242,10 @@
 <p>从另一个角度看，树是一种递归的数据结构</p>
 <p><strong>基本概念</strong></p>
 <p>包括树的构建、遍历、删除等</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gprsbh1igpj30ye0hc1ee.jpg" alt="image-20210421233018284"></p>
+<img src="https://tva1.sinaimg.cn/large/008i3skNgy1gprsbh1igpj30ye0hc1ee.jpg" alt="image-20210421233018284" style="zoom:50%;" />
+
+
+
 <blockquote>
 <p>如果树有 n 个顶点，那么其就有 n - 1 条边，这说明了树的顶点数和边数是同阶的。</p>
 <p>任何一个节点到根节点存在<code>唯一</code>路径，路径的长度为节点所处的深度</p>
@@ -324,29 +253,25 @@
 <p>实际使用的树有可能会更复杂，比如使用在游戏中的碰撞检测可能会用到四叉树或者八叉树。以及 k 维的树结构 <code>k-d 树</code>等。</p>
 <p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gro06z8x5bj306y06mdft.jpg" alt="img"></p>
 <p>二叉树是节点度数不超过二的树，是树的一种特殊子集，有趣的是二叉树这种被限制的树结构却能够表示和实现所有的树</p>
-<ul>
-<li>二叉树构建</li>
-</ul>
+<p><strong>二叉树构建</strong></p>
 <p>1）链式存储</p>
 <img src="https://tva1.sinaimg.cn/large/008i3skNgy1gprsjj29roj312w0qwe67.jpg" alt="image-20210421233803644" style="zoom:33%;" />
 
 <p>2）基于数组的顺序存储</p>
 <img src="https://tva1.sinaimg.cn/large/008i3skNgy1gprsnic8hyj312a0liat9.jpg" alt="image-20210421234153502" style="zoom:43%;" />
 
-<p>如果<strong>某棵二叉树是一棵完全二叉树，那用数组存储无疑是最节省内存的</strong>一种方式。因为数组的存储方式并不需要像链式存储法那样，要存储额外的左右子节点的指针。这也是为什么完全二叉树会单􏰁拎出来的原因，也是为什么完全二叉树要求最后一层的子节点<strong>都靠左</strong>的原因。</p>
-<ul>
-<li>遍历</li>
-</ul>
+<p>如果某棵二叉树是一棵完全二叉树，那用数组存储无疑是最节省内存的一种方式。因为数组的存储方式并不需要像链式存储法那样，要存储额外的左右子节点的指针。这也是为什么完全二叉树会单􏰁拎出来的原因，也是为什么完全二叉树要求最后一层的子节点都靠左的原因。</p>
+<p><strong>遍历</strong></p>
 <p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gprtep5idfj31e40j8hdt.jpg" alt="image-20210422000801073"></p>
 <p>时间复杂度O(n)，参考递归时间复杂度分析：f(n)=2*f(n/2)+1,且f(1)=1—-&gt;O(n)</p>
-<p>层序遍历【结合队列】</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gv2l8wn7w2j60k80d60t202.jpg" alt="image-20211004002912647"></p>
-<blockquote>
+<ul>
+<li><p>层序遍历</p>
 <p>层序遍历是广度优先，BFS,需用到队列</p>
-</blockquote>
+</li>
+</ul>
+<img src="https://tva1.sinaimg.cn/large/008i3skNgy1gv2l8wn7w2j60k80d60t202.jpg" alt="image-20211004002912647" style="zoom:50%;" />
+
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BiTreeNode</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, data</span>):</span></span><br><span class="line">        self.data = data</span><br><span class="line">        self.left = <span class="literal">None</span>  <span class="comment"># 左孩子</span></span><br><span class="line">        self.right = <span class="literal">None</span>  <span class="comment"># 右孩子</span></span><br><span class="line"></span><br><span class="line">a =BiTreeNode(<span class="string">&#x27;A&#x27;</span>)</span><br><span class="line">b =BiTreeNode(<span class="string">&#x27;B&#x27;</span>)</span><br><span class="line">c =BiTreeNode(<span class="string">&#x27;C&#x27;</span>)</span><br><span class="line">d =BiTreeNode(<span class="string">&#x27;D&#x27;</span>)</span><br><span class="line">e =BiTreeNode(<span class="string">&#x27;E&#x27;</span>)</span><br><span class="line">f =BiTreeNode(<span class="string">&#x27;F&#x27;</span>)</span><br><span class="line">g =BiTreeNode(<span class="string">&#x27;G&#x27;</span>)</span><br><span class="line"></span><br><span class="line">e.right= g</span><br><span class="line">e.left = a</span><br><span class="line">a.right = c</span><br><span class="line">c.left=b</span><br><span class="line">c.right=d</span><br><span class="line">g.right=f</span><br><span class="line"></span><br><span class="line">root =e</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(root.left.right.data)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 二叉树前序遍历</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">pre_order</span>(<span class="params">root</span>):</span></span><br><span class="line">    <span class="keyword">if</span> root: <span class="comment"># 非空</span></span><br><span class="line">        pre_order(root.left)</span><br><span class="line">        pre_order(root.right)</span><br><span class="line">        <span class="built_in">print</span>(root.data, end= <span class="string">&quot; &quot;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> deque</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">level_order</span>(<span class="params">root</span>):</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;层次遍历&quot;&quot;&quot;</span></span><br><span class="line">    queue = deque()</span><br><span class="line">    queue.append(root)</span><br><span class="line">    <span class="keyword">while</span> <span class="built_in">len</span>(queue)&gt;<span class="number">0</span>:  <span class="comment">#只要队不空</span></span><br><span class="line">        node = queue.popleft()</span><br><span class="line">        <span class="built_in">print</span>(node.data, end= <span class="string">&#x27; &#x27;</span>)</span><br><span class="line">        <span class="keyword">if</span> node.left:</span><br><span class="line">            queue.append(node.left)</span><br><span class="line">        <span class="keyword">if</span> node.right:</span><br><span class="line">            queue.append(node.right)</span><br><span class="line">level_order(root)</span><br></pre></td></tr></table></figure>
-
-
 
 <ul>
 <li>二叉树删除</li>
@@ -358,9 +283,6 @@
 <p>二叉查找树要求，在树中的任意一个节点，其左子树中的每个节 点的值，都要小于这个节点的值，而右子树节点的值都大于这个节点的值。</p>
 <p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gqh6wj75snj31a80em4fd.jpg" alt="image-20210422233911033"></p>
 <p>中序遍历二叉查找树，可以输出有 序的数据序列，时间复杂度是 O(n)<strong>，非常高效</strong>。因此，二叉查找树也叫作二叉排序树。</p>
-<blockquote>
-<p>代码</p>
-</blockquote>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BiTreeNode</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self,data</span>):</span></span><br><span class="line">        self.data = data</span><br><span class="line">        self.lchild= <span class="literal">None</span></span><br><span class="line">        self.rchild =<span class="literal">None</span></span><br><span class="line">        self.parent = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BST</span>:</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;二叉搜索树类&quot;&quot;&quot;</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, li=<span class="literal">None</span></span>):</span></span><br><span class="line">        self.root =<span class="literal">None</span></span><br><span class="line">        <span class="keyword">if</span> li:</span><br><span class="line">            <span class="keyword">for</span> val <span class="keyword">in</span> li:</span><br><span class="line">                self.insert_no_rec(val)</span><br><span class="line">                <span class="comment"># self.root = self.insert(self.root, val)</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">insert</span>(<span class="params">self, node, val</span>):</span></span><br><span class="line">        <span class="string">&quot;&quot;&quot;注意递归形式时候要注意返回&quot;&quot;&quot;</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> node:  <span class="comment"># 空</span></span><br><span class="line">            node = BiTreeNode(val)</span><br><span class="line">        <span class="keyword">elif</span> val&lt;node.data:</span><br><span class="line">            node.lchild = self.insert(node.lchild, val)</span><br><span class="line">            node.lchild.parent = node</span><br><span class="line">        <span class="keyword">elif</span> val&gt;node.data:</span><br><span class="line">            node.rchild = self.insert(node.rchild, val)</span><br><span class="line">            node.rchild.parent= node</span><br><span class="line">        <span class="keyword">return</span> node</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">insert_no_rec</span>(<span class="params">self, val</span>):</span></span><br><span class="line">        <span class="string">&quot;&quot;&quot;非递归插入&quot;&quot;&quot;</span></span><br><span class="line">        p =self.root</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> p:  <span class="comment"># 空树</span></span><br><span class="line">            self.root = BiTreeNode(val)</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">            <span class="keyword">if</span> val &lt;p.data: <span class="comment"># 插左子树</span></span><br><span class="line">                <span class="keyword">if</span> p.lchild:</span><br><span class="line">                    p = p.lchild</span><br><span class="line">                <span class="keyword">else</span>:  <span class="comment"># 左子树不存在</span></span><br><span class="line">                    p.lchild = BiTreeNode(val)</span><br><span class="line">                    p.lchild.parent = p</span><br><span class="line">                    <span class="keyword">return</span></span><br><span class="line">            <span class="keyword">elif</span> val&gt;p.data:</span><br><span class="line">                <span class="keyword">if</span> p.rchild:</span><br><span class="line">                    p = p.rchild</span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    p.rchild = BiTreeNode(val)</span><br><span class="line">                    p.rchild.parent=p</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 二叉树后序遍历</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">post_order</span>(<span class="params">self, root</span>):</span></span><br><span class="line">        <span class="keyword">if</span> root:  <span class="comment"># 非空</span></span><br><span class="line">            self.post_order(root.lchild)</span><br><span class="line">            self.post_order(root.rchild)</span><br><span class="line">            <span class="built_in">print</span>(root.data, end=<span class="string">&quot; &quot;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">pre_order</span>(<span class="params">self, root</span>):</span></span><br><span class="line">        <span class="keyword">if</span> root:  <span class="comment"># 非空</span></span><br><span class="line">            <span class="built_in">print</span>(root.data, end=<span class="string">&quot; &quot;</span>)</span><br><span class="line">            self.pre_order(root.lchild)</span><br><span class="line">            self.pre_order(root.rchild)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">in_order</span>(<span class="params">self, root</span>):</span></span><br><span class="line">        <span class="string">&quot;&quot;&quot;中序遍历&quot;&quot;&quot;</span></span><br><span class="line">        <span class="keyword">if</span> root:</span><br><span class="line">            self.in_order(root.lchild)</span><br><span class="line">            <span class="built_in">print</span>(root.data, end=<span class="string">&quot; &quot;</span>)</span><br><span class="line">            self.in_order(root.rchild)</span><br><span class="line"></span><br><span class="line">li = <span class="built_in">list</span>(<span class="built_in">range</span>(<span class="number">1000</span>))</span><br><span class="line">random.shuffle(li)</span><br><span class="line"></span><br><span class="line">tree= BST([<span class="number">4</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">9</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">8</span>])</span><br><span class="line"><span class="comment"># tree= BST(li)</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&#x27;前序遍历：&#x27;</span>)</span><br><span class="line">tree.pre_order(tree.root)</span><br><span class="line"><span class="built_in">print</span>()</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&#x27;中序遍历：&#x27;</span>)</span><br><span class="line">tree.in_order(tree.root)</span><br><span class="line"><span class="built_in">print</span>()</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&#x27;后续遍历：&#x27;</span>)</span><br><span class="line">tree.post_order(tree.root)</span><br></pre></td></tr></table></figure>
 
 <p>前序遍历：<br>4 2 1 3 6 5 7 9 8<br>中序遍历：<br>1 2 3 4 5 6 7 8 9<br>后续遍历：<br>1 3 2 5 8 9 7 6 4 </p>
@@ -592,7 +514,8 @@
 
 
 
-<h2 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h2><p>按照复杂度分为：</p>
+<h2 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h2><p><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h2pg2x0wtej215a0oy44w.jpg" alt="image-20210516120055333"></p>
+<p>按照复杂度分为：</p>
 <table>
 <thead>
 <tr>
@@ -765,13 +688,16 @@
 <li>变体四:查找最后一个 ≤ 给定值的元素</li>
 </ol>
 <p>参见：<a target="_blank" rel="noopener" href="https://github.com/flitdu/consult/blob/main/jupyter/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE.ipynb"><strong>二分查找.ipynb</strong> </a></p>
-<h2 id="字符串匹配"><a href="#字符串匹配" class="headerlink" title="字符串匹配"></a>字符串匹配</h2><h3 id="BF算法"><a href="#BF算法" class="headerlink" title="BF算法"></a>BF算法</h3><p>Brute Force, 也即暴力匹配算法，复杂度为O（mn），其中m为模式串长度，n 为主串长度，n&gt;m</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gpwd1fyt1sj30vk0eqwzb.jpg" alt="image-20210425222923858"></p>
-<h3 id="RK-算法"><a href="#RK-算法" class="headerlink" title="RK 算法"></a>RK 算法</h3><p>RK 算法的全称叫 Rabin-Karp 算法，是由它的两位发明者 Rabin 和 Karp 的名字来命名的。</p>
+<h2 id="字符串匹配"><a href="#字符串匹配" class="headerlink" title="字符串匹配"></a>字符串匹配</h2><p><strong>BF算法</strong></p>
+<p>Brute Force, 也即暴力匹配算法，复杂度为O（mn），其中m为模式串长度，n 为主串长度，n&gt;m</p>
+<img src="https://tva1.sinaimg.cn/large/008i3skNgy1gpwd1fyt1sj30vk0eqwzb.jpg" alt="image-20210425222923858" style="zoom:50%;" />
+
+<p><strong>RK 算法</strong></p>
+<p>RK 算法的全称叫 <a target="_blank" rel="noopener" href="https://brilliant.org/wiki/rabin-karp-algorithm/">Rabin-Karp 算法</a>，是由它的两位发明者 Rabin 和 Karp 的名字来命名的。</p>
 <p>是BF算法的升级版</p>
 <p>RK 算法的思路是这样的：我们通过哈希算法对主串中的 n-m+1 个子串分别求哈希值，然后逐个与模式串的哈希值比较大小。如果某个子串的哈希值与模式串相等，那就说明对应的子串和模式串匹配了(这 里先不考虑哈希冲突的问题，后面我们会讲到)。因为哈希值是一个数字，数字之间比较是否相等是非 常快速的，所以模式串和子串比较的效率就提高了。</p>
 <p>整体复杂度：O(n)</p>
-<h3 id="BM-算法"><a href="#BM-算法" class="headerlink" title="BM 算法"></a>BM 算法</h3><h2 id="四种算法思想"><a href="#四种算法思想" class="headerlink" title="四种算法思想"></a>四种算法思想</h2><p>贪心 算法、分治算法、回溯算法、动态规划，更加确切地说，它们应该是算法思想，并不是具体的算法，常用来指导我们设计具体的算法和编码等。</p>
+<h2 id="四种算法思想"><a href="#四种算法思想" class="headerlink" title="四种算法思想"></a>四种算法思想</h2><p>贪心 算法、分治算法、回溯算法、动态规划，更加确切地说，它们应该是算法思想，并不是具体的算法，常用来指导我们设计具体的算法和编码等。</p>
 <p><strong>回溯</strong></p>
 <p>应用领域：</p>
 <ul>
