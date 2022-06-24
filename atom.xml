@@ -37,9 +37,9 @@
     
     <category term="CS" scheme="http://example.com/tags/CS/"/>
     
-    <category term="shell" scheme="http://example.com/tags/shell/"/>
-    
     <category term="linux" scheme="http://example.com/tags/linux/"/>
+    
+    <category term="shell" scheme="http://example.com/tags/shell/"/>
     
   </entry>
   
