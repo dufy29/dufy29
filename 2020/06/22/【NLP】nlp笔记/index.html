@@ -115,14 +115,25 @@
 <p>构词学（morphology）作为语言学的一个重要分支，研究的正是词的内部结构和形成方式。</p>
 </blockquote>
 <p>在 word2vec 中，我们并没有直接利用构词学中的信息。无论是在 <strong>skip-gram</strong> 还是 <strong>CBOW</strong> 中，我们将形态不同的单词用不同的向量来表示。例如，“dog”和“dogs”分别用两个不同的向量表示，而模型中并未直接表达这两个向量之间的关系。</p>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://heleifz.github.io/14732610572844.html">fastText 源码分析</a></li>
-</ul>
+<p><strong>关于 subwords 的计算</strong></p>
+<p>如设<code>minn:3 maxn:3</code></p>
+<p>则对于词 ‘here’ 和 ‘where’有：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;here&gt;	计算Subwords: &lt;he, her, ere, re&gt;, </span><br><span class="line">	subwords[]存储（hash）: 33, 1188615, 1473455, 1529068, 867533, </span><br><span class="line">&lt;where&gt;	计算Subwords: &lt;wh, whe, her, ere, re&gt;, </span><br><span class="line">	subwords[]存储（hash）: 19, 167687, 420976, 1473455, 1529068, 867533, </span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>一些疑问❓</strong></p>
+<p>1）文本分类时，设置subword 参数后模型变得很大</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./fasttext supervised -input train.txt -output model -epoch <span class="number">10</span> -minn <span class="number">1</span> -maxn <span class="number">3</span> -------&gt; <span class="number">800</span>MB</span><br></pre></td></tr></table></figure>
+
+<p>vs </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./fasttext supervised -input train.txt -output model -epoch 10</span><br></pre></td></tr></table></figure>
+
+<p>模型相差 数百倍</p>
+<p><strong>参考资料</strong></p>
+<p><a target="_blank" rel="noopener" href="https://www.bookstack.cn/books/fasttext-doc-zh">FastText v0.1.0 中文文档</a></p>
+<p><a target="_blank" rel="noopener" href="https://heleifz.github.io/14732610572844.html">fastText 源码分析</a></p>
 <p><img src="https://tva1.sinaimg.cn/large/0081Kckwgy1gkgv92i6kfj31ji0u0te3.jpg" alt="image-20200308224944226"></p>
-<ul>
-<li>FastText v0.1.0 中文文档</li>
-</ul>
-<p><a target="_blank" rel="noopener" href="https://www.bookstack.cn/books/fasttext-doc-zh">https://www.bookstack.cn/books/fasttext-doc-zh</a></p>
 <h2 id="CNN"><a href="#CNN" class="headerlink" title="CNN"></a>CNN</h2><p><img src="https://miro.medium.com/max/1400/0*0efgxnFIaLTZ2qkY" alt="img"></p>
 <h2 id="RNN"><a href="#RNN" class="headerlink" title="RNN"></a>RNN</h2><p><strong><a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_37788308/article/details/80632809">普通RNN</a></strong></p>
 <img src="https://tva1.sinaimg.cn/large/008i3skNgy1gstlc3g1stj31aq0i6jsr.jpg" alt="image-20210725230129775" style="zoom:33%;" />
