@@ -45,14 +45,14 @@
 <p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/92155250">对simhash的简单理解</a></p>
 <h2 id="多传感器数据融合介绍"><a href="#多传感器数据融合介绍" class="headerlink" title="多传感器数据融合介绍"></a>多传感器数据融合介绍</h2><p>输入、输出具体是？？</p>
 <p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/341440139">卡尔曼滤波最完整公式推导</a></p>
-<h2 id="GoogleNet和Resnet差别"><a href="#GoogleNet和Resnet差别" class="headerlink" title="GoogleNet和Resnet差别"></a>GoogleNet和Resnet差别</h2><ul>
-<li><p><strong>为什么Dropout有效？</strong></p>
-<p>Dropout背后理念和集成模型很相似。在Drpout层，不同的神经元组合被关闭，这代表了一种不同的结构，所有这些不同的结构使用一个的子数据集并行地带权重训练，而权重总和为1。如果Dropout层有 <img src="https://www.zhihu.com/equation?tex=n" alt="[公式]"> 个神经元，那么会形成 <img src="https://www.zhihu.com/equation?tex=2%5E%7Bn%7D" alt="[公式]"> 个不同的子结构。在预测时，相当于集成这些模型并取均值。这种结构化的模型正则化技术有利于避免过拟合。Dropout有效的另外一个视点是：由于神经元是随机选择的，所以可以减少神经元之间的相互依赖，从而确保提取出相互独立的重要特征。</p>
+<h2 id="GoogleNet和Resnet差别"><a href="#GoogleNet和Resnet差别" class="headerlink" title="GoogleNet和Resnet差别"></a><del>GoogleNet和Resnet差别</del></h2><ul>
+<li><p><del><strong>为什么Dropout有效？</strong></del></p>
+<p><del>Dropout背后理念和集成模型很相似。在Drpout层，不同的神经元组合被关闭，这代表了一种不同的结构，所有这些不同的结构使用一个的子数据集并行地带权重训练，而权重总和为1。如果Dropout层有 <img src="https://www.zhihu.com/equation?tex=n" alt="[公式]"> 个神经元，那么会形成 <img src="https://www.zhihu.com/equation?tex=2%5E%7Bn%7D" alt="[公式]"> 个不同的子结构。在预测时，相当于集成这些模型并取均值。这种结构化的模型正则化技术有利于避免过拟合。Dropout有效的另外一个视点是：由于神经元是随机选择的，所以可以减少神经元之间的相互依赖，从而确保提取出相互独立的重要特征。</del></p>
 </li>
 </ul>
-<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/32116277">ResNet, AlexNet, VGG, Inception: 理解各种各样的CNN架构</a></p>
+<p><del><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/32116277">ResNet, AlexNet, VGG, Inception: 理解各种各样的CNN架构</a></del></p>
 <ul>
-<li>池化操作的使用场景，什么时候不用？一定要用吗？</li>
+<li><del>池化操作的使用场景，什么时候不用？一定要用吗？</del></li>
 </ul>
 <h2 id="超参数怎么调优"><a href="#超参数怎么调优" class="headerlink" title="超参数怎么调优"></a>超参数怎么调优</h2><p>参见《白面机器学习》p43</p>
 <h2 id="特征选取，关键特征如何挑选？"><a href="#特征选取，关键特征如何挑选？" class="headerlink" title="特征选取，关键特征如何挑选？"></a>特征选取，关键特征如何挑选？</h2><ul>
