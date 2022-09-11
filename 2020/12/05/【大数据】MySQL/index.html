@@ -9,11 +9,14 @@
 <p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gu502h5a0fj61720jitbc02.jpg" alt="image-20210904231246998"></p>
 <h2 id="结构化和非结构化数据"><a href="#结构化和非结构化数据" class="headerlink" title="结构化和非结构化数据"></a>结构化和非结构化数据</h2><p>结构化数据：可以用二维表结构来逻辑表达实现的数据，如 SQL 数据库表中的行。</p>
 <p>非结构化数据：办公文档、文本、图片、XML、HTML、各类报表、图像和音频/视频信息等等</p>
-<h2 id="规范化"><a href="#规范化" class="headerlink" title="规范化"></a>规范化</h2><p>如果一个数据库以完全不存在重复信息的方式进行组织，则称该数据库是<strong>规范化</strong>的。将包含重复数据的数据库转换为不包含重复数据的过程称为规范化</p>
-<p>e.g.</p>
-<p>重复：<img src="https://tva1.sinaimg.cn/large/008i3skNly1gz1957cirdj30qs0aamye.jpg" alt="image-20220204100614254"></p>
-<p>规范化，拆表：</p>
+<h2 id="主键、外键"><a href="#主键、外键" class="headerlink" title="主键、外键"></a>主键、外键</h2><p>如果一个数据库以完全不存在重复信息的方式进行组织，则称该数据库是<strong>规范化</strong>的。将包含重复数据的数据库转换为不包含重复数据的过程称为规范化</p>
+<p>e.g.下表重复：<img src="https://tva1.sinaimg.cn/large/008i3skNly1gz1957cirdj30qs0aamye.jpg" alt="image-20220204100614254"></p>
+<p>利用主键、外键进行规范化，拆表：</p>
 <p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gz197nglodj30s20bidha.jpg" alt="image-20220204100835357"></p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/smuxiaolei/p/7451856.html">语法操作参考</a>：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE `dage` (</span><br><span class="line">`id` int(11) NOT NULL auto_increment,</span><br><span class="line">`name` varchar(32) default &#x27;&#x27;,</span><br><span class="line">PRIMARY KEY (`id`))</span><br><span class="line">ENGINE=InnoDB DEFAULT CHARSET=latin1；</span><br><span class="line">CREATE TABLE `xiaodi` (</span><br><span class="line">`id` int(11) NOT NULL auto_increment,</span><br><span class="line">`dage_id` int(11) default NULL,</span><br><span class="line">`name` varchar(32) default &#x27;&#x27;,</span><br><span class="line">PRIMARY KEY (`id`),</span><br><span class="line">KEY `dage_id` (`dage_id`),</span><br><span class="line">CONSTRAINT `xiaodi_ibfk_1` FOREIGN KEY (`dage_id`) REFERENCES `dage` (`id`) # 添加 外键</span><br><span class="line">) ENGINE=InnoDB DEFAULT CHARSET=latin1；</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>外键声明非必须，使用的话整个表格的约束会更加严格。完整性检验也是有耗时代价的</p>
 <h2 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h2><p>通过索引，可以快速检索</p>
 <p>同时要注意索引更新的时间开销，以及索引会占用磁盘空间</p>
 <p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gz2q7lj36vj30q80cwdhu.jpg" alt="image-20220205164214546"></p>
