@@ -5,72 +5,30 @@
 
 <h2 id="状态转移图"><a href="#状态转移图" class="headerlink" title="状态转移图"></a>状态转移图</h2><p><img src="https://tva1.sinaimg.cn/large/0081Kckwgy1gkjb63bcymj30zk0k00w1.jpg" alt="img"></p>
 <p>参考 <a href="">四个命令玩转 Git</a> </p>
+<h2 id="常见命令"><a href="#常见命令" class="headerlink" title="常见命令"></a>常见命令</h2><p><strong>新建阅读分支</strong></p>
+<p>在本地创建以线上test分支为基础的分支</p>
+<p>使用场景：比如对源码研读</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b test origin/test </span><br></pre></td></tr></table></figure>
+
+<p><strong>分支合并</strong></p>
+<p>假设dev分支已经开发好一个版本，可以考虑合并到master</p>
+<p>git checkout master—&gt;git pull origin master–&gt;git merge dev</p>
+<img src="https://tva1.sinaimg.cn/large/008vxvgGgy1h7ssjq6269j30ya0no46s.jpg" alt="image-20200107235246827" style="zoom: 50%;" />
+
+<p><strong>git stash</strong></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/fly910905/article/details/88711075">Git：什么时候应使用 “git stash”</a></p>
+<p><strong>版本回退</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git log</span><br><span class="line">git reset --hard ID</span><br><span class="line">git push -f  强制推送到远程分支</span><br></pre></td></tr></table></figure>
+
+
+
+
+
 <h2 id="猴子都能懂的GIT入门"><a href="#猴子都能懂的GIT入门" class="headerlink" title="猴子都能懂的GIT入门"></a>猴子都能懂的GIT入门</h2><p><strong>传送门→</strong><a target="_blank" rel="noopener" href="https://backlog.com/git-tutorial/cn/">https://backlog.com/git-tutorial/cn/</a></p>
 <p><img src="https://tva1.sinaimg.cn/large/0082zybpgy1gc6i6uoktxj31cv0u0wpw.jpg" alt="image-20200223181920397"></p>
 <h2 id="廖雪峰Git教程"><a href="#廖雪峰Git教程" class="headerlink" title="廖雪峰Git教程"></a>廖雪峰Git教程</h2><p><a target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/wiki/896043488029600">https://www.liaoxuefeng.com/wiki/896043488029600</a></p>
 <h2 id="书籍《Pro-Git》"><a href="#书籍《Pro-Git》" class="headerlink" title="书籍《Pro Git》"></a>书籍《Pro Git》</h2><p><strong>传送门→</strong><a target="_blank" rel="noopener" href="https://git-scm.com/book/zh/v2">https://git-scm.com/book/zh/v2</a></p>
 <p><img src="https://tva1.sinaimg.cn/large/0082zybpgy1gc6hxuuza7j31h40r6186.jpg" alt="image-20200223181039982"></p>
-<h2 id="branch分支管理"><a href="#branch分支管理" class="headerlink" title="branch分支管理"></a>branch分支管理</h2><ul>
-<li>远程建仓</li>
-<li>clone 到本地</li>
-<li>初始代码版本放入本地</li>
-</ul>
-<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1gaoe2ubiqyj30lk03e74o.jpg" alt="image-20200107225635746"></p>
-<ul>
-<li>push 到远程</li>
-<li>远程建立 dev 分支</li>
-</ul>
-<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1gaoe5ohqwsj30rm0augme.jpg" alt="image-20200107225919188"></p>
-<ul>
-<li>本地建立 dev 分支</li>
-</ul>
-<p>查看当前分支对应 </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -vv</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1gaoduc3v3gj30ss03gdjr.jpg" alt="image-20200107224822678"></p>
-<ul>
-<li>与远程分支建立对应</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch --all</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1gaoemct31hj30n005kafc.jpg" alt="image-20200107231520446"></p>
-<p>会发现，远程的dev 未看到</p>
-<p>首先，</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git fetch</span><br><span class="line">获取分支</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1gaoepkcxhpj30nk09in68.jpg" alt="image-20200107231825932"></p>
-<p>再次查看，可以看到有远程的dev了</p>
-<p>关联：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git checkout dev  </span><br><span class="line">#切换到分支 &#x27;dev&#x27;</span><br><span class="line">git branch --set-upstream origin/dev  </span><br><span class="line">#设置当前本地分支的默认远程分支。</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1gaoevsg5ktj30s803eq6v.jpg" alt="image-20200107232423933"></p>
-<ul>
-<li>下拉</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><strong>本地切换到dev开发</strong></li>
-</ul>
-<p>修改2次，每次均git add . git commit</p>
-<p>git push 远端，结果如下：</p>
-<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1gaof9dfcezj31j60qe0zv.jpg" alt="image-20200107233728088"></p>
-<ul>
-<li>合并分支到master上【1】</li>
-</ul>
-<p>假设已经开发好一个版本，可以考虑合并上传</p>
-<p>切换到master—&gt;git pull origin master–&gt;git merge dev</p>
-<p><img src="https://tva1.sinaimg.cn/large/006tNbRwgy1gaofpb1qswj30ya0no1kx.jpg" alt="image-20200107235246827"></p>
-<p>再 git push 远端同步</p>
-<h2 id="git-stash"><a href="#git-stash" class="headerlink" title="git stash"></a>git stash</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/fly910905/article/details/88711075">Git：什么时候应使用 “git stash”</a></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">$ git stash save</span><br><span class="line">$ git add -u</span><br><span class="line">$ git commit -m &#x27;...&#x27;</span><br><span class="line">$ git stash pop</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="版本回退"><a href="#版本回退" class="headerlink" title="版本回退"></a>版本回退</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">本地回退：</span><br><span class="line">git log</span><br><span class="line">git reset --hard ID</span><br><span class="line">紧接着强制推送到远程分支：</span><br><span class="line">git push -f</span><br></pre></td></tr></table></figure>
-
-
-
-
-
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
 <li><a target="_blank" rel="noopener" href="https://blog.csdn.net/boysky0015/article/details/78185879">合并分支到master上</a></li>
 <li></li>
