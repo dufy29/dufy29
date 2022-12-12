@@ -20,11 +20,24 @@
 </ul>
 <p><a target="_blank" rel="noopener" href="https://www.kernel.org/doc/html/latest/index.html">https://www.kernel.org/doc/html/latest/index.html</a></p>
 <p><img src="https://tva1.sinaimg.cn/large/008vxvgGgy1h71rlxglr3j31ly0u0n3x.jpg" alt="image-20211230195552873"></p>
+<h2 id="linux-历史"><a href="#linux-历史" class="headerlink" title="linux 历史"></a>linux 历史</h2><p>发布时间线：<a target="_blank" rel="noopener" href="https://commons.wikimedia.org/wiki/File:Linux_Distribution_Timeline.svg">https://commons.wikimedia.org/wiki/File:Linux_Distribution_Timeline.svg</a></p>
+<img src="../../../Library/Application Support/typora-user-images/image-20221212234757346.png" alt="image-20221212234757346" style="zoom:50%;" />
+
+<h2 id="系统安装"><a href="#系统安装" class="headerlink" title="系统安装"></a>系统安装</h2><p><strong>分区</strong></p>
+<p>Dev/sda  –&gt; new partition table –&gt; freespace</p>
+<img src="../../../Library/Application Support/typora-user-images/image-20221213000216540.png" alt="image-20221213000216540" style="zoom:67%;" />
+
+<p>swap 分 5475MB</p>
+<p>![image-20221213000722077](../../../Library/Application Support/typora-user-images/image-20221213000722077.png)</p>
+<p>/ 挂载：Ext4</p>
+<p>![image-20221213001053694](../../../Library/Application Support/typora-user-images/image-20221213001053694.png)</p>
 <h2 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h2><p>操作系统层级模型：</p>
 <p><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h0wa3wmbduj20w20ksgn1.jpg" alt="image-20220403093223961"></p>
 <p>Linux系统架构：</p>
-<p><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h10ebtd9a7j20pe0gcta4.jpg" alt="image-20220406230039860"></p>
-<h2 id="用户模式和内核模式"><a href="#用户模式和内核模式" class="headerlink" title="用户模式和内核模式"></a>用户模式和内核模式</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/lp284558195/article/details/115346904#:~:text=%E5%BD%93%E8%BF%90%E8%A1%8C%E5%9C%A8%E7%94%A8%E6%88%B7%E6%A8%A1%E5%BC%8F,%E4%B9%9F%E6%9C%89%E6%9D%83%E9%99%90%E8%AE%BF%E9%97%AE%E7%94%A8%E6%88%B7%E7%A9%BA%E9%97%B4%EF%BC%89%E3%80%82">用户模式和内核模式（线程级）</a></p>
+<img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h10ebtd9a7j20pe0gcta4.jpg" alt="image-20220406230039860" style="zoom:50%;" />
+
+<p><strong>用户模式和内核模式</strong></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/lp284558195/article/details/115346904#:~:text=%E5%BD%93%E8%BF%90%E8%A1%8C%E5%9C%A8%E7%94%A8%E6%88%B7%E6%A8%A1%E5%BC%8F,%E4%B9%9F%E6%9C%89%E6%9D%83%E9%99%90%E8%AE%BF%E9%97%AE%E7%94%A8%E6%88%B7%E7%A9%BA%E9%97%B4%EF%BC%89%E3%80%82">用户模式和内核模式（线程级）</a></p>
 <h2 id="shell"><a href="#shell" class="headerlink" title="shell"></a>shell</h2><p>shell 提供了一种用户调用操作系统内核的方式</p>
 <p>shell命令形式 : <code>命令名+选项/参数</code></p>
 <p><strong>命令名</strong></p>
