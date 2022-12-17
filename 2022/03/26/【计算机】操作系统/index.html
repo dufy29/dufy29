@@ -1,6 +1,6 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="baidu-site-verification" content="1EB8XoOl0C"><meta name="google-site-verification" content="K7thEgdLm0UfRWJ5MGdF7sCcjClSzAlxFLPv2Oz5CGM"><title> ⭐️操作系统理解 · Hexo</title><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="⭐️操作系统理解 - John Doe"><meta name="keywords"><meta name="author" content="John Doe"><link rel="short icon" href="https://bubuzou.oss-cn-shenzhen.aliyuncs.com/blog/202010/favicon.ico"><link rel="stylesheet" href="https://bubuzou.oss-cn-shenzhen.aliyuncs.com/blog/202010/bubuzou.css"><link rel="search" type="application/opensearchdescription+xml" href="http://example.com/atom.xml" title="Hexo"><script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="baidu-site-verification" content="1EB8XoOl0C"><meta name="google-site-verification" content="K7thEgdLm0UfRWJ5MGdF7sCcjClSzAlxFLPv2Oz5CGM"><title> ⭐️操作系统 · Hexo</title><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="⭐️操作系统 - John Doe"><meta name="keywords"><meta name="author" content="John Doe"><link rel="short icon" href="https://bubuzou.oss-cn-shenzhen.aliyuncs.com/blog/202010/favicon.ico"><link rel="stylesheet" href="https://bubuzou.oss-cn-shenzhen.aliyuncs.com/blog/202010/bubuzou.css"><link rel="search" type="application/opensearchdescription+xml" href="http://example.com/atom.xml" title="Hexo"><script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
 <script src='//unpkg.com/valine/dist/Valine.min.js'></script><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-</head><body><header><div class="header row"> <a href="/" class="logo-link"><img src="/images/logo.png"></a><ul id="nav_list" class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" data-hover="博文" class="nav-list-link">博文</a></li><li class="nav-list-item"><a href="/archives/" target="_self" data-hover="归档" class="nav-list-link">归档</a></li><li class="nav-list-item"><a href="/about/" target="_self" data-hover="关于" class="nav-list-link">关于</a></li></ul><div class="search"><a id="search_btn" href="#search"></a></div><div id="nav_btn" class="nav-btn"><span></span><span></span><span></span></div></div></header><div class="row scroll-con"><section class="container"><!-- for archive page--><div id="postAr" class="post"><article class="post-block"><h1 class="post-title">⭐️操作系统理解</h1><div class="post-info">2022-03-26</div><div class="post-content"><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h10eguyuhij20w20u0wgc.jpg" alt="image-20220406230532785" style="zoom:20%;" />
+</head><body><header><div class="header row"> <a href="/" class="logo-link"><img src="/images/logo.png"></a><ul id="nav_list" class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" data-hover="博文" class="nav-list-link">博文</a></li><li class="nav-list-item"><a href="/archives/" target="_self" data-hover="归档" class="nav-list-link">归档</a></li><li class="nav-list-item"><a href="/about/" target="_self" data-hover="关于" class="nav-list-link">关于</a></li></ul><div class="search"><a id="search_btn" href="#search"></a></div><div id="nav_btn" class="nav-btn"><span></span><span></span><span></span></div></div></header><div class="row scroll-con"><section class="container"><!-- for archive page--><div id="postAr" class="post"><article class="post-block"><h1 class="post-title">⭐️操作系统</h1><div class="post-info">2022-03-26</div><div class="post-content"><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h10eguyuhij20w20u0wgc.jpg" alt="image-20220406230532785" style="zoom: 13%;" />
 
 <span id="more"></span>
 
@@ -25,19 +25,27 @@
 
 <h2 id="系统安装"><a href="#系统安装" class="headerlink" title="系统安装"></a>系统安装</h2><p><strong>分区</strong></p>
 <p>Dev/sda  –&gt; new partition table –&gt; freespace</p>
-<img src="../../../Library/Application Support/typora-user-images/image-20221213000216540.png" alt="image-20221213000216540" style="zoom:67%;" />
+<img src="https://tva1.sinaimg.cn/large/008vxvgGgy1h96or3j8umj317k0n4jtl.jpg" alt="image-20221213000216540" style="zoom:67%;" />
 
 <p>swap 分 5475MB</p>
-<p>![image-20221213000722077](../../../Library/Application Support/typora-user-images/image-20221213000722077.png)</p>
+<p><img src="https://tva1.sinaimg.cn/large/008vxvgGgy1h96orb9f1bj313e0ja0uv.jpg" alt="image-20221213000722077"></p>
 <p>/ 挂载：Ext4</p>
-<p>![image-20221213001053694](../../../Library/Application Support/typora-user-images/image-20221213001053694.png)</p>
-<h2 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h2><p>操作系统层级模型：</p>
+<p><img src="https://tva1.sinaimg.cn/large/008vxvgGgy1h96orhynwuj31560fa762.jpg" alt="image-20221213001053694"></p>
+<p>开始安装：</p>
+<p><img src="https://tva1.sinaimg.cn/large/008vxvgGgy1h96p0wdnwxj31520j6mzb.jpg" alt="image-20221217122651234"></p>
+<h2 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://www.eet-china.com/mp/a58463.html">华为鸿蒙操作系统全景解构</a></li>
+<li></li>
+</ul>
+<p><img src="https://tva1.sinaimg.cn/large/008vxvgGgy1h96zi9y4x3j30jw0cgq40.jpg" alt="img"></p>
+<p>操作系统层级模型：</p>
 <p><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h0wa3wmbduj20w20ksgn1.jpg" alt="image-20220403093223961"></p>
 <p>Linux系统架构：</p>
 <img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h10ebtd9a7j20pe0gcta4.jpg" alt="image-20220406230039860" style="zoom:50%;" />
 
 <p><strong>用户模式和内核模式</strong></p>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/lp284558195/article/details/115346904#:~:text=%E5%BD%93%E8%BF%90%E8%A1%8C%E5%9C%A8%E7%94%A8%E6%88%B7%E6%A8%A1%E5%BC%8F,%E4%B9%9F%E6%9C%89%E6%9D%83%E9%99%90%E8%AE%BF%E9%97%AE%E7%94%A8%E6%88%B7%E7%A9%BA%E9%97%B4%EF%BC%89%E3%80%82">用户模式和内核模式（线程级）</a></p>
+<p>微内核介绍：<a target="_blank" rel="noopener" href="http://www.microkernel.info/">http://www.microkernel.info/</a></p>
 <h2 id="shell"><a href="#shell" class="headerlink" title="shell"></a>shell</h2><p>shell 提供了一种用户调用操作系统内核的方式</p>
 <p>shell命令形式 : <code>命令名+选项/参数</code></p>
 <p><strong>命令名</strong></p>
