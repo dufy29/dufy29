@@ -108,29 +108,33 @@
 
 
 
-<p><strong>浮点数</strong></p>
-<p>1985年：IEEE-754 标准</p>
+<h2 id="浮点数"><a href="#浮点数" class="headerlink" title="浮点数"></a><strong>浮点数</strong></h2><p> 一个很有意思的介绍浮点数的网站：<a target="_blank" rel="noopener" href="https://0.30000000000000004.com/">https://0.30000000000000004.com</a></p>
+<p>谷歌为什么要花费力气来设计自己的BFloat16，详情请参考：<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Bfloat16_floating-point_format">Google BFloat16</a></p>
+<p>1985年，IEEE-754 标准：</p>
 <p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gx4k4wfr9mj31e808it9l.jpg" alt="image-20211207000208368"></p>
 <p>具体编码方式（32位浮点数为例）：</p>
+<blockquote>
 <p>其中，尾数用原码表示，阶码是用加偏置常量的移码表示</p>
+</blockquote>
 <p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gx4kbm3wvsj31600jg0ve.jpg" alt="image-20211207000838521"></p>
-<p>e.g. 单精度浮点数表示如下：《程序是怎么跑起来的》p54</p>
-<p>0-01111110-10000000000000000000000</p>
+<p><strong>浮点数进制转换</strong></p>
+<ul>
+<li>浮点转十进制</li>
+</ul>
+<p>e.g. 单精度浮点数表示如下：<code>《程序是怎么跑起来的》p54</code></p>
+<p><code>0-01111110-10000000000000000000000</code></p>
 <p>转为十进制为：</p>
 <p>(-1)^0 * (1+1<em>2^(-1)) * 2^(126-127) = 1</em> 1.5 * 0.5 = 0.75</p>
-<p>十进制转浮点：</p>
+<ul>
+<li>十进制转浮点</li>
+</ul>
 <p><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h34ffaz1paj20u00ehta3.jpg" alt="img"></p>
-<ul>
-<li>浮点数加法和乘法不满足结合律 ，也不满足乘法对加法的分配律，</li>
-</ul>
+<p><strong>浮点数分配率</strong></p>
+<p>浮点数加法和乘法不满足结合律 ，也不满足乘法对加法的分配律，</p>
 <p>以下举例说明：</p>
-<p>(3.14+1e10)-1e10 = 0, 3.14+(1e10-1e10) = 3.14，(1e20 *1e20) * 1e-20= inf, 1e20 * (1e20 * 1e-20)= 1e20</p>
+<p>(3.14+1e10)-1e10 = 0, 3.14+(1e10-1e10) = 3.14，</p>
+<p>(1e20 *1e20) * 1e-20= inf, 1e20 * (1e20 * 1e-20)= 1e20</p>
 <p>1e20 * (1e20 - 1e20)= 0.0, 1e20 * 1e20 - 1e20 * 1e20 = NaN</p>
-<ul>
-<li>浮点问题求和小例子</li>
-</ul>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 有问题的版本 </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">float</span> sum = <span class="number">0.0f</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10000</span>; i++) sum += i + <span class="number">1</span>;</span><br><span class="line">      <span class="built_in">printf</span>(<span class="string">&quot;Sum: %f\n&quot;</span>, sum);  <span class="comment">// Sum: 50002896.000000</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 1 + 2 + 3 + … + 10000 = 10000 * (10000 + 1) / 2 = 50005000 ?</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 修正的版本</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">float</span> sum = <span class="number">0.0f</span>, corr = <span class="number">0.0f</span>; <span class="comment">/* corrective value for rounding error */</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10000</span>; i++) &#123;</span><br><span class="line">      <span class="keyword">float</span> y = (i + <span class="number">1</span>) - corr; <span class="comment">/* add the correction to specific item */</span></span><br><span class="line">      <span class="keyword">float</span> t = sum + y; <span class="comment">/* bits might be lost */</span></span><br><span class="line">      corr = (t - sum) - y; <span class="comment">/* recover lost bits */</span></span><br><span class="line">      sum = t;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Sum: %f\n&quot;</span>, sum);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p><strong>datalab</strong></p>
 <p><a target="_blank" rel="noopener" href="https://github.com/flitdu/c-learning">个人github答案参考：</a>，</p>
 <p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/429163387">知乎记录的完成情况</a></p>
@@ -318,7 +322,6 @@
 <p>Patterson演讲：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1fr4y1N7hx/">计算机体系结构的新黄金时代</a>，Hennessy演讲：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1TV411y7Jo/">计算机体系结构的新黄金时代</a></p>
 <p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV12A41177Qt?p=1">计算机体系结构（胡伟武 汪文祥）20年秋季学期</a></p>
 <p>关于现代处理器，强烈推荐阅读这份很好的在线文档：<a target="_blank" rel="noopener" href="http://www.lighterra.com/papers/modernmicroprocessors/">Modern Microprocessors A 90-Minute Guide!</a><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gxyktrcremj324a0r2133.jpg" alt="image-20220101231226145"></p>
-<p>大学伯克利分校 CS61C：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1g5411K7Z7/">计算机架构的伟大思想</a> - 授课教授Krste</p>
 <h2 id="Chap5-优化程序性能"><a href="#Chap5-优化程序性能" class="headerlink" title="Chap5: 优化程序性能"></a>Chap5: 优化程序性能</h2><p><strong>编译器领域最早成名的教材</strong>： <em>Compilers: Principles,Techniques,and Tools，</em>中文名（龙书）：<em>编译原理</em></p>
 <p>本书的一大特点就是抽象难懂，主要讨论了编译器设计的重要主题，包括词法分析、语法分析、语义分析、中间代码生成、代码优化、代码生成等过程</p>
 <p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gxtx8zt4y5j30ro0jjjug.jpg" alt="1001948-20171123164637571-2133970350_副本 (1)"></p>
