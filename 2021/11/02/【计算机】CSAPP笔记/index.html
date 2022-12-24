@@ -135,19 +135,18 @@
 <p>(3.14+1e10)-1e10 = 0, 3.14+(1e10-1e10) = 3.14，</p>
 <p>(1e20 *1e20) * 1e-20= inf, 1e20 * (1e20 * 1e-20)= 1e20</p>
 <p>1e20 * (1e20 - 1e20)= 0.0, 1e20 * 1e20 - 1e20 * 1e20 = NaN</p>
-<p><strong>datalab</strong></p>
-<p><a target="_blank" rel="noopener" href="https://github.com/flitdu/c-learning">个人github答案参考：</a>，</p>
-<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/429163387">知乎记录的完成情况</a></p>
-<p><a target="_blank" rel="noopener" href="http://csapp.cs.cmu.edu/3e/datalab.pdf">说明文件PDF：</a></p>
+<h2 id="DataLab"><a href="#DataLab" class="headerlink" title="DataLab"></a>DataLab</h2><p><img src="https://tva1.sinaimg.cn/large/008vxvgGgy1h9f62zaawgj31b80l679w.jpg" alt="image-20221224202131179"></p>
+<p><del><a target="_blank" rel="noopener" href="https://github.com/flitdu/c-learning">个人github答案参考：</a>，</del></p>
+<p><del>[知乎记录的完成情况</del>](<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/429163387">https://zhuanlan.zhihu.com/p/429163387</a>?)</p>
+<p>代码地址：<a target="_blank" rel="noopener" href="http://csapp.cs.cmu.edu/3e/labs.html">http://csapp.cs.cmu.edu/3e/labs.html</a></p>
+<p><a target="_blank" rel="noopener" href="http://csapp.cs.cmu.edu/3e/datalab.pdf">说明文件PDF</a></p>
 <blockquote>
 <p>This directory contains the files that you will need to run the CS:APP<br>Data Lab, which helps develops the student’s understanding of bit<br>representations, two’s complement arithmetic, and IEEE floating point.</p>
+<p>Specifically, you are only allowed to use the following eight operators: ! ˜ &amp; ˆ | + &lt;&lt; &gt;&gt;</p>
 </blockquote>
-<ul>
-<li>Docker 运行</li>
-</ul>
 <p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/82529114">Introduction to CSAPP（八）：Datalab</a></p>
+<p>操作步骤:</p>
 <blockquote>
-<p>用法详情还是需要你自己去阅读代码中的README文件，加油。总的来说，你需要做的是：</p>
 <ol>
 <li>阅读<code>bits.c</code>的注释与代码</li>
 <li>修改它</li>
@@ -158,6 +157,72 @@
 <li>最终运行<code>./driver.pl</code>获得打分</li>
 </ol>
 </blockquote>
+<ul>
+<li>报错<code> fatal error: bits/libc-header-start.h</code></li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/54082459/fatal-error-bits-libc-header-start-h-no-such-file-or-directory-while-compili">https://stackoverflow.com/questions/54082459/fatal-error-bits-libc-header-start-h-no-such-file-or-directory-while-compili</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install gcc-multilib</span><br></pre></td></tr></table></figure>
+
+<p><strong>bitXor</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* </span></span><br><span class="line"><span class="comment"> * bitXor - x^y using only ~ and &amp; </span></span><br><span class="line"><span class="comment"> *   Example: bitXor(4, 5) = 1</span></span><br><span class="line"><span class="comment"> *   Legal ops: ~ &amp;  </span></span><br><span class="line"><span class="comment"> *   Max ops: 14</span></span><br><span class="line"><span class="comment"> *   Rating: 1</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">bitXor</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">2</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>该题是仅通过 <code>~ and &amp;</code>实现 xor 异或操作</p>
+<p>~ 非, ~[0 1 0]= [1 0 1]</p>
+<p>&amp; 与, [0 1 ] &amp; [1 1]= [0 1]</p>
+<table>
+<thead>
+<tr>
+<th>x</th>
+<th>y</th>
+<th>a=x&amp;y</th>
+<th>b=~a</th>
+<th>c=~(x&amp;b)</th>
+<th>d=~(y&amp;b)</th>
+<th>c&amp;d</th>
+<th>Xor</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+</tr>
+</tbody></table>
 <ul>
 <li>isTmax()</li>
 </ul>
