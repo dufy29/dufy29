@@ -191,6 +191,19 @@
     
     
     <entry>
+      <title></title>
+      <link href="/2021/09/09/README/"/>
+      <url>/2021/09/09/README/</url>
+      
+        <content type="html"><![CDATA[<h1 id="hexo-back-up"><a href="#hexo-back-up" class="headerlink" title="hexo-back_up"></a>hexo-back_up</h1><p>hexo 备份</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>⭐️推荐系统实践</title>
       <link href="/2021/09/04/%E3%80%90NLP%E3%80%91%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E5%AE%9E%E8%B7%B5/"/>
       <url>/2021/09/04/%E3%80%90NLP%E3%80%91%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E5%AE%9E%E8%B7%B5/</url>
@@ -486,7 +499,7 @@
       <link href="/2020/12/22/%E3%80%90%E7%BC%96%E7%A8%8B%E3%80%91GPU%E5%AD%A6%E4%B9%A0/"/>
       <url>/2020/12/22/%E3%80%90%E7%BC%96%E7%A8%8B%E3%80%91GPU%E5%AD%A6%E4%B9%A0/</url>
       
-        <content type="html"><![CDATA[<p>GPU架构：【哔站建勇分享】</p><ol><li>Graphics<br> 胡事民，计算机图形学(video lecture)-&gt;《Real Time Rendering》-&gt; Life of a Triangle -&gt; Ray Tracing in One Weekend -&gt; TTU spec</li><li>General purpose<br> 《Computer Architecture:A Quantitative Approach》-&gt;《General-Purpose Graphics Processor Architecture》、 《通用图形处理器设计》(上交，梁)-&gt; CUDA programming guide-&gt;Life of a Byte(many slides &amp; video to learn:) -&gt; Hopper ISA(not IAS) -&gt; FDs() -&gt; TensorCore()</li></ol><span id="more"></span><h2 id="TPU"><a href="#TPU" class="headerlink" title="TPU"></a>TPU</h2><p><img src="/2020/12/22/%E3%80%90%E7%BC%96%E7%A8%8B%E3%80%91GPU%E5%AD%A6%E4%B9%A0/aaa.png"></p><h2 id="计算机图形学"><a href="#计算机图形学" class="headerlink" title="计算机图形学"></a>计算机图形学</h2><p><a href="https://www.bilibili.com/video/BV1at411D7YV/?vd_source=abeb4ad4122e4eff23d97059cf088ab4">计算机图形学（清华大学胡事民教授）（共计28讲）</a></p><p><a href="https://shao.fun/blog/w/taichi-ray-tracing.html">Taichi: 从零开始的光线追踪</a></p><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol><li></li><li></li></ol>]]></content>
+        <content type="html"><![CDATA[<p>GPU架构：【哔站建勇分享】？？</p><ol><li>Graphics<br> 胡事民，计算机图形学(video lecture)-&gt;《Real Time Rendering》-&gt; Life of a Triangle -&gt; Ray Tracing in One Weekend -&gt; TTU spec</li><li>General purpose<br> 《Computer Architecture:A Quantitative Approach》-&gt;《General-Purpose Graphics Processor Architecture》、 《通用图形处理器设计》(上交，梁)-&gt; CUDA programming guide-&gt;Life of a Byte(many slides &amp; video to learn:) -&gt; Hopper ISA(not IAS) -&gt; FDs() -&gt; TensorCore()</li></ol><span id="more"></span><h2 id="不同计算架构特点"><a href="#不同计算架构特点" class="headerlink" title="不同计算架构特点"></a>不同计算架构特点</h2><p><img src="/2020/12/22/%E3%80%90%E7%BC%96%E7%A8%8B%E3%80%91GPU%E5%AD%A6%E4%B9%A0/BBB.png"></p><p>TPU:<img src="/2020/12/22/%E3%80%90%E7%BC%96%E7%A8%8B%E3%80%91GPU%E5%AD%A6%E4%B9%A0/aaa.png"></p><h2 id="AI编译器"><a href="#AI编译器" class="headerlink" title="AI编译器"></a>AI编译器</h2><p>视频：<a href="https://www.zhihu.com/zvideo/1368678126411800576">Chris ASPLOS Keynote - 编译器的黄金时代</a></p><p>​    PPT:: <a href="https://docs.google.com/presentation/d/1ZMtzT6nmfvNOlIaHRzdaXpFeaAklcT7DvfGjhgpzcxk/edit#slide=id.p">https://docs.google.com/presentation/d/1ZMtzT6nmfvNOlIaHRzda…</a></p><p>知乎：<a href="https://zhuanlan.zhihu.com/p/367035973">看Chris Lattner在ASPLOS演讲有感</a></p><h2 id="计算机图形学"><a href="#计算机图形学" class="headerlink" title="计算机图形学"></a>计算机图形学</h2><p><a href="https://www.bilibili.com/video/BV1at411D7YV/?vd_source=abeb4ad4122e4eff23d97059cf088ab4">计算机图形学（清华大学胡事民教授）（共计28讲）</a></p><p><a href="https://shao.fun/blog/w/taichi-ray-tracing.html">Taichi: 从零开始的光线追踪</a></p><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol><li></li><li></li></ol>]]></content>
       
       
       <categories>
@@ -929,6 +942,19 @@
       <url>/2000/11/08/copy/</url>
       
         <content type="html"><![CDATA[<p>….</p><span id="more"></span><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级"><a href="#三级" class="headerlink" title="三级"></a>三级</h3><p>公式：<code>$$</code>, 回车<br>$$<br>P(A_i \mid B) = \frac{P(B\mid A)P(A_i)}{\sum_{j=1}^{n}P(A_j)P(B \mid A_j)}<br>$$</p><p>质能方程 $$e=mc^2$$</p><p>出自【1】<a name="toc1"></a></p><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol><li><a href>参考1</a><a href="#toc1">🔼</a></li><li></li></ol><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure><p><img src="/2000/11/08/copy/aa.png"></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/1985/10/26/index/"/>
+      <url>/1985/10/26/index/</url>
+      
+        <content type="html"><![CDATA[<!DOCTYPE html><html lang="en"><head>  <meta charset="UTF-8">  <title>文档在线阅读</title>  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">  <meta name="description" content="Description">  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">  <link rel="stylesheet" href="https://unpkg.com/docsify-toc@1.0.0/dist/toc.css"></head><body>  <div id="app">加载中</div>  <script>    window.$docsify = {      // 入口文件改为 /home.md      //homepage: 'home.md'      name: 'testezhang文档',      // 加载 _sidebar.md,加载自定义侧边栏      loadSidebar: true,      // 调整副标题的级数      subMaxLevel: 3,      //加载自定义导航栏      loadNavbar: true,      themeColor: '#3F51B5',      count:{          float: 'left',          countable: true,          position: 'top',          margin: '10px',          fontsize:'0.9em',          color:'rgb(90,90,90)',          language:'chinese',          isExpected: true      },      toc: {          scope: '.markdown-section',          headings: 'h1, h2, h3, h4',          title: 'Table of Contents',      },      // 强制悬停,切换页面后是否自动跳转到页面顶部。      auto2top: true,      //禁用 emoji 解析      noEmoji: true,      //搜索配置项      search: {        maxAge: 86400000, // 过期时间，单位毫秒，默认一天        paths: 'auto', // or 'auto'        placeholder: '搜索',        noData: '找不到结果',        // 搜索标题的最大程级, 1 - 6        depth: 4      },      pagination: {        previousText: '上一章节',        nextText: '下一章节',      },      footer: {        copy: '<a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备xxxx号</a></div>© 2021–2022',        auth: 'testerzhang',        pre: '<hr/>',        style: 'text-align: center;',        class: 'className',      },      repo: '',    }    window.$docsify.customPageTitle = {        prefix:     "testerzhang",      // [optional] title prefix. default: false eg: prefix: "Application"        suffix:     "软件测试之家",      // [optional] title suffix. default: false eg: suffix: "v1.0.0"        seprator:   '|',        // [optional] seprator for title eg: title->   prefix | title | suffix        debug:      false,      // [optional] should debug    }  </script>  <!-- Docsify v4 -->  <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>  <script src="https://unpkg.com/docsify-toc@1.0.0/dist/toc.js"></script>  <script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>  <script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>  <script src="//unpkg.com/docsify-count/dist/countable.js"></script>  <script src="//unpkg.com/docsify-footer-enh/dist/docsify-footer-enh.min.js"></script>  <script src="//cdn.jsdelivr.net/npm/@sujaykumarh/docsify-plugin-title@1.x/dist/plugin.min.js"></script>  <script src="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script></body></html>]]></content>
       
       
       
