@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://example.com/2020/12/22/%E3%80%90%E7%BC%96%E7%A8%8B%E3%80%91GPU%E5%AD%A6%E4%B9%A0/</loc>
+    <loc>http://example.com/2020/05/07/%E3%80%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E3%80%91%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A6%81%E7%82%B9/</loc>
     
     <lastmod>2023-01-01</lastmod>
     
@@ -10,6 +10,20 @@
   
   <url>
     <loc>http://example.com/1985/10/26/index/</loc>
+    
+    <lastmod>2023-01-01</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://example.com/2021/09/09/README/</loc>
+    
+    <lastmod>2023-01-01</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://example.com/2020/12/22/%E3%80%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E3%80%91GPU%E5%AD%A6%E4%B9%A0/</loc>
     
     <lastmod>2023-01-01</lastmod>
     
@@ -52,13 +66,6 @@
   
   <url>
     <loc>http://example.com/2021/11/02/%E3%80%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E3%80%91CSAPP%E7%AC%94%E8%AE%B0/</loc>
-    
-    <lastmod>2022-12-24</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://example.com/2020/05/07/%E3%80%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E3%80%91%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A6%81%E7%82%B9/</loc>
     
     <lastmod>2022-12-24</lastmod>
     
@@ -243,13 +250,6 @@
     <loc>http://example.com/2021/09/04/%E3%80%90NLP%E3%80%91%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E5%AE%9E%E8%B7%B5/</loc>
     
     <lastmod>2021-09-27</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://example.com/2021/09/09/README/</loc>
-    
-    <lastmod>2021-09-09</lastmod>
     
   </url>
   
