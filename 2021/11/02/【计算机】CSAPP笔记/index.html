@@ -12,6 +12,8 @@
 </li>
 <li><p><a target="_blank" rel="noopener" href="https://fengmuzi2003.gitbook.io/csapp3e/">CSAPP重点解读</a></p>
 </li>
+<li><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1X34y1o7zq/?spm_id_from=333.788&vd_source=abeb4ad4122e4eff23d97059cf088ab4">九曲阑干图示解读 CSAPP</a></p>
+</li>
 <li><p>哔站<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV18e4y1278V/?spm_id_from=333.999.0.0">0xFFFF CS:APP 讨论会</a></p>
 </li>
 <li><p><strong>CSAPP-Labs</strong></p>
@@ -27,9 +29,6 @@
 <li><p>知乎相关专栏：<a target="_blank" rel="noopener" href="https://www.zhihu.com/column/deeplearningcat">CS:APP配套实验6：Malloc Lab笔记</a></p>
 </li>
 </ul>
-<ol start="4">
-<li></li>
-</ol>
 <h2 id="原码、反码与补码"><a href="#原码、反码与补码" class="headerlink" title="原码、反码与补码"></a>原码、反码与补码</h2><p>计算机内部采用二进制，对于整数使用补码 表示，浮点数使用 IEEE-754bbb</p>
 <img src="/2021/11/02/%E3%80%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E3%80%91CSAPP%E7%AC%94%E8%AE%B0/bbb.jpeg" style="zoom:50%;">
 
@@ -130,7 +129,7 @@
 <p>1e20 * (1e20 - 1e20)= 0.0, 1e20 * 1e20 - 1e20 * 1e20 = NaN</p>
 <h2 id="DataLab"><a href="#DataLab" class="headerlink" title="DataLab"></a>DataLab</h2><p><img src="https://tva1.sinaimg.cn/large/008vxvgGgy1h9f62zaawgj31b80l679w.jpg" alt="image-20221224202131179"></p>
 <p><del><a target="_blank" rel="noopener" href="https://github.com/flitdu/c-learning">个人github答案参考：</a>，</del></p>
-<p><del>[知乎记录的完成情况</del>](<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/429163387">https://zhuanlan.zhihu.com/p/429163387</a>?)</p>
+<p><del><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/429163387">知乎记录的完成情况</a></del></p>
 <p>代码地址：<a target="_blank" rel="noopener" href="http://csapp.cs.cmu.edu/3e/labs.html">http://csapp.cs.cmu.edu/3e/labs.html</a></p>
 <p><a target="_blank" rel="noopener" href="http://csapp.cs.cmu.edu/3e/datalab.pdf">说明文件PDF</a></p>
 <blockquote>
@@ -227,101 +226,76 @@
 <li>gdb 调试</li>
 </ol>
 </blockquote>
-<h2 id="Chap3-程序的机器级表示"><a href="#Chap3-程序的机器级表示" class="headerlink" title="Chap3: 程序的机器级表示"></a>Chap3: 程序的机器级表示</h2><h3 id="汇编代码与机器代码查看"><a href="#汇编代码与机器代码查看" class="headerlink" title="汇编代码与机器代码查看"></a><strong>汇编代码与机器代码查看</strong></h3><p>对于源程序 xx.c，可以通过如下命令生成<strong>汇编代码</strong> <code>xx.s</code></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc -Og -S xx.c</span><br></pre></td></tr></table></figure>
+<h2 id="汇编代码查看"><a href="#汇编代码查看" class="headerlink" title="汇编代码查看"></a><strong>汇编代码查看</strong></h2><p>对于源程序<code>mstore.c</code>，可以通过如下命令生成汇编代码 mstore.s：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc -Og -S mstore.c</span><br></pre></td></tr></table></figure>
 
-<p>通过如下命令生成二进制格式的<strong>目标代码</strong><code>xx.o</code>：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc -Og -c xx.c</span><br></pre></td></tr></table></figure>
+<p>通过如下命令生成二进制格式的<strong>目标代码</strong> mstore.o：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc -Og -c mstore.c</span><br></pre></td></tr></table></figure>
 
 <p>通过反汇编命令<code>objdump</code>可以将机器代码翻译成汇编代码,查看 .o 文件内容：</p>
 <p><em>注意，汇编语言与机器语言是一一对应的</em></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">objdump -d xx.o</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">objdump -d mstore.o</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">0000000000000000 &lt;multstore&gt;:</span><br><span class="line">   0:	f3 0f 1e fa          	endbr64 </span><br><span class="line">   4:	53                   	push   %rbx</span><br><span class="line">   5:	48 89 d3             	mov    %rdx,%rbx</span><br><span class="line">   8:	e8 00 00 00 00       	callq  d &lt;multstore+0xd&gt;</span><br><span class="line">   d:	48 89 03             	mov    %rax,(%rbx)</span><br><span class="line">  10:	5b                   	pop    %rbx</span><br><span class="line">  11:	c3                   	retq   </span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">0000000000000000 &lt;multstore&gt;:</span><br><span class="line">   0:   53                      push   %rbx</span><br><span class="line">   1:   48 89 d3                mov    %rdx,%rbx</span><br><span class="line">   4:   e8 00 00 00 00          callq  9 &lt;multstore+0x9&gt;</span><br><span class="line">   9:   48 89 03                mov    %rax,(%rbx)</span><br><span class="line">   c:   5b                      pop    %rbx</span><br><span class="line">   d:   c3                      retq</span><br></pre></td></tr></table></figure>
 
-<p>反汇编同时显示源代码：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">gcc -g -o main main.c</span><br><span class="line">objdump -S -d main &gt; main.txt</span><br></pre></td></tr></table></figure>
+<p><u>反汇编同时显示源代码：</u></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">gcc -g -o main main.c</span><br><span class="line">objdump -S -d main &gt; main.txt</span><br></pre></td></tr></table></figure>
+
+<p>效果：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">000000000000068a &lt;main&gt;:</span><br><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">int main() &#123;</span><br><span class="line"> 68a:	55                   	push   %rbp</span><br><span class="line"> 68b:	48 89 e5             	mov    %rsp,%rbp</span><br><span class="line"> 68e:	48 83 ec 10          	sub    $0x10,%rsp</span><br><span class="line">    printf(&quot;????\n&quot;);</span><br><span class="line"> 692:	48 8d 3d bb 00 00 00 	lea    0xbb(%rip),%rdi        # 754 &lt;_IO_stdin_used+0x4&gt;</span><br><span class="line"> 699:	e8 b2 fe ff ff       	callq  550 &lt;puts@plt&gt;</span><br><span class="line">    int a=1;</span><br><span class="line"> 69e:	c7 45 f8 01 00 00 00 	movl   $0x1,-0x8(%rbp)</span><br><span class="line">    int b = a-2;</span><br><span class="line"> 6a5:	8b 45 f8             	mov    -0x8(%rbp),%eax</span><br><span class="line"> 6a8:	83 e8 02             	sub    $0x2,%eax</span><br><span class="line"> 6ab:	89 45 fc             	mov    %eax,-0x4(%rbp)</span><br><span class="line">    printf(&quot;b: %d\n&quot;, b);</span><br><span class="line"> 6ae:	8b 45 fc             	mov    -0x4(%rbp),%eax</span><br><span class="line"> 6b1:	89 c6                	mov    %eax,%esi</span><br><span class="line"> 6b3:	48 8d 3d 9f 00 00 00 	lea    0x9f(%rip),%rdi        # 759 &lt;_IO_stdin_used+0x9&gt;</span><br><span class="line"> 6ba:	b8 00 00 00 00       	mov    $0x0,%eax</span><br><span class="line"> 6bf:	e8 9c fe ff ff       	callq  560 &lt;printf@plt&gt;</span><br><span class="line"> 6c4:	b8 00 00 00 00       	mov    $0x0,%eax</span><br><span class="line"></span><br><span class="line"> 6c9:	c9                   	leaveq </span><br><span class="line"> 6ca:	c3                   	retq   </span><br><span class="line"> 6cb:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)</span><br></pre></td></tr></table></figure>
 
 
 
-<h3 id="x86-64通用目的寄存器"><a href="#x86-64通用目的寄存器" class="headerlink" title="x86-64通用目的寄存器"></a><strong>x86-64通用目的寄存器</strong></h3><p>用于存储整数数据和指针。<code>%rbx ,%rbp,%r12~%r15</code> 共6个为<strong>被调用者保存寄存器</strong>，其余为调用者保存寄存器</p>
+<h2 id="通用目的寄存器"><a href="#通用目的寄存器" class="headerlink" title="通用目的寄存器"></a><strong>通用目的寄存器</strong></h2><p>用于存储整数数据和指针。</p>
+<p><code>%rbx ,%rbp,%r12~%r15</code> 共6个为<strong>被调用者保存寄存器</strong>，其余为调用者保存寄存器</p>
 <p>更多寄存器 知识参考：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/272135463">一口气看完45个寄存器，CPU核心技术大揭秘</a></p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gxn0w0gug6j30u00yh79p.jpg" alt="image-20211222232137445"></p>
-<h3 id="汇编指令"><a href="#汇编指令" class="headerlink" title="汇编指令"></a><strong>汇编指令</strong></h3><p>大多数指令有一个或多个操作数，分为如下3种类型：</p>
-<ul>
-<li><p>寄存器：%rax</p>
-</li>
-<li><p>内存引用：(%rax)</p>
-</li>
-<li><p>立即数: $8</p>
-</li>
-</ul>
+<p><img src="/2021/11/02/%E3%80%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E3%80%91CSAPP%E7%AC%94%E8%AE%B0/ass.jpeg"></p>
+<h2 id="汇编指令"><a href="#汇编指令" class="headerlink" title="汇编指令"></a><strong>汇编指令</strong></h2><p>PDF：<a target="_blank" rel="noopener" href="https://cs.brown.edu/courses/cs033/docs/guides/x64_cheatsheet.pdf">x64 Cheat Sheet</a> </p>
+<p>操作数可以分为3种类型：寄存器，内存引用和立即数</p>
+<img src="/2021/11/02/%E3%80%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E3%80%91CSAPP%E7%AC%94%E8%AE%B0/aqq.png" alt="image-20230102140436984" style="zoom: 67%;">
+
+<table>
+<thead>
+<tr>
+<th>操组数</th>
+<th>值</th>
+<th>注释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>%rax</td>
+<td>0x100</td>
+<td>寄存器</td>
+</tr>
+<tr>
+<td>(%rax)</td>
+<td>0xFF</td>
+<td>地址 0x100</td>
+</tr>
+<tr>
+<td>0x104, 4(%rax)</td>
+<td>0xAB</td>
+<td>地址 0x104</td>
+</tr>
+<tr>
+<td>$0x104</td>
+<td>0x104</td>
+<td>立即数</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>不同指令后缀对应的数据大小：</p>
+<p><img src="/2021/11/02/%E3%80%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E3%80%91CSAPP%E7%AC%94%E8%AE%B0/wew.jpeg"></p>
 <p><strong>mov指令</strong></p>
-<p>将数据从源位置**<u>复制</u>**到目的位置</p>
-<p>有 moveb, movel, movew 等，最后的汇编代码后缀对应所需要的寄存器大小</p>
-<p><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1gzj7xw2wcvj21960jy41d.jpg" alt="image-20211219205032799"></p>
-<p>c 语言数据类型在 x86-64中的大小：</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gxjfsqmt0qj30vw0d4q4g.jpg" alt="image-20211219205516203"></p>
-<h3 id="push压栈指令"><a href="#push压栈指令" class="headerlink" title="push压栈指令"></a>push压栈指令</h3><p>e.g. 保存寄存器 rax 内存储的数据 0x123</p>
-<p><code>pushq %rax</code></p>
-<p>等价于如下两步：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">subq $8, %rsp     // 寄存器rsp 值 -8，为待压入的值腾位置</span><br><span class="line">movq %rax, (%rsp)  // 将 寄存器rax 中值复制到新的栈顶位置</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gxjijy64hmj313c0i0di0.jpg" alt="image-20211219223036575"></p>
-<h3 id="pop出栈"><a href="#pop出栈" class="headerlink" title="pop出栈"></a>pop出栈</h3><p>同压栈操作类似，pop指令也可等效为如下两步</p>
+<p><code>movl $10, -4(%rbp)</code></p>
 <blockquote>
-<p>注意，pop后，内存地址 0x100中保存的数据 0x123依旧存在</p>
+<p>含义：将 立即数10 —&gt; rbp寄存器中值减去4之后的内存地址处。</p>
 </blockquote>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gxjiskjxg4j31220hgjte.jpg" alt="image-20211219223853989"></p>
-<h3 id="cmpq指令"><a href="#cmpq指令" class="headerlink" title="cmpq指令"></a>cmpq指令</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">comp</span><span class="params">(<span class="keyword">long</span> a, <span class="keyword">long</span> b)</span></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> (a==b);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">a in %rdi, b in %rsi</span><br><span class="line">  cmp    %rsi,%rdi   (a-b) 设置条件码寄存器</span><br><span class="line">  sete   %al</span><br><span class="line">  movzbl %al,%eax</span><br><span class="line">  retq</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gxko67rt12j313i0fagnn.jpg" alt="image-20211220223031369"></p>
-<h3 id="栈帧-函数调用"><a href="#栈帧-函数调用" class="headerlink" title="栈帧-函数调用"></a>栈帧-函数调用</h3><p>程序调用示意图：</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gzc9w2qj2bj310i0om0vb.jpg" alt="image-20220213225311379"></p>
-<p>更详细如下图：</p>
-<blockquote>
-<p>x86体系，参数先压入栈后执行call指令，<strong>call指令会把返回地址压入栈。</strong>进入被调用函数后局部变量在栈上，出被调用函数前局部变量出栈，ret和call对应返回被调用函数。栈指令（寄存器）是一种效率上优化。其实调用函数只要能记录下返回地址，被调函数能读取到并返回就行。脑洞完全可以这样，调用函数把返回地址存在某处或寄存器中，被调函数读到并jmp回来。</p>
-</blockquote>
-<p><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1gzlk3wrqcvj20e80ga74y.jpg" alt="img"></p>
-<p><del>综合以下文章理解之：</del></p>
-<p>🔥<a target="_blank" rel="noopener" href="https://gitbook.coder.cat/function-call-principle/">函数调用原理</a></p>
-<blockquote>
-<p>这是一篇讲述函数调用原理的文章，通过大量的示意图从比较基础的概念开始阐述函数调用时堆栈的完整变化过程，同时还会通过具体例子来分析在X-64平台上函数调用在汇编级的表示，从而深刻理解函数调用原理。最后会提供几个例子来发现C语言函数栈帧的一些有意思的行为</p>
-</blockquote>
-<p><a target="_blank" rel="noopener" href="https://ctfbook.ph0en1x.com/reverse/zhan-3001-zhan-zheng-yu-han-shu-diao-yong"><strong>栈、栈帧与函数调用</strong></a></p>
-<p><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000017151354">函数栈的实现原理</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/sddai/p/9762968.html">C函数调用过程原理及函数栈帧分析</a></p>
-<p>程序执行时，Linux 会为其在内存中分配相应的空间以支撑程序的运行，如下图所示：</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gxrky2ndd3j316y0gewgr.jpg" alt="image-20211226215745237"></p>
-<p>在虚拟内存中，内存空间被分为多个区域。代码指令保存在文本段，已初始化的全局变量 <code>global</code> 保存在数据段，程序运行中动态申请的内存<code>malloc(10 * char())</code>放在堆中，而函数执行的时候则在栈中开辟空间运行。例如<code>main</code>函数便占有一个函数栈，其中的变量<code>i</code>和<code>ip</code>都保存在<code>main</code>的栈空间中。</p>
-<p>函数的栈空间有个名字叫做 <code>栈帧</code> (stack frame）</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gxrl7exqwij311w0lcq5c.jpg" alt="image-20211226220645984"></p>
-<p>参考：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1DA411Y7jk?p=4">CS50：P4第3周 C语言 字符串 指针 内存管理1:51</a>  讲解交互变量值</p>
-<h3 id="递归调用"><a href="#递归调用" class="headerlink" title="递归调用"></a>递归调用</h3><p>B站视频讲解：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1cD4y1D7uR?p=19">p19- 过程函数调用 07:00</a> </p>
-<h3 id="缓冲区溢出"><a href="#缓冲区溢出" class="headerlink" title="缓冲区溢出"></a>缓冲区溢出</h3><p>of 为overflow.c的可执行文件</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">echo</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">char</span> buf[<span class="number">4</span>];   <span class="comment">// stored on the stack</span></span><br><span class="line">  gets(buf);</span><br><span class="line">  <span class="built_in">puts</span>(buf);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">&quot;type a string:&quot;</span>);</span><br><span class="line">  echo();</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>调试查看地址：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">gdb of</span><br><span class="line">b overflow.c:5  # 设置断点</span><br><span class="line">r					# 运行</span><br><span class="line">info f   # 打印栈信息</span><br><span class="line">p/a &amp;buf[0]  # 查看 buf地址</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="补充资料"><a href="#补充资料" class="headerlink" title="补充资料"></a>补充资料</h3><p><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=CS01Hmjv1pQ">拉尔夫·兰纳：破解二十一世纪的网络武器–震网病毒</a></p>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://cs.brown.edu/courses/cs033/docs/guides/x64_cheatsheet.pdf">x64 Cheat Sheet</a> pdf</li>
-</ul>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gxckpmarcqj30xp0u0wja.jpg" alt="image-20211213222625144"></p>
-<p><strong>x86</strong>指令集自诞生以来指令数量的增长：</p>
-<blockquote>
-<p>From book:《RISC-V-Reader-Chinese-v2p1》</p>
-</blockquote>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gy0j2omyq4j30v60f6q3z.jpg" alt="image-20220103154354439"></p>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1EW411u7th?p=7">【计算机科学速成课】7：中央处理器CPU</a></li>
-</ul>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gz7o6k1pblj31cz0u07g5.jpg" alt="image-20220209231951581"></p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gz8u16aur2j319e0u0tgs.jpg" alt="image-20220210232754012"></p>
-<h2 id="Chap4-处理器体系结构"><a href="#Chap4-处理器体系结构" class="headerlink" title="Chap4: 处理器体系结构"></a>Chap4: 处理器体系结构</h2><h3 id="pipeline"><a href="#pipeline" class="headerlink" title="pipeline??"></a>pipeline??</h3><h3 id="补充资料-1"><a href="#补充资料-1" class="headerlink" title="补充资料"></a>补充资料</h3><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1q64y1s7MH/?spm_id_from=333.788.recommend_more_video.-1">【硬核科普】全站最硬科普：7分钟带你了解造芯全过程</a></p>
+<h2 id="Chap4-处理器体系结构"><a href="#Chap4-处理器体系结构" class="headerlink" title="Chap4: 处理器体系结构"></a>Chap4: 处理器体系结构</h2><h3 id="pipeline"><a href="#pipeline" class="headerlink" title="pipeline??"></a>pipeline??</h3><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1q64y1s7MH/?spm_id_from=333.788.recommend_more_video.-1">【硬核科普】全站最硬科普：7分钟带你了解造芯全过程</a></p>
 <p>Patterson演讲：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1fr4y1N7hx/">计算机体系结构的新黄金时代</a>，Hennessy演讲：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1TV411y7Jo/">计算机体系结构的新黄金时代</a></p>
 <p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV12A41177Qt?p=1">计算机体系结构（胡伟武 汪文祥）20年秋季学期</a></p>
 <p>关于现代处理器，强烈推荐阅读这份很好的在线文档：<a target="_blank" rel="noopener" href="http://www.lighterra.com/papers/modernmicroprocessors/">Modern Microprocessors A 90-Minute Guide!</a><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gxyktrcremj324a0r2133.jpg" alt="image-20220101231226145"></p>
@@ -343,7 +317,7 @@
 <p><strong>用户空间 vs 内核空间</strong></p>
 <p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gxw659bc3nj30lo0ekach.jpg" alt="img"></p>
 <p>参考：<a target="_blank" rel="noopener" href="http://www.ruanyifeng.com/blog/2016/12/user_space_vs_kernel_space.html">阮一峰：User space 与 Kernel space</a></p>
-<h3 id="补充资料-2"><a href="#补充资料-2" class="headerlink" title="补充资料"></a>补充资料</h3><p><a target="_blank" rel="noopener" href="https://liam.page/2017/01/17/layers-and-operation-system/">程序员的自我修养（二）：操作系统、进程与线程</a></p>
+<h3 id="补充资料"><a href="#补充资料" class="headerlink" title="补充资料"></a>补充资料</h3><p><a target="_blank" rel="noopener" href="https://liam.page/2017/01/17/layers-and-operation-system/">程序员的自我修养（二）：操作系统、进程与线程</a></p>
 <p><a target="_blank" rel="noopener" href="https://www.ruanyifeng.com/blog/2013/04/processes_and_threads.html">进程与线程的一个简单解释</a></p>
 <h2 id="Chap9-虚拟内存"><a href="#Chap9-虚拟内存" class="headerlink" title="Chap9: 虚拟内存"></a>Chap9: 虚拟内存</h2><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1XB4y1A7vm?p=5"><strong>物理内存有什么问题？</strong></a>    1. 内存空间不够  2. 产生内存碎片  3. 没有内存保护    </p>
 <p>（虚拟内存闪亮登场，本质就是增加一个中间层，计算机科学的任何问题都可以通过增加间接层解决！）</p>
