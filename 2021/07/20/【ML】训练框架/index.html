@@ -1,6 +1,6 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="baidu-site-verification" content="1EB8XoOl0C"><meta name="google-site-verification" content="K7thEgdLm0UfRWJ5MGdF7sCcjClSzAlxFLPv2Oz5CGM"><title> ⭐️TensorFlow/Pytroch 笔记 · Hexo</title><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="⭐️TensorFlow/Pytroch 笔记 - John Doe"><meta name="keywords"><meta name="author" content="John Doe"><link rel="short icon" href="https://bubuzou.oss-cn-shenzhen.aliyuncs.com/blog/202010/favicon.ico"><link rel="stylesheet" href="https://bubuzou.oss-cn-shenzhen.aliyuncs.com/blog/202010/bubuzou.css"><link rel="search" type="application/opensearchdescription+xml" href="http://example.com/atom.xml" title="Hexo"><script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="baidu-site-verification" content="1EB8XoOl0C"><meta name="google-site-verification" content="K7thEgdLm0UfRWJ5MGdF7sCcjClSzAlxFLPv2Oz5CGM"><title> ⭐️训练框架笔记 · Hexo</title><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="⭐️训练框架笔记 - John Doe"><meta name="keywords"><meta name="author" content="John Doe"><link rel="short icon" href="https://bubuzou.oss-cn-shenzhen.aliyuncs.com/blog/202010/favicon.ico"><link rel="stylesheet" href="https://bubuzou.oss-cn-shenzhen.aliyuncs.com/blog/202010/bubuzou.css"><link rel="search" type="application/opensearchdescription+xml" href="http://example.com/atom.xml" title="Hexo"><script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
 <script src='//unpkg.com/valine/dist/Valine.min.js'></script><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-</head><body><header><div class="header row"> <a href="/" class="logo-link"><img src="/images/logo.png"></a><ul id="nav_list" class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" data-hover="博文" class="nav-list-link">博文</a></li><li class="nav-list-item"><a href="/archives/" target="_self" data-hover="归档" class="nav-list-link">归档</a></li><li class="nav-list-item"><a href="/about/" target="_self" data-hover="关于" class="nav-list-link">关于</a></li></ul><div class="search"><a id="search_btn" href="#search"></a></div><div id="nav_btn" class="nav-btn"><span></span><span></span><span></span></div></div></header><div class="row scroll-con"><section class="container"><!-- for archive page--><div id="postAr" class="post"><article class="post-block"><h1 class="post-title">⭐️TensorFlow/Pytroch 笔记</h1><div class="post-info">2021-07-20</div><div class="post-content"><p>TF源码：<a target="_blank" rel="noopener" href="https://github.com/tensorflow/tensorflow">https://github.com/tensorflow/tensorflow</a></p>
+</head><body><header><div class="header row"> <a href="/" class="logo-link"><img src="/images/logo.png"></a><ul id="nav_list" class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" data-hover="博文" class="nav-list-link">博文</a></li><li class="nav-list-item"><a href="/archives/" target="_self" data-hover="归档" class="nav-list-link">归档</a></li><li class="nav-list-item"><a href="/about/" target="_self" data-hover="关于" class="nav-list-link">关于</a></li></ul><div class="search"><a id="search_btn" href="#search"></a></div><div id="nav_btn" class="nav-btn"><span></span><span></span><span></span></div></div></header><div class="row scroll-con"><section class="container"><!-- for archive page--><div id="postAr" class="post"><article class="post-block"><h1 class="post-title">⭐️训练框架笔记</h1><div class="post-info">2021-07-20</div><div class="post-content"><p>TF源码：<a target="_blank" rel="noopener" href="https://github.com/tensorflow/tensorflow">https://github.com/tensorflow/tensorflow</a></p>
 <span id="more"></span>
 
 
@@ -8,8 +8,7 @@
 <h2 id="PyTorch资料"><a href="#PyTorch资料" class="headerlink" title="PyTorch资料"></a>PyTorch资料</h2><ul>
 <li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/328674159">PyTorch 源码解读系列</a></li>
 </ul>
-<img src="https://tva1.sinaimg.cn/large/008vxvgGgy1h98al5bl50j31bs0p0jw6.jpg" alt="image-20220403154519664" style="zoom:40%;" />
-
+<p><img src="/2021/07/20/%E3%80%90ML%E3%80%91%E8%AE%AD%E7%BB%83%E6%A1%86%E6%9E%B6/aa.jpeg"></p>
 <ul>
 <li><p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/20b92c29d571">看PyTorch源代码的心路历程</a></p>
 </li>
@@ -19,34 +18,35 @@
 <h2 id="pytorch多卡训练"><a href="#pytorch多卡训练" class="headerlink" title="pytorch多卡训练"></a>pytorch多卡训练</h2><p>以数据并行为例， 参考哔站 <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1xZ4y1S7dG/?spm_id_from=pageDriver&vd_source=abeb4ad4122e4eff23d97059cf088ab4">33、完整讲解PyTorch多GPU分布式训练代码编写</a></p>
 <p><strong>单机单卡</strong></p>
 <p><a target="_blank" rel="noopener" href="https://github.com/dufy29/ai-frame/blob/5c5f2c89868ea916df8d97f2577a021eb210ad8c/pytorch/pytorch%20imdb-%E5%A4%9AGPU%E8%AE%AD%E7%BB%83%E4%BB%A3%E7%A0%81demo.py">github示例代码</a></p>
-<p><img src="https://tva1.sinaimg.cn/large/008vxvgGgy1h8job7gjtxj31a40lq76e.jpg" alt="image-20221127143409309"></p>
+<p><img src="/2021/07/20/%E3%80%90ML%E3%80%91%E8%AE%AD%E7%BB%83%E6%A1%86%E6%9E%B6/aa1.jpeg"></p>
 <p><strong>单机多卡</strong></p>
 <p><a target="_blank" rel="noopener" href="https://github.com/dufy29/ai-frame/blob/main/pytorch/pytorch%20imdb-%E5%A4%9AGPU%E8%AE%AD%E7%BB%83%E4%BB%A3%E7%A0%81demo.py">推荐 DDP实现</a></p>
-<p><img src="https://tva1.sinaimg.cn/large/008vxvgGgy1h8jvklpqhtj317c090q3w.jpg" alt="image-20221127184524158"></p>
+<p><img src="/2021/07/20/%E3%80%90ML%E3%80%91%E8%AE%AD%E7%BB%83%E6%A1%86%E6%9E%B6/qq.jpeg"></p>
 <ul>
 <li><del>torch.nn.DataParallel() 实现</del></li>
 </ul>
-<p><img src="https://tva1.sinaimg.cn/large/008vxvgGgy1h8jvhpie9dj319q0u0dit.jpg" alt="image-20221127184236049"></p>
+<p><img src="/2021/07/20/%E3%80%90ML%E3%80%91%E8%AE%AD%E7%BB%83%E6%A1%86%E6%9E%B6/as.png"></p>
 <ul>
 <li>DDP: torch.nn.parallel.DistributedDataParallel() 实现</li>
 </ul>
-<p><img src="https://tva1.sinaimg.cn/large/008vxvgGgy1h8jvj2o86sj319c0u0n0q.jpg" alt="image-20221127184355335"></p>
-<p><img src="https://tva1.sinaimg.cn/large/008vxvgGgy1h8jvjh7jihj31ip0u0jum.jpg" alt="image-20221127184418663"></p>
+<p><img src="/2021/07/20/%E3%80%90ML%E3%80%91%E8%AE%AD%E7%BB%83%E6%A1%86%E6%9E%B6/aa2.jpeg"></p>
+<p><img src="/2021/07/20/%E3%80%90ML%E3%80%91%E8%AE%AD%E7%BB%83%E6%A1%86%E6%9E%B6/aa3.jpeg"></p>
 <p><strong>多机多卡</strong></p>
-<p><img src="https://tva1.sinaimg.cn/large/008vxvgGgy1h8jvbb1qalj31k20jqdif.jpg" alt="image-20221127183627300"></p>
-<h2 id="TF-系统架构"><a href="#TF-系统架构" class="headerlink" title="TF 系统架构"></a>TF 系统架构</h2><p><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1gzshbr4l6vj212a0j876q.jpg" alt="image-20220227231935259"></p>
+<p><img src="/2021/07/20/%E3%80%90ML%E3%80%91%E8%AE%AD%E7%BB%83%E6%A1%86%E6%9E%B6/qw.jpeg"></p>
+<h2 id="TF-系统架构"><a href="#TF-系统架构" class="headerlink" title="TF 系统架构"></a>TF 系统架构</h2><p><img src="/2021/07/20/%E3%80%90ML%E3%80%91%E8%AE%AD%E7%BB%83%E6%A1%86%E6%9E%B6/sda.jpeg"></p>
 <p>详细的如下：</p>
-<p><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h0fishvhovj20u00ua44d.jpg" alt="image-20220319213814995"></p>
+<p><img src="/2021/07/20/%E3%80%90ML%E3%80%91%E8%AE%AD%E7%BB%83%E6%A1%86%E6%9E%B6/fg.jpeg"></p>
 <p>对于 TensorFlow，C API 是衔接前后端系统的桥梁。理解 C API 的设计，基本能够猜测前后端系统的行为</p>
 <p><strong>技术栈</strong></p>
 <p>下图按照系统的层次结构展示了 TensorFlow 的技术栈，构成了 TensorFlow 生态系统的核心。</p>
-<p><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h0f7wzk586j20ui0iuad5.jpg" alt="image-20220319151911404"></p>
-<h2 id="编程模型：基于数据流的通信拓扑"><a href="#编程模型：基于数据流的通信拓扑" class="headerlink" title="编程模型：基于数据流的通信拓扑"></a><strong>编程模型：基于数据流的通信拓扑</strong></h2><p>TensorFlow 是一个使用数据流图 (Dataflow Graph) 表达数值计算的开源软件库。它使 用节点表示抽象的数学计算，并使用 OP 表达计算的逻辑;而边表示节点间传递的数据流， 并使用 Tensor 表达数据的表示。数据流图是一种有向无环图 (DAG)，当图中的 OP 按 照特定的拓扑排序依次被执行时，Tensor 在图中流动形成数据流，TensorFlow 因此而得名。</p>
+<p><img src="/2021/07/20/%E3%80%90ML%E3%80%91%E8%AE%AD%E7%BB%83%E6%A1%86%E6%9E%B6/sfd.jpeg"></p>
+<h2 id="TF编程模型"><a href="#TF编程模型" class="headerlink" title="TF编程模型"></a>TF<strong>编程模型</strong></h2><p><strong>基于数据流的通信拓扑</strong></p>
+<p>TensorFlow 是一个使用数据流图 (Dataflow Graph) 表达数值计算的开源软件库。它使 用节点表示抽象的数学计算，并使用 OP 表达计算的逻辑;而边表示节点间传递的数据流， 并使用 Tensor 表达数据的表示。数据流图是一种有向无环图 (DAG)，当图中的 OP 按 照特定的拓扑排序依次被执行时，Tensor 在图中流动形成数据流，TensorFlow 因此而得名。</p>
 <p>使用节点表示抽象计算，边表示数据流(Tensor)</p>
 <blockquote>
 <p>下图展示了 MNIST 手写识别应用的数据流图。在该模型 中，前向子图使用了 2 层全连接网络，分别为 ReLU 层和 Softmax 层。随后，使用 SGD 的 优化算法，构建了与前向子图对应的反向子图，用于计算训练参数的梯度。最后，根据参数 更新法则，构造训练参数的更新子图，完成训练参数的迭代更新。</p>
 </blockquote>
-<p><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1gzsi4fvrizg20700cg48l.gif" alt="tensors_flowing"></p>
+<p><img src="/2021/07/20/%E3%80%90ML%E3%80%91%E8%AE%AD%E7%BB%83%E6%A1%86%E6%9E%B6/aaz.gif"></p>
 <p>OP 是最小的抽象计算单元，支持构造复杂的网络模型</p>
 <p>TF 支持 OP 扩展，Kernel 扩展，Device 扩展，通信协议的扩展;</p>
 <h2 id="TensorFlow-能做什么？"><a href="#TensorFlow-能做什么？" class="headerlink" title="TensorFlow 能做什么？"></a><del>TensorFlow 能做什么？</del></h2><p><del>TensorFlow 可以为以上的这些需求提供完整的解决方案。具体而言，TensorFlow 包含以下特性：</del></p>
@@ -198,25 +198,22 @@
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
 <li><a target="_blank" rel="noopener" href="https://tf.wiki/zh_hans/">https://tf.wiki/zh_hans/</a></li>
 </ol>
-<p><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h6d2h60qhxj21my0u0dlw.jpg" alt="image-20220920144439038"></p>
+<p><img src="/2021/07/20/%E3%80%90ML%E3%80%91%E8%AE%AD%E7%BB%83%E6%A1%86%E6%9E%B6/1.jpeg"></p>
 <ol start="2">
-<li><a target="_blank" rel="noopener" href="https://github.com/dragen1860/Deep-Learning-with-TensorFlow-book">https://github.com/dragen1860/Deep-Learning-with-TensorFlow-book</a></li>
-</ol>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gt1n4hnwo3j31x10u011i.jpg" alt="image-20210801220754292"></p>
-<ol start="3">
-<li>官方文档</li>
-</ol>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gt39xoflqcj31qo0u0458.jpg" alt="image-20210803080243039"></p>
-<ol start="4">
-<li>30天吃掉那只Tensorflow2</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/dragen1860/Deep-Learning-with-TensorFlow-book">https://github.com/dragen1860/Deep-Learning-with-TensorFlow-book</a></p>
+</li>
+<li><p>官方文档</p>
+</li>
+<li><p>30天吃掉那只Tensorflow2</p>
+</li>
 </ol>
 <p><a target="_blank" rel="noopener" href="https://jackiexiao.github.io/eat_tensorflow2_in_30_days/">https://jackiexiao.github.io/eat_tensorflow2_in_30_days/</a></p>
 <ol start="5">
 <li>[<a target="_blank" rel="noopener" href="https://www.cnblogs.com/yao62995/p/5773578.html">图解tensorflow源码] [原创] Tensorflow 图解分析 （Session, Graph, Kernels, Devices）</a></li>
 </ol>
-<p><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h5uu0373lnj21d20u0tf3.jpg" alt="image-20220904201112369"></p>
+<p><img src="/2021/07/20/%E3%80%90ML%E3%80%91%E8%AE%AD%E7%BB%83%E6%A1%86%E6%9E%B6/12.jpeg"></p>
 <ol start="6">
 <li>csdn博主 pytorch 专栏：<a target="_blank" rel="noopener" href="https://blog.csdn.net/scar2016/category_10900277.html?spm=1001.2014.3001.5482">https://blog.csdn.net/scar2016/category_10900277.html?spm=1001.2014.3001.5482</a></li>
 </ol>
-<p><img src="https://tva1.sinaimg.cn/large/008vxvgGgy1h8jo9djo90j31uh0u0tgg.jpg" alt="image-20221127115333381"></p>
+<p><img src="/2021/07/20/%E3%80%90ML%E3%80%91%E8%AE%AD%E7%BB%83%E6%A1%86%E6%9E%B6/ada.jpeg"></p>
 </div></article></div><div class="right-container"><div class="widget"><div id="arAnchorBar"></div></div><div class="widget"><div class="tagcloud"><h4>标签云</h4><a href="/tags/C/" style="font-size: 10px;">C</a> <a href="/tags/CS/" style="font-size: 15px;">CS</a> <a href="/tags/CSAPP/" style="font-size: 10px;">CSAPP</a> <a href="/tags/CV/" style="font-size: 10px;">CV</a> <a href="/tags/Django/" style="font-size: 10px;">Django</a> <a href="/tags/GPU/" style="font-size: 10px;">GPU</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/Hadoop/" style="font-size: 10px;">Hadoop</a> <a href="/tags/Python/" style="font-size: 15px;">Python</a> <a href="/tags/Pytorch/" style="font-size: 10px;">Pytorch</a> <a href="/tags/TensorFlow/" style="font-size: 10px;">TensorFlow</a> <a href="/tags/book/" style="font-size: 15px;">book</a> <a href="/tags/c/" style="font-size: 10px;">c++</a> <a href="/tags/flask/" style="font-size: 10px;">flask</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/lucene/" style="font-size: 10px;">lucene</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nlp/" style="font-size: 15px;">nlp</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a> <a href="/tags/%E4%BD%93%E7%B3%BB%E5%8C%96/" style="font-size: 10px;">体系化</a> <a href="/tags/%E5%85%89%E7%BA%BF%E8%BF%BD%E8%B8%AA/" style="font-size: 10px;">光线追踪</a> <a href="/tags/%E5%88%86%E8%AF%8D/" style="font-size: 10px;">分词</a> <a href="/tags/%E5%8A%9B%E6%89%A3/" style="font-size: 10px;">力扣</a> <a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 10px;">工具</a> <a href="/tags/%E5%B9%B6%E5%8F%91/" style="font-size: 10px;">并发</a> <a href="/tags/%E6%80%9D%E7%BB%B4/" style="font-size: 10px;">思维</a> <a href="/tags/%E6%8E%A8%E8%8D%90/" style="font-size: 10px;">推荐</a> <a href="/tags/%E6%90%9C%E7%B4%A2/" style="font-size: 10px;">搜索</a> <a href="/tags/%E6%91%98%E8%A6%81/" style="font-size: 10px;">摘要</a> <a href="/tags/%E6%95%B0%E5%AD%A6/" style="font-size: 10px;">数学</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 10px;">数据结构</a> <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 15px;">机器学习</a> <a href="/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/" style="font-size: 10px;">树莓派</a> <a href="/tags/%E6%A1%86%E6%9E%B6/" style="font-size: 10px;">框架</a> <a href="/tags/%E7%88%AC%E8%99%AB/" style="font-size: 15px;">爬虫</a> <a href="/tags/%E7%94%B5%E5%BD%B1/" style="font-size: 10px;">电影</a> <a href="/tags/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/" style="font-size: 10px;">目标检测</a> <a href="/tags/%E7%A1%AC%E4%BB%B6/" style="font-size: 10px;">硬件</a> <a href="/tags/%E7%AE%80%E5%8E%86/" style="font-size: 10px;">简历</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 20px;">算法</a> <a href="/tags/%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6/" style="font-size: 10px;">自动驾驶</a> <a href="/tags/%E8%87%AA%E5%AD%A6/" style="font-size: 10px;">自学</a> <a href="/tags/%E8%A7%84%E8%8C%83/" style="font-size: 10px;">规范</a></div></div></div></section></div><div class="right-menu"></div><div class="modal search-modal"><div class="input-field"><input type="text" id="search_input"><label for="search-input">搜索</label></div><div id="search_result" class="search-result"></div></div><div class="blog-overlay"></div><footer class="row"><div class="footer-con"><div class="paginator"><a href="/2021/07/26/%E3%80%90%E7%BD%91%E7%BB%9C%E3%80%91%E7%BD%91%E9%A1%B5%E5%B1%95%E7%A4%BA/" title="⭐️网页展示" class="prev">PREV</a><a href="/2021/06/29/%E3%80%90ML%E3%80%91%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B8%AD%E7%9A%84%E6%95%B0%E5%AD%A6/" title="⭐️机器学习中的数学" class="next">NEXT</a></div><div class="copyright"><p>© 2016 - 2023 <a target="_blank">John Doe</a>, powered by <a href="https://hexo.io/" target="_blank">Hexo</a> <br> and <a href="https://github.com/Bulandent/hexo-theme-bubuzou" target="_blank">hexo-theme-bubuzou</a></p><p> <span style="padding-right: 6px;">闽ICP备16007301号-2</span></p></div><div class="totop"><i></i></div></div></footer><script async src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><script src="https://bubuzou.oss-cn-shenzhen.aliyuncs.com/blog/202010/jquery-1.8.2.min.js"></script><script src="https://bubuzou.oss-cn-shenzhen.aliyuncs.com/blog/202010/articleCatalog.js"></script><script src="https://bubuzou.oss-cn-shenzhen.aliyuncs.com/blog/202010/main.js"></script><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',"UA-65933410-1",'auto');ga('send','pageview');</script></body></html>
