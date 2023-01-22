@@ -84,12 +84,18 @@
 
 <p><strong>BJT</strong></p>
 <p><img src="/2020/05/07/%E3%80%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E3%80%91%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A6%81%E7%82%B9/sd114.png" alt="image-20230121133112056"></p>
-<p><strong>0 1 表示</strong></p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/yedongnan001/article/details/79471329">以非门为例</a>：</p>
+<p><strong>非门实现</strong></p>
+<p>知乎：<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/20492284">代码是如何控制硬件的？</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/yedongnan001/article/details/79471329">三极管实现与门、或门和非门操作</a>：</p>
 <p>当输入为高电平＋５Ｖ时，Q1基极与发射极间Ube&gt; 0.7V，Q1导通，输出点电压为Q1的集电极和发射极之间的压降，即0.3V，即输出为数字量0；当输入为低时，Q1集电极和发射极之间未导通，输出电压为上拉的电压，+5V，即数字量1。</p>
 <p><img src="/2020/05/07/%E3%80%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E3%80%91%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A6%81%E7%82%B9/20180307150254592.png" alt="img"></p>
 <p><strong>半导体产品分类</strong></p>
-<p><img src="/2020/05/07/%E3%80%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E3%80%91%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A6%81%E7%82%B9/image-20230122120508327.png" alt="image-20230122120508327"></p>
+<p><a target="_blank" rel="noopener" href="http://www.zhengshili.com/news/?3186.html">半导体基本知识——分立器件（D-O-S）</a></p>
+<p><img src="/2020/05/07/%E3%80%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E3%80%91%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A6%81%E7%82%B9/12qq.png" alt="image-20230122235030497"></p>
+<p><strong>模拟芯片</strong></p>
+<p><img src="/2020/05/07/%E3%80%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E3%80%91%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A6%81%E7%82%B9/asd11.png" alt="image-20230122234038436"></p>
+<p>上图为一张简化的模拟芯片工作原理示意图，模拟信号如声、光、温度通过传感器进入后，放大器将输入的信号进行放大减小处理，随后信号经过模数转换器转化为数字信号后由数字芯片进行处理，最终输出的信号通过数模转换器重新转化为模拟信号，某些设备还会在其中添加接口器件，用于提高信号范围与质量，这个过程被称为信号链。在这个过程中起到模拟信号处理功能的放大器、数模转换器与接口即为信号链芯片。</p>
+<p>而在信号处理的过程中需要进行电能的转换、分配与检测，这个过程被称为电源链，在电源链中起到稳压、直交流电转换与电池管理的集成电路即为电源管理芯片。</p>
 <h2 id="CPU"><a href="#CPU" class="headerlink" title="CPU"></a>CPU</h2><ul>
 <li><p>cpu 工作过程视频：<a target="_blank" rel="noopener" href="https://computersciencewiki.org/index.php/Architecture_of_the_central_processing_unit_(CPU)">Architecture of the central processing unit (CPU)</a></p>
 </li>
@@ -155,21 +161,6 @@
 <p><img src="/2020/05/07/%E3%80%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E3%80%91%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A6%81%E7%82%B9/21a.jpeg" alt="image-20230122120508327"></p>
 <p>一个真实的Intel Core i7 CPU的缓存结构示意图：</p>
 <p><img src="/2020/05/07/%E3%80%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E3%80%91%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A6%81%E7%82%B9/wwq.jpeg" alt="image-20230122120508327"></p>
-<h2 id="代码控制硬件过程"><a href="#代码控制硬件过程" class="headerlink" title="代码控制硬件过程"></a>代码控制硬件过程</h2><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gekabfah5ej30c8092glv.jpg" alt="img"></p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1giu1z2x7otj31d70u07wi.jpg" alt="image-20200917231351261"></p>
-<ul>
-<li><p>参考文章<a target="_blank" rel="noopener" href="https://blog.csdn.net/segoold_chou/article/details/11863935">计算机是如何工作的（最简单透彻的解释）</a>，整理如下：</p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%99%B6%E4%BD%93%E7%AE%A1/569042?fromtitle=transistor&fromid=8858808">百度词条【晶体管】视频</a></p>
-</li>
-</ul>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1geli4gzshxj31hs0i677e.jpg" alt="image-20200509001856037"></p>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/348237008">CPU 是怎么认识代码的？</a></li>
-</ul>
-<p>里面的回答很经典</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gv14ph93lhj60pk0bb0tb02.jpg" alt="img"></p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gw6h9hftm8j316c0u0ag6.jpg" alt="image-20211107123344205"></p>
 <h2 id="字符编码"><a href="#字符编码" class="headerlink" title="字符编码"></a>字符编码</h2><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1ghstmfbx9kj31i80b2e5e.jpg" alt="image-20200816181855186"></p>
 <p>在python 程序中，当我们的程序运行起来后，内存中存储的字符串默认使用的是unicode。目的是 Unicode定长，好处理。但是，如果涉及到字符串的存储和传输，就必须进行编码，编码成utf-8 或 gbk 进行传递，原因是unicode 太浪费空间了。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="string">&#x27;很好&#x27;</span>  <span class="comment"># 内存中使用unicode</span></span><br><span class="line"><span class="comment"># 编码</span></span><br><span class="line">bs = s.encode(<span class="string">&#x27;utf-8&#x27;</span>)  </span><br><span class="line"><span class="built_in">print</span>(bs)   <span class="comment"># b&#x27;\xe5\xbe\x88\xe5\xa5\xbd&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(bs))  <span class="comment"># &lt;class &#x27;bytes&#x27;&gt;bytes 数据类型</span></span><br><span class="line"><span class="comment"># 在utf-8中，一个汉字是3个字节，每个\x代表一个字节</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(s.encode(<span class="string">&#x27;gbk&#x27;</span>))  <span class="comment"># 4字节：b&#x27;\xba\xdc\xba\xc3&#x27;</span></span><br></pre></td></tr></table></figure>
@@ -227,5 +218,8 @@
 <p>其实，除了算法，在我看来很多别的知识也是这样。<strong>只是说算法，更容易在面试的时候去展示而已。本身而言，并没有什么特殊的。</strong></p>
 <p>比如学习操作系统。那我们为什么学习操作系统？难道是让我们造出来一个操作系统吗？显而易见并不是。学习操作系统是让我们了解为什么会提出OS，如果没有OS又会是什么样子。它怎么样做任务调度，怎么样做进程管理，怎么样对可用的硬件做成抽象，死锁是如何产生的，内存是怎么管理的，文件系统是如何实现的，通信是指谁与谁的通信。不是说应付了考试就算学了，而是带着脑子掌握这个东西的脉络，这才是核心。</p>
 </blockquote>
-<p>4. </p>
+<ol start="4">
+<li></li>
+<li></li>
+</ol>
 </div></article></div><div class="right-container"><div class="widget"><div id="arAnchorBar"></div></div><div class="widget"><div class="tagcloud"><h4>标签云</h4><a href="/tags/C/" style="font-size: 10px;">C</a> <a href="/tags/CS/" style="font-size: 15px;">CS</a> <a href="/tags/CSAPP/" style="font-size: 10px;">CSAPP</a> <a href="/tags/CV/" style="font-size: 10px;">CV</a> <a href="/tags/Django/" style="font-size: 10px;">Django</a> <a href="/tags/GPU/" style="font-size: 10px;">GPU</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/Hadoop/" style="font-size: 10px;">Hadoop</a> <a href="/tags/Python/" style="font-size: 15px;">Python</a> <a href="/tags/Pytorch/" style="font-size: 10px;">Pytorch</a> <a href="/tags/TensorFlow/" style="font-size: 10px;">TensorFlow</a> <a href="/tags/book/" style="font-size: 15px;">book</a> <a href="/tags/c/" style="font-size: 10px;">c++</a> <a href="/tags/flask/" style="font-size: 10px;">flask</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/lucene/" style="font-size: 10px;">lucene</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nlp/" style="font-size: 15px;">nlp</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a> <a href="/tags/%E4%BD%93%E7%B3%BB%E5%8C%96/" style="font-size: 10px;">体系化</a> <a href="/tags/%E5%85%89%E7%BA%BF%E8%BF%BD%E8%B8%AA/" style="font-size: 10px;">光线追踪</a> <a href="/tags/%E5%88%86%E8%AF%8D/" style="font-size: 10px;">分词</a> <a href="/tags/%E5%8A%9B%E6%89%A3/" style="font-size: 10px;">力扣</a> <a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 10px;">工具</a> <a href="/tags/%E5%B9%B6%E5%8F%91/" style="font-size: 10px;">并发</a> <a href="/tags/%E6%80%9D%E7%BB%B4/" style="font-size: 10px;">思维</a> <a href="/tags/%E6%8E%A8%E8%8D%90/" style="font-size: 10px;">推荐</a> <a href="/tags/%E6%90%9C%E7%B4%A2/" style="font-size: 10px;">搜索</a> <a href="/tags/%E6%91%98%E8%A6%81/" style="font-size: 10px;">摘要</a> <a href="/tags/%E6%95%B0%E5%AD%A6/" style="font-size: 10px;">数学</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 10px;">数据结构</a> <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 15px;">机器学习</a> <a href="/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/" style="font-size: 10px;">树莓派</a> <a href="/tags/%E6%A1%86%E6%9E%B6/" style="font-size: 10px;">框架</a> <a href="/tags/%E7%88%AC%E8%99%AB/" style="font-size: 15px;">爬虫</a> <a href="/tags/%E7%94%B5%E5%BD%B1/" style="font-size: 10px;">电影</a> <a href="/tags/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/" style="font-size: 10px;">目标检测</a> <a href="/tags/%E7%A1%AC%E4%BB%B6/" style="font-size: 10px;">硬件</a> <a href="/tags/%E7%AE%80%E5%8E%86/" style="font-size: 10px;">简历</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 20px;">算法</a> <a href="/tags/%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6/" style="font-size: 10px;">自动驾驶</a> <a href="/tags/%E8%87%AA%E5%AD%A6/" style="font-size: 10px;">自学</a> <a href="/tags/%E8%A7%84%E8%8C%83/" style="font-size: 10px;">规范</a></div></div></div></section></div><div class="right-menu"></div><div class="modal search-modal"><div class="input-field"><input type="text" id="search_input"><label for="search-input">搜索</label></div><div id="search_result" class="search-result"></div></div><div class="blog-overlay"></div><footer class="row"><div class="footer-con"><div class="paginator"><a href="/2020/05/24/%E3%80%90ML%E3%80%91%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%9F%A5%E8%AF%86%E7%82%B9/" title="⭐️机器学习知识点" class="prev">PREV</a><a href="/2020/05/02/%E3%80%90%E7%AE%97%E6%B3%95%E3%80%91%E7%AE%97%E6%B3%95%E5%88%B7%E9%A2%98/" title="⭐️算法刷题" class="next">NEXT</a></div><div class="copyright"><p>© 2016 - 2023 <a target="_blank">John Doe</a>, powered by <a href="https://hexo.io/" target="_blank">Hexo</a> <br> and <a href="https://github.com/Bulandent/hexo-theme-bubuzou" target="_blank">hexo-theme-bubuzou</a></p><p> <span style="padding-right: 6px;">闽ICP备16007301号-2</span></p></div><div class="totop"><i></i></div></div></footer><script async src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><script src="https://bubuzou.oss-cn-shenzhen.aliyuncs.com/blog/202010/jquery-1.8.2.min.js"></script><script src="https://bubuzou.oss-cn-shenzhen.aliyuncs.com/blog/202010/articleCatalog.js"></script><script src="https://bubuzou.oss-cn-shenzhen.aliyuncs.com/blog/202010/main.js"></script><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',"UA-65933410-1",'auto');ga('send','pageview');</script></body></html>
