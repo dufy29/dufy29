@@ -66,28 +66,30 @@
 <blockquote>
 <p>绿点指示处为当前状态，每条规则的4项分别是：当前位置读入的字符、当前位置写入的字符、纸带的移动方向、将要转移到的状态。【1936年】—-<a target="_blank" rel="noopener" href="https://fwjmath.wordpress.com/2012/07/20/the-limit-of-computation-0/">计算的极限（零）</a></p>
 </blockquote>
+<h2 id="模拟电路、数字电路"><a href="#模拟电路、数字电路" class="headerlink" title="模拟电路、数字电路"></a>模拟电路、数字电路</h2><p>信号是信息的载体，信号有光、电、声、力等，目前对于电信号的处理技术已经比较成熟，对于非电信号，一般需要把待处理的非电信号先变成电信号，经过处理后再还原成非电信号</p>
+<p>电信号按照特点分为：</p>
+<ul>
+<li>模拟信号：在时间上和幅值上均是连续的信号</li>
+<li>数字信号：在时间上和幅值上均离散的信号（幅值只可取有限个值）</li>
+</ul>
+<p><img src="/2020/05/07/%E3%80%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E3%80%91%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A6%81%E7%82%B9/image-20230121131828663.png" alt="image-20230121131828663"></p>
+<p>同一个物理量，既可以采用模拟信号进行表征，也可以采用数字信号进行表征</p>
+<p><strong>模拟电路与数字电路</strong></p>
+<p>处理模拟信号的电子电路称为模拟电路，处理数字信号的电子电路称为数字电路</p>
+<p><img src="/2020/05/07/%E3%80%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E3%80%91%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A6%81%E7%82%B9/image-20230121133112056.png" alt="image-20230121133112056"></p>
 <h2 id="晶体管"><a href="#晶体管" class="headerlink" title="晶体管"></a>晶体管</h2><p>晶体管主要分为两大类：<a target="_blank" rel="noopener" href="https://zh.m.wikipedia.org/wiki/%E5%8F%8C%E6%9E%81%E6%80%A7%E6%99%B6%E4%BD%93%E7%AE%A1">双极性晶体管</a>（BJT）和<a target="_blank" rel="noopener" href="https://zh.m.wikipedia.org/wiki/%E5%9C%BA%E6%95%88%E5%BA%94%E7%AE%A1">场效应晶体管</a>（FET）</p>
-<img src="https://tva1.sinaimg.cn/large/008i3skNgy1gvydqp6f3wj30qk0ne0ue.jpg" alt="img" style="zoom:67%;">
-
-<p>晶体管的导通：</p>
-<img src="https://i.loli.net/2021/03/15/BS86XWHAmfGuNsO.png" alt="image-20210315000137256" style="zoom: 50%;">
+<img src="/2020/05/07/%E3%80%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E3%80%91%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A6%81%E7%82%B9/image-20230121133619941.png" alt="image-20230121133619941" style="zoom: 50%;">
 
 
 
-<p><strong>半导体分类</strong></p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gvydtuc1m1j30jg06ojru.jpg" alt="img"></p>
+<p><strong>BJT</strong></p>
+<p><img src="/2020/05/07/%E3%80%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E3%80%91%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A6%81%E7%82%B9/sd114.png" alt="image-20230121133112056"></p>
 <p><strong>0 1 表示</strong></p>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/yedongnan001/article/details/79471329">以非门为例</a>：</p>
 <p>当输入为高电平＋５Ｖ时，Q1基极与发射极间Ube&gt; 0.7V，Q1导通，输出点电压为Q1的集电极和发射极之间的压降，即0.3V，即输出为数字量0；当输入为低时，Q1集电极和发射极之间未导通，输出电压为上拉的电压，+5V，即数字量1。</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gv5opd5x3rj60e809q74k02.jpg" alt="img"></p>
-<h2 id="存储"><a href="#存储" class="headerlink" title="存储"></a>存储</h2><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1UZ4y1K7ZD">【软件开发】理解CPU缓存的重要性</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/cxuanBlog/p/11751609.html">程序员需要了解的硬核知识之内存</a></p>
-<img src="https://i.loli.net/2021/03/15/H5BCF4RrqTozebl.png" alt="image-20210315005433324" style="zoom: 50%;">
-
-
-
-
-
+<p><img src="/2020/05/07/%E3%80%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E3%80%91%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A6%81%E7%82%B9/20180307150254592.png" alt="img"></p>
+<p><strong>半导体产品分类</strong></p>
+<p><img src="/2020/05/07/%E3%80%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E3%80%91%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A6%81%E7%82%B9/image-20230122120508327.png" alt="image-20230122120508327"></p>
 <h2 id="CPU"><a href="#CPU" class="headerlink" title="CPU"></a>CPU</h2><ul>
 <li><p>cpu 工作过程视频：<a target="_blank" rel="noopener" href="https://computersciencewiki.org/index.php/Architecture_of_the_central_processing_unit_(CPU)">Architecture of the central processing unit (CPU)</a></p>
 </li>
@@ -99,6 +101,8 @@
 <img src="/2020/05/07/%E3%80%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E3%80%91%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A6%81%E7%82%B9/sdsd.jpeg" style="zoom:33%;">
 
 <ul>
+<li><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1UZ4y1K7ZD">【大佬讲座】理解CPU缓存的重要性</a></p>
+</li>
 <li><p><a target="_blank" rel="noopener" href="https://www.ithome.com/0/635/764.htm">科普：火遍全网的 DPU 到底是什么</a></p>
 <blockquote>
 <p>英伟达首席执行官黄仁勋曾在演讲中表示：“ DPU 将成为未来计算的三大支柱之一，未来的数据中心标配是‘ CPU + DPU + GPU ’。CPU 用于通用计算，GPU 用于加速计算，DPU 则进行数据处理。”</p>
@@ -109,7 +113,7 @@
 <p>2GHz 表示cpu 每秒可以执行20亿次基本操作（一个周期1ns），完成一条机器指令需要 5-10次基本操作，即2GHz 表示每秒可以执行数亿条机器指令</p>
 <p><strong>取指–&gt;译码–&gt;执行–&gt;写回</strong></p>
 <p>参考：<a target="_blank" rel="noopener" href="https://diveintosystems.org/book/C5-Arch/von.html">https://diveintosystems.org/book/C5-Arch/von.html</a></p>
-<p><img src="https://tva1.sinaimg.cn/large/008vxvgGgy1h985li9izcj319s0tewji.jpg" alt="image-20221218184546097"></p>
+<p><img src="/2020/05/07/%E3%80%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E3%80%91%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A6%81%E7%82%B9/as1.png" alt="image-20230122120508327"></p>
 <p>注意地址总线（单向），数据总线（双向）</p>
 <p>32位和64位CPU体系结构，指的就是数据总线和地址总线的条数，涉及寻址空间以及能够操作的二进制位数。e.g. 32位地址总线可以对 2^32字节（4GB）的内存进行寻址。其实，32位、64位话题，可以从软件、硬件、OS3个层面理解，具体参考<a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1769686">Linux 中的 32 位与 64 位</a></p>
 <blockquote>
@@ -119,13 +123,12 @@
 </blockquote>
 <p>思考一个问题，我们平时需要计算的数据一般很大，cpu 中的寄存器根本存不下，cpu又是如何计算的了的呢？</p>
 <p>其实，主要是靠cpu与内存之间不断进行的数据传输。  <a target="_blank" rel="noopener" href="https://blog.51cto.com/u_15067244/4111206"><strong>数据结构是如何装入 CPU 寄存器的？</strong></a></p>
-<p><del>另外，pc 是如何知道下一条指令的地址的？RAM 中1条完整的指令可并非1字节</del></p>
+<p><del>另外，pc 是如何知道下一条指令的地址的？RAM 中1条完整的指令可并非1字节</del>1q</p>
 <p><strong>指令集</strong></p>
 <p>cpu 可以执行的所有操作的集合，称为指令集</p>
 <p>ISA 提供了对处理器的抽象，可以看成是软/硬件的接口</p>
-<p><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h08lt6jl6wj21080j6wie.jpg" alt="image-20220313220341101"></p>
-<p><a target="_blank" rel="noopener" href="https://pastraiser.com/cpu/i4040/i4040.html">下图展示了如何将操作映射 为数字</a></p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gzalltd71hj325a0jaq7o.jpg" alt="image-20220212120726664"></p>
+<p><a target="_blank" rel="noopener" href="https://pastraiser.com/cpu/i4040/i4040.html">下图展示了如何将操作映射 为数字</a>：</p>
+<p><img src="/2020/05/07/%E3%80%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E3%80%91%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A6%81%E7%82%B9/as111.jpeg" alt="image-20230122120508327"></p>
 <blockquote>
 <p>The upper 4 bit is called the OPR and contains the operation code. The lower 4 bits is called OPA and contains the modifier. For a single word machine instruction the operation code (OPR) contains the code of the operation that is to be performed (add, subtract, load, etc.). The modifie (OPA) contains one of 4 things:</p>
 <ol>
@@ -135,46 +138,30 @@
 <li>An instruction modifier</li>
 </ol>
 </blockquote>
-<ul>
-<li>RISC vs CISC</li>
-</ul>
-<p>简单来说，CISC任务处理能力强，适合桌面电脑和服务器。RISC通过精简CISC指令种类，格式，简化寻址方式，达到省电高效的效果，适合手机、平板、数码相机等便携式电子产品。<a target="_blank" rel="noopener" href="https://www.ithome.com/0/424/726.htm">https://www.ithome.com/0/424/726.htm</a></p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gwmwnz5fjdj30go04iwes.jpg" alt="img"></p>
-<p><strong>CPU 缓存与局部性原理</strong></p>
-<p>CPU 和内存的速度差异：</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gz57a9agimj30hr0bxt9q.jpg" alt="img"></p>
-<p>处理器和内存的速度差距造就了存储层次：<del>离处理器流水线距离越近的地方，使用存储密度小的电路结构，牺牲存储容量来换取 更快的访问速度;离处理器流水线距离越远的地方，使用存储密度大的电路结构，牺牲访问速度 来换取存储容量。目前计算机中常见的存储层次包括寄存器、高速缓存(Cache)、内存、IO 这四 个层次。</del></p>
-<p><img src="https://tva1.sinaimg.cn/large/008vxvgGgy1h9721ja18qj315q0puaez.jpg" alt="image-20221217195715166"></p>
+<p><strong>CPU 缓存</strong></p>
+<p><img src="/2020/05/07/%E3%80%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E3%80%91%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A6%81%E7%82%B9/q3e.jpeg" alt="image-20230122120508327"></p>
 <p>当处理器发出内存访问请求时，会先查看缓存内是否有请求数据。当L1发生缓存命中失败后，CPU会尝试去L2中读取，如果又失败，则继续向下一层缓存寻找。</p>
 <p>如果存在（命中），则不经访问内存直接返回该数据；<strong>如果不存在（失效），则要先把内存中的相应数据载入缓存，再将其返回处理器。</strong></p>
-<p><del>数字越小，缓存的速度越快，但成本也越高，因此容量一般更小。缓存并不是越大越好，虽然更大的缓存虽然能存储更多的数据和指令，但每一次寻址需要花费更多的周期，可能最终得不偿失。<strong>缓存的设计需要平衡时间、空间和制造成本，是CPU架构设计中的一个重要环节。</strong></del></p>
 <p>通过缓存机制，大约有<strong>不到 10% 的</strong>存储请求必须直接从RAM 获取</p>
-<ul>
-<li><p>局部性原理，</p>
+<p><a target="_blank" rel="noopener" href="https://colin-scott.github.io/personal_website/research/interactive_latency.html">计算机访问不同层次存储器的时间开销：</a></p>
+<p>寄存器： 1个CPU周期（1ns）<br>内存：   0.1-1us<br>磁盘：   2ms3ed</p>
+<p><img src="/2020/05/07/%E3%80%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E3%80%91%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A6%81%E7%82%B9/23d.jpeg" alt="image-20230122120508327"></p>
+<p><strong>局部性原理</strong></p>
 <p>包括时间局部性、空间局部性，这也是为何缓存为何会有用</p>
 <p>时间局部性：访问某个存储地址时，可能很快再次访问该地址</p>
 <p>空间局部性：访问某个存储地址时，可能很快会访问与之相邻的地址</p>
-</li>
-</ul>
-<p><a target="_blank" rel="noopener" href="https://colin-scott.github.io/personal_website/research/interactive_latency.html">计算机访问不同层次存储器的时间开销：</a></p>
-<p>寄存器： 1个CPU周期（1ns）<br>内存：   0.1-1us<br>磁盘：   2ms</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gxtz52ohkkj31xp0u0aia.jpg" alt="image-20211228233954700"></p>
-<ul>
-<li>缓存结构示例</li>
-</ul>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gz57b9sentj30go06yq5c.jpg" alt="img"></p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gz42suwcnjj30k90abgmx.jpg" alt="img"></p>
-<p>一个真实的Intel Core i7 CPU的缓存结构示意图</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gxv2as1djvj30n10hcwhd.jpg" alt="img"></p>
-<h2 id="代码控制硬件过程"><a href="#代码控制硬件过程" class="headerlink" title="代码控制硬件过程"></a>代码控制硬件过程</h2><p>参见知乎：<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/20492284">代码是如何控制硬件的？</a></p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gekabfah5ej30c8092glv.jpg" alt="img"></p>
+<p><strong>缓存结构示例</strong>2</p>
+<p><img src="/2020/05/07/%E3%80%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E3%80%91%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A6%81%E7%82%B9/1q.jpeg" alt="image-20230122120508327"></p>
+<p><img src="/2020/05/07/%E3%80%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E3%80%91%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A6%81%E7%82%B9/21a.jpeg" alt="image-20230122120508327"></p>
+<p>一个真实的Intel Core i7 CPU的缓存结构示意图：</p>
+<p><img src="/2020/05/07/%E3%80%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E3%80%91%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A6%81%E7%82%B9/wwq.jpeg" alt="image-20230122120508327"></p>
+<h2 id="代码控制硬件过程"><a href="#代码控制硬件过程" class="headerlink" title="代码控制硬件过程"></a>代码控制硬件过程</h2><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gekabfah5ej30c8092glv.jpg" alt="img"></p>
 <p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1giu1z2x7otj31d70u07wi.jpg" alt="image-20200917231351261"></p>
 <ul>
-<li>参考文章<a target="_blank" rel="noopener" href="https://blog.csdn.net/segoold_chou/article/details/11863935">计算机是如何工作的（最简单透彻的解释）</a>，整理如下：</li>
-</ul>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gelhmwhwuxj30u014c1l0.jpg" alt="image-20200509000407044"></p>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%99%B6%E4%BD%93%E7%AE%A1/569042?fromtitle=transistor&fromid=8858808">百度词条【晶体管】视频</a></li>
+<li><p>参考文章<a target="_blank" rel="noopener" href="https://blog.csdn.net/segoold_chou/article/details/11863935">计算机是如何工作的（最简单透彻的解释）</a>，整理如下：</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%99%B6%E4%BD%93%E7%AE%A1/569042?fromtitle=transistor&fromid=8858808">百度词条【晶体管】视频</a></p>
+</li>
 </ul>
 <p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1geli4gzshxj31hs0i677e.jpg" alt="image-20200509001856037"></p>
 <ul>
@@ -193,8 +180,7 @@
 
 <p><a target="_blank" rel="noopener" href="http://www.ruanyifeng.com/blog/2007/10/ascii_unicode_and_utf-8.html">字符编码笔记：ASCII，Unicode 和 UTF-8</a></p>
 <p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1TV411z759?p=28">全网最适合Python小白的Python基础课（纯干货，超详细）</a></p>
-<h2 id="1024-or-1000-？"><a href="#1024-or-1000-？" class="headerlink" title="1024 or 1000 ？"></a>1024 or 1000 ？</h2><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1geuma7ssfoj31n60kub29.jpg" alt="image-20200516213509459"></p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1geumapu124j31ng09edig.jpg" alt="image-20200516213529954"></p>
+<h2 id="1024-or-1000-？"><a href="#1024-or-1000-？" class="headerlink" title="1024 or 1000 ？"></a>1024 or 1000 ？</h2><p><img src="/2020/05/07/%E3%80%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E3%80%91%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A6%81%E7%82%B9/23ss.png" alt="image-20230122120508327"></p>
 <h2 id="编程范式"><a href="#编程范式" class="headerlink" title="编程范式"></a>编程范式</h2><p><a target="_blank" rel="noopener" href="https://imweb.io/topic/5cde5770e363b77a0edeb874">再谈编程范式—程序语言背后的思想</a></p>
 <p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gevwc9f3scj30k00bsmy2.jpg" alt="img"></p>
 <p><a target="_blank" rel="noopener" href="https://developer.aliyun.com/article/270068">声明式编程和命令式编程的比较（转）</a></p>
