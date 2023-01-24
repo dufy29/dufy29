@@ -67,7 +67,7 @@
 <p>《python源码剖析》，这本书是python的源代码，c语言写的，精通python必读</p>
 <h2 id="Cpython-源码"><a href="#Cpython-源码" class="headerlink" title="Cpython 源码"></a>Cpython 源码</h2><p><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1036428">怎么样才算是精通 Python？</a></p>
 <p><a target="_blank" rel="noopener" href="https://realpython.com/cpython-source-code-guide/">Your Guide to the CPython Source Code</a>，中文翻译：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/79656976">https://zhuanlan.zhihu.com/p/79656976</a></p>
-<img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h2bs3d6ms7j21hh0u045o.jpg" alt="image-20210419231132649" style="zoom: 23%;" />
+<img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h2bs3d6ms7j21hh0u045o.jpg" alt="image-20210419231132649" style="zoom: 23%;">
 
 <p>cpython实现官网: <a target="_blank" rel="noopener" href="https://github.com/python/cpython">https://github.com/python/cpython</a></p>
 <p>陈儒📚《Python源码剖析》以及相应的github: <a target="_blank" rel="noopener" href="https://flaggo.github.io/python3-source-code-analysis/">https://flaggo.github.io/python3-source-code-analysis/</a></p>
@@ -402,7 +402,18 @@
 
 <p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gihe536jn1j30z205edg6.jpg" alt="image-20200905215028954"></p>
 <h2 id="编码"><a href="#编码" class="headerlink" title="编码"></a>编码</h2><p><strong>参考 【13】</strong></p>
-<h3 id="ASCII、Unicode和UTF-8"><a href="#ASCII、Unicode和UTF-8" class="headerlink" title="ASCII、Unicode和UTF-8"></a>ASCII、Unicode和UTF-8</h3><blockquote>
+<p><img src="/2019/12/11/%E3%80%90%E7%BC%96%E7%A8%8B%E3%80%91Python%E7%AC%94%E8%AE%B0/image-20230122235845443.png" alt="image-20230122235845443"></p>
+<p>在python 程序中，当我们的程序运行起来后，内存中存储的字符串默认使用的是unicode。目的是 Unicode定长，好处理。但是，如果涉及到字符串的存储和传输，就必须进行编码，编码成utf-8 或 gbk 进行传递，原因是unicode 太浪费空间了。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="string">&#x27;很好&#x27;</span>  <span class="comment"># 内存中使用unicode</span></span><br><span class="line"><span class="comment"># 编码</span></span><br><span class="line">bs = s.encode(<span class="string">&#x27;utf-8&#x27;</span>)  </span><br><span class="line"><span class="built_in">print</span>(bs)   <span class="comment"># b&#x27;\xe5\xbe\x88\xe5\xa5\xbd&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(bs))  <span class="comment"># &lt;class &#x27;bytes&#x27;&gt;bytes 数据类型</span></span><br><span class="line"><span class="comment"># 在utf-8中，一个汉字是3个字节，每个\x代表一个字节</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(s.encode(<span class="string">&#x27;gbk&#x27;</span>))  <span class="comment"># 4字节：b&#x27;\xba\xdc\xba\xc3&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>解码和bytes 数据类型转换：</p>
+<p><img src="/2019/12/11/%E3%80%90%E7%BC%96%E7%A8%8B%E3%80%91Python%E7%AC%94%E8%AE%B0/image-20230123000205797.png" alt="image-20230123000205797"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 解码</span></span><br><span class="line">bs = <span class="string">b&#x27;\xe5\xbe\x88\xe5\xa5\xbd&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(bs.decode(<span class="string">&#x27;utf8&#x27;</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># gbk--&gt;&gt;utf8字节</span></span><br><span class="line">bs = <span class="string">b&#x27;\xba\xdc\xba\xc3&#x27;</span></span><br><span class="line">s = bs.decode(<span class="string">&#x27;gbk&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(s.encode(<span class="string">&#x27;utf8&#x27;</span>))  <span class="comment"># b&#x27;\xe5\xbe\x88\xe5\xa5\xbd&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="http://www.ruanyifeng.com/blog/2007/10/ascii_unicode_and_utf-8.html">字符编码笔记：ASCII，Unicode 和 UTF-8</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1TV411z759?p=28">全网最适合Python小白的Python基础课（纯干货，超详细）</a></p>
+<p><strong>ASCII、Unicode和UTF-8</strong></p>
+<blockquote>
 <p>Unicode 是「字符集」</p>
 <p>UTF-8 、ASCII等则是「编码规则」</p>
 </blockquote>
@@ -411,7 +422,8 @@
 <p>ASCII 8位 –&gt;&gt; 0000 0000 0000 0000 ANSI(16位) –&gt;&gt;GBK(国标码的扩展码)–&gt;&gt;万国码Unicode（32位）</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">字母A： 0100 0001  <span class="comment"># ACSII</span></span><br><span class="line">字母A： <span class="number">0000</span> <span class="number">0000</span> 0100 0001 <span class="comment"># 国标码</span></span><br><span class="line">字母A： <span class="number">0000</span> <span class="number">0000</span> 0100 0001 <span class="number">0000</span> <span class="number">0000</span> 0100 0001 <span class="comment">#Unicode</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="unicode"><a href="#unicode" class="headerlink" title="unicode"></a>unicode</h3><blockquote>
+<p><strong>unicode</strong></p>
+<blockquote>
 <p>目前的Unicode字符分为17组编排，0x0000至0x10FFFF，每组称为平面（Plane），而每平面拥有65536个码位，共1114112个。然而目前只用了少数平面。<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/UTF-8">UTF-8</a>、<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/UTF-16">UTF-16</a>、<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/UTF-32">UTF-32</a>都是将数字转换到程序数据的编码方案。</p>
 </blockquote>
 <p>不同位置代表的字符可以查：<a target="_blank" rel="noopener" href="https://home.unicode.org/%EF%BC%8C">https://home.unicode.org/，</a> 十六进制表示</p>
@@ -443,7 +455,8 @@
 </ul>
 <p>Unicode太浪费空间！！（内存中存储的字符串默认使用unicode，目的是Unicode定长，好处理）</p>
 <p>于是提出<em>UTF-8</em>（8-bit Unicode Transformation Format）， 可变长度编码</p>
-<h3 id="utf8"><a href="#utf8" class="headerlink" title="utf8"></a>utf8</h3><p>不同语言所占内存空间大小：</p>
+<p><strong>utf8</strong></p>
+<p>不同语言所占内存空间大小：</p>
 <p>英文：1byte</p>
 <p>欧洲：2byte</p>
 <p>中文：3byte</p>
@@ -451,7 +464,8 @@
 <li>总结：</li>
 </ul>
 <p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gihe4x8myqj31ka0awjug.jpg" alt="image-20200826235900455"></p>
-<h3 id="encode-与decode"><a href="#encode-与decode" class="headerlink" title="encode() 与decode()"></a>encode() 与decode()</h3><p>由于Python的字符串类型是<code>str</code>，在内存中以Unicode表示，一个字符对应若干个字节。如果要在网络上传输，或者保存到磁盘上，就需要把<code>str</code>变为以字节为单位的<code>bytes</code>。</p>
+<p><strong>encode() 与decode()</strong></p>
+<p>由于Python的字符串类型是<code>str</code>，在内存中以Unicode表示，一个字符对应若干个字节。如果要在网络上传输，或者保存到磁盘上，就需要把<code>str</code>变为以字节为单位的<code>bytes</code>。</p>
 <p>以Unicode表示的<code>str</code>通过<code>encode()</code>方法可以编码为指定的<code>bytes</code>，例如：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">&#x27;ABC&#x27;</span>.encode(<span class="string">&#x27;ascii&#x27;</span>)</span><br><span class="line"><span class="string">b&#x27;ABC&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">&#x27;中文&#x27;</span>.encode(<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line"><span class="string">b&#x27;\xe4\xb8\xad\xe6\x96\x87&#x27;</span></span><br></pre></td></tr></table></figure>
 
@@ -477,7 +491,8 @@
 </ul>
 <p>bytes,一堆字节，python 程序中最小的数据单位</p>
 <p>图片，mp3，视频等都要用bytes来读取</p>
-<h3 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h3><ul>
+<p><strong>应用</strong></p>
+<ul>
 <li><ol>
 <li>计算机系统通用的字符编码工作方式 </li>
 </ol>
@@ -667,67 +682,67 @@
 <tbody><tr>
 <td align="left">追加(尾部)</td>
 <td align="left">append()</td>
-<td align="left">l = [‘a’, ‘b’]<br />l.append(‘c’) <br />print(l)</td>
+<td align="left">l = [‘a’, ‘b’]<br>l.append(‘c’) <br>print(l)</td>
 <td>[‘a’, ‘b’, ‘c’]</td>
 </tr>
 <tr>
 <td align="left">插入(索引)</td>
 <td align="left">insert(index)</td>
-<td align="left">l = [‘a’, ‘b’]<br />l.insert(1,’c’)<br />print(l)</td>
+<td align="left">l = [‘a’, ‘b’]<br>l.insert(1,’c’)<br>print(l)</td>
 <td>[‘a’, ‘c’, ‘b’]</td>
 </tr>
 <tr>
 <td align="left">合并新增</td>
 <td align="left">extend()</td>
-<td align="left">l = [‘a’, ‘b’] <br />l1 = [‘c’, ‘z’] <br />l.extend(l1) <br />print(l)</td>
+<td align="left">l = [‘a’, ‘b’] <br>l1 = [‘c’, ‘z’] <br>l.extend(l1) <br>print(l)</td>
 <td>[‘a’, ‘b’, ‘c’, ‘z’]</td>
 </tr>
 <tr>
 <td align="left">删除</td>
 <td align="left">remove()</td>
-<td align="left">l = [‘a’, ‘b’, ‘c’, ‘z’, ‘b’]<br />l.remove(‘b’)<br />print(l)</td>
+<td align="left">l = [‘a’, ‘b’, ‘c’, ‘z’, ‘b’]<br>l.remove(‘b’)<br>print(l)</td>
 <td>[‘a’, ‘c’, ‘z’, ‘b’]</td>
 </tr>
 <tr>
 <td align="left">弹出</td>
 <td align="left">pop()</td>
-<td align="left">l = [‘a’, ‘b’, ‘c’, ‘z’, ‘b’]<br />a = l.pop()  # 返回最后一个 <br />print(a, l)</td>
+<td align="left">l = [‘a’, ‘b’, ‘c’, ‘z’, ‘b’]<br>a = l.pop()  # 返回最后一个 <br>print(a, l)</td>
 <td>b [‘a’, ‘b’, ‘c’, ‘z’]</td>
 </tr>
 <tr>
 <td align="left"></td>
 <td align="left">pop(index)</td>
-<td align="left">l = [‘a’, ‘b’, ‘c’, ‘z’, ‘b’]<br />a = l.pop(1)  # 指定索引删除 <br />print(a, l)</td>
+<td align="left">l = [‘a’, ‘b’, ‘c’, ‘z’, ‘b’]<br>a = l.pop(1)  # 指定索引删除 <br>print(a, l)</td>
 <td>b [‘a’, ‘c’, ‘z’, ‘b’]</td>
 </tr>
 <tr>
 <td align="left">清空</td>
 <td align="left">clear()</td>
-<td align="left">l = [‘a’, ‘b’, ‘c’, ‘z’, ‘b’] <br />l.clear() <br />print(l)</td>
+<td align="left">l = [‘a’, ‘b’, ‘c’, ‘z’, ‘b’] <br>l.clear() <br>print(l)</td>
 <td>[]</td>
 </tr>
 <tr>
 <td align="left">计数</td>
 <td align="left">count()</td>
-<td align="left">l = [‘a’, ‘b’, ‘c’, ‘b’, ‘b’] <br />print(l.count(‘b’))</td>
+<td align="left">l = [‘a’, ‘b’, ‘c’, ‘b’, ‘b’] <br>print(l.count(‘b’))</td>
 <td>3</td>
 </tr>
 <tr>
 <td align="left">翻转</td>
 <td align="left">reverse()</td>
-<td align="left">l = [‘a’, ‘b’, ‘c’, ‘a’] <br />l.reverse() <br />print(l)</td>
+<td align="left">l = [‘a’, ‘b’, ‘c’, ‘a’] <br>l.reverse() <br>print(l)</td>
 <td>[‘a’, ‘c’, ‘b’, ‘a’]</td>
 </tr>
 <tr>
 <td align="left">排序</td>
 <td align="left">sort()</td>
-<td align="left">l = [12, 34, 1, 354] <br />l.sort() <br />print(l)</td>
+<td align="left">l = [12, 34, 1, 354] <br>l.sort() <br>print(l)</td>
 <td>[1, 12, 34, 354]</td>
 </tr>
 <tr>
 <td align="left"></td>
 <td align="left">sort(reverse=True)</td>
-<td align="left">l = [12, 34, 1, 354] <br />l.sort(reverse=True) <br />print(l)</td>
+<td align="left">l = [12, 34, 1, 354] <br>l.sort(reverse=True) <br>print(l)</td>
 <td>[354, 34, 12, 1]</td>
 </tr>
 </tbody></table>
@@ -1392,7 +1407,7 @@
 <p>locals()查看当前作用域中内容</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">def func1():</span><br><span class="line">    a = 10</span><br><span class="line">    def hehe():</span><br><span class="line">        pass</span><br><span class="line">    print(locals())</span><br><span class="line"></span><br><span class="line">func1()</span><br></pre></td></tr></table></figure>
 
-<p>{‘a’: 10, ‘hehe’: &lt;function func1.<locals>.hehe at 0x1044a7170&gt;}</p>
+<p>{‘a’: 10, ‘hehe’: &lt;function func1.<locals>.hehe at 0x1044a7170&gt;}</locals></p>
 <ul>
 <li>global和nonlocal</li>
 </ul>
@@ -1538,7 +1553,7 @@
 </blockquote>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">l = (i <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10</span>))  <span class="comment">#python中没有元组推导式</span></span><br><span class="line"><span class="built_in">print</span>(l)</span><br></pre></td></tr></table></figure>
 
-<p>&lt;generator object <genexpr> at 0x10fde1950&gt;</p>
+<p>&lt;generator object <genexpr> at 0x10fde1950&gt;</genexpr></p>
 <ul>
 <li>拿空生成器数据</li>
 </ul>

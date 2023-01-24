@@ -96,7 +96,9 @@
 <p><img src="/2020/05/07/%E3%80%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E3%80%91%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A6%81%E7%82%B9/asd11.png" alt="image-20230122234038436"></p>
 <p>上图为一张简化的模拟芯片工作原理示意图，模拟信号如声、光、温度通过传感器进入后，放大器将输入的信号进行放大减小处理，随后信号经过模数转换器转化为数字信号后由数字芯片进行处理，最终输出的信号通过数模转换器重新转化为模拟信号，某些设备还会在其中添加接口器件，用于提高信号范围与质量，这个过程被称为信号链。在这个过程中起到模拟信号处理功能的放大器、数模转换器与接口即为信号链芯片。</p>
 <p>而在信号处理的过程中需要进行电能的转换、分配与检测，这个过程被称为电源链，在电源链中起到稳压、直交流电转换与电池管理的集成电路即为电源管理芯片。</p>
-<h2 id="CPU"><a href="#CPU" class="headerlink" title="CPU"></a>CPU</h2><ul>
+<h2 id="CPU"><a href="#CPU" class="headerlink" title="CPU"></a>CPU</h2><p><a target="_blank" rel="noopener" href="https://zh.m.wikipedia.org/zh-sg/%E5%89%8D%E7%AB%AF%E6%80%BB%E7%BA%BF">典型芯片组规划</a></p>
+<p><img src="/2020/05/07/%E3%80%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E3%80%91%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A6%81%E7%82%B9/300px-Motherboard_diagram.png" alt="img"></p>
+<ul>
 <li><p>cpu 工作过程视频：<a target="_blank" rel="noopener" href="https://computersciencewiki.org/index.php/Architecture_of_the_central_processing_unit_(CPU)">Architecture of the central processing unit (CPU)</a></p>
 </li>
 <li><p>[intel cpu演进故事](The Evolution Of CPU Processing Power Part 1: The Mechanics Of A CPU)</p>
@@ -118,7 +120,7 @@
 <p><strong>CPU 时钟</strong></p>
 <p>2GHz 表示cpu 每秒可以执行20亿次基本操作（一个周期1ns），完成一条机器指令需要 5-10次基本操作，即2GHz 表示每秒可以执行数亿条机器指令</p>
 <p><strong>取指–&gt;译码–&gt;执行–&gt;写回</strong></p>
-<p>参考：<a target="_blank" rel="noopener" href="https://diveintosystems.org/book/C5-Arch/von.html">https://diveintosystems.org/book/C5-Arch/von.html</a></p>
+<p>参考：<a target="_blank" rel="noopener" href="https://diveintosystems.org/book/C5-Arch/von.html">5.2. The von Neumann Architecture</a></p>
 <p><img src="/2020/05/07/%E3%80%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E3%80%91%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A6%81%E7%82%B9/as1.png" alt="image-20230122120508327"></p>
 <p>注意地址总线（单向），数据总线（双向）</p>
 <p>32位和64位CPU体系结构，指的就是数据总线和地址总线的条数，涉及寻址空间以及能够操作的二进制位数。e.g. 32位地址总线可以对 2^32字节（4GB）的内存进行寻址。其实，32位、64位话题，可以从软件、硬件、OS3个层面理解，具体参考<a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1769686">Linux 中的 32 位与 64 位</a></p>
@@ -161,29 +163,77 @@
 <p><img src="/2020/05/07/%E3%80%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E3%80%91%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A6%81%E7%82%B9/21a.jpeg" alt="image-20230122120508327"></p>
 <p>一个真实的Intel Core i7 CPU的缓存结构示意图：</p>
 <p><img src="/2020/05/07/%E3%80%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E3%80%91%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A6%81%E7%82%B9/wwq.jpeg" alt="image-20230122120508327"></p>
-<h2 id="字符编码"><a href="#字符编码" class="headerlink" title="字符编码"></a>字符编码</h2><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1ghstmfbx9kj31i80b2e5e.jpg" alt="image-20200816181855186"></p>
-<p>在python 程序中，当我们的程序运行起来后，内存中存储的字符串默认使用的是unicode。目的是 Unicode定长，好处理。但是，如果涉及到字符串的存储和传输，就必须进行编码，编码成utf-8 或 gbk 进行传递，原因是unicode 太浪费空间了。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="string">&#x27;很好&#x27;</span>  <span class="comment"># 内存中使用unicode</span></span><br><span class="line"><span class="comment"># 编码</span></span><br><span class="line">bs = s.encode(<span class="string">&#x27;utf-8&#x27;</span>)  </span><br><span class="line"><span class="built_in">print</span>(bs)   <span class="comment"># b&#x27;\xe5\xbe\x88\xe5\xa5\xbd&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(bs))  <span class="comment"># &lt;class &#x27;bytes&#x27;&gt;bytes 数据类型</span></span><br><span class="line"><span class="comment"># 在utf-8中，一个汉字是3个字节，每个\x代表一个字节</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(s.encode(<span class="string">&#x27;gbk&#x27;</span>))  <span class="comment"># 4字节：b&#x27;\xba\xdc\xba\xc3&#x27;</span></span><br></pre></td></tr></table></figure>
+<h2 id="PCI-amp-PCIe"><a href="#PCI-amp-PCIe" class="headerlink" title="PCI &amp; PCIe"></a>PCI &amp; PCIe</h2><p><strong>Peripheral Component Interconnect</strong> (<strong>PCI</strong>)(外设部件互连标准)[<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Peripheral_Component_Interconnect#cite_note-3">3]</a> is a <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Local_bus">local</a> computer <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Computer_bus">bus</a> for attaching <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Computer_hardware">hardware</a> devices in a <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Computer">computer</a> and is part of the PCI Local Bus standard. </p>
+<p>PCI 是一种局部总线，用于连接硬件外围设备，由intel 1992年提出</p>
+<p>PCIe card, however, adopts dedicated <strong>point-to-point</strong> serial technology, resembling an on-board network. </p>
+<p>两者均属于 I/O bus , 用于连接外围设备（除cpu，内存）</p>
+<p>Bus 历史：</p>
+<ul>
+<li>第一代：ISA, EISA, VESA, Micro Channel</li>
+<li>第二代：PCI, AGP, PCI-X</li>
+<li>第三代：PCI Express</li>
+</ul>
+<img src="/2020/05/07/%E3%80%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E3%80%91%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A6%81%E7%82%B9/image-20230123234223492.png" alt="image-20230123234223492" style="zoom:67%;">
 
-<p>解码和bytes 数据类型转换：</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1ghsv5z40drj30qe06u449.jpg" alt="image-20200816191222990"></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 解码</span></span><br><span class="line">bs = <span class="string">b&#x27;\xe5\xbe\x88\xe5\xa5\xbd&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(bs.decode(<span class="string">&#x27;utf8&#x27;</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># gbk--&gt;&gt;utf8字节</span></span><br><span class="line">bs = <span class="string">b&#x27;\xba\xdc\xba\xc3&#x27;</span></span><br><span class="line">s = bs.decode(<span class="string">&#x27;gbk&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(s.encode(<span class="string">&#x27;utf8&#x27;</span>))  <span class="comment"># b&#x27;\xe5\xbe\x88\xe5\xa5\xbd&#x27;</span></span><br></pre></td></tr></table></figure>
+<p><a target="_blank" rel="noopener" href="https://community.fs.com/blog/pci-vs-pci-x-vs-pci-e-why-choose-pci-e-card.html">Some detailed specifications are presented in the table below</a>:</p>
+<table>
+<thead>
+<tr>
+<th align="center">Type</th>
+<th align="center">Working Topology</th>
+<th align="center">Bus Type</th>
+<th align="center">Clock Speed</th>
+<th align="center">Transmission Speed</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">PCI</td>
+<td align="center">Parallel transmission</td>
+<td align="center">32-bit 64-bit</td>
+<td align="center">33MHz 66MHz</td>
+<td align="center">32-bit: 133MB/s, 266MB/s 64-bit: 266MB/s, 533MB/s</td>
+</tr>
+<tr>
+<td align="center">PCI-X</td>
+<td align="center">Parallel transmission</td>
+<td align="center">64-bit</td>
+<td align="center">66MHz 100MHz 133MHz (Up to 533MHz)</td>
+<td align="center">533MB/s; 800MB/s; 1066MB/s</td>
+</tr>
+<tr>
+<td align="center">PCI-E (PCIe 1.0 8x version)</td>
+<td align="center">Serial transmission</td>
+<td align="center">8-bit</td>
+<td align="center">2.5GHz</td>
+<td align="center">4GB/s</td>
+</tr>
+</tbody></table>
+<p><strong>PCIe</strong></p>
+<p>PCIe拓扑结构：</p>
+<p><img src="/2020/05/07/%E3%80%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E3%80%91%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A6%81%E7%82%B9/image-20230124131241173.png" alt="image-20230124131241173"></p>
+<p>A PCI Express link between two devices consists of one or more lanes, which are <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Dual_simplex">dual simplex</a> channels using two <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Differential_signaling">differential signaling</a> pairs.[<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/PCI_Express#cite_note-pcie-basics-6">5]</a>: 3 </p>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/PCI_Express_Terminology.svg/2560px-PCI_Express_Terminology.svg.png" alt="img" style="zoom:67%;">
 
-<p><a target="_blank" rel="noopener" href="http://www.ruanyifeng.com/blog/2007/10/ascii_unicode_and_utf-8.html">字符编码笔记：ASCII，Unicode 和 UTF-8</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1TV411z759?p=28">全网最适合Python小白的Python基础课（纯干货，超详细）</a></p>
+<p>PCI Express link performance:</p>
+<p><img src="/2020/05/07/%E3%80%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E3%80%91%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A6%81%E7%82%B9/image-20230124192618828.png" alt="image-20230124192618828"></p>
+<p><strong>基于PCIe的系统介绍</strong></p>
+<ul>
+<li><em>Low Cost PCI Express System</em></li>
+</ul>
+<p><img src="/2020/05/07/%E3%80%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E3%80%91%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A6%81%E7%82%B9/image-20230124220401898.png" alt="image-20230124220401898"></p>
+<p><img src="/2020/05/07/%E3%80%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E3%80%91%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A6%81%E7%82%B9/image-20230124220522946.png" alt="image-20230124220522946"></p>
+<ul>
+<li><em>PCI Express High-End Server System</em></li>
+</ul>
+<p><img src="/2020/05/07/%E3%80%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E3%80%91%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A6%81%E7%82%B9/image-20230124220636737.png" alt="image-20230124220636737"></p>
 <h2 id="1024-or-1000-？"><a href="#1024-or-1000-？" class="headerlink" title="1024 or 1000 ？"></a>1024 or 1000 ？</h2><p><img src="/2020/05/07/%E3%80%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E3%80%91%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A6%81%E7%82%B9/23ss.png" alt="image-20230122120508327"></p>
 <h2 id="编程范式"><a href="#编程范式" class="headerlink" title="编程范式"></a>编程范式</h2><p><a target="_blank" rel="noopener" href="https://imweb.io/topic/5cde5770e363b77a0edeb874">再谈编程范式—程序语言背后的思想</a></p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gevwc9f3scj30k00bsmy2.jpg" alt="img"></p>
+<p><img src="/2020/05/07/%E3%80%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E3%80%91%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A6%81%E7%82%B9/dsgd.jpeg" alt="image-20230122120508327"></p>
 <p><a target="_blank" rel="noopener" href="https://developer.aliyun.com/article/270068">声明式编程和命令式编程的比较（转）</a></p>
 <ul>
 <li>命令式编程：命令“机器”如何去做事情(how)，这样不管你想要的是什么(what)，它都会按照你的命令实现。//是函数式编程的意思，更强调流程及步骤。强调的操作细节，即Step by Step，而不是对象之间的关系</li>
 <li>声明式编程：告诉“机器”你想要的是什么(what)，让机器想出如何去做(how)。//OO了，更强调语义的层面，而不是细节，不强调具体流程的细节，即更强调What，描述对象之间的<strong>关系</strong>，而不是具体的操作细节。需要通用实现的归纳提取</li>
 </ul>
-<p>声明式编程让我们去描述我们想要的是什么，让底层的软件/计算机/等去解决如何去实现它们。</p>
-<p>在很多情况中，就像我们看到的一样，声明式编程能给我们的编程带来真正的提升，通过站在更高层面写代码，我们可以更多的专注于<em>what</em>，而这正是我们开发软件真正的目标。</p>
-<p>问题是，程序员习惯了去描述<em>how</em>，这让我们感觉很好很舒服——强力——能够控制事情的发生发展，不放走任何我们不能看见不能理解的处理过程。</p>
-<p>有时候这种紧盯着<em>how</em>不放的做法是没问题的。如果我需要对代码进行更高性能的优化，我需要对what进行更深一步的描述来指导how。有时候对于某个业务逻辑没有任何可以归纳提取的通用实现，我们只能写命令式编程代码。</p>
-<p>但大多数时候，我们可以、而且应该寻求声明式的写代码方式，如果没有发现现成的归纳提取好的实现，我们应该自己去创建。起初这会很难，必定的，但就像我们使用SQL和D3.js， 我们会长期从中获得巨大的回报！</p>
 <h2 id="网络"><a href="#网络" class="headerlink" title="网络"></a>网络</h2><ul>
 <li><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=x3c1ih2NJEg">How does the INTERNET work? | ICT #2</a></li>
 <li></li>
