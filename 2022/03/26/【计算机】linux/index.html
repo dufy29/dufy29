@@ -19,6 +19,9 @@
 <p>​        课程主页： <a target="_blank" rel="noopener" href="https://pdos.csail.mit.edu/6.828/2021/schedule.html">https://pdos.csail.mit.edu/6.828/2021/schedule.html</a></p>
 <p>​        说明文档 <a href="http://link.zhihu.com/?target=https://pdos.csail.mit.edu/6.828/2021/xv6/book-riscv-rev2.pdf">xv6 book</a> </p>
 <p>​        知乎专栏： <a target="_blank" rel="noopener" href="https://www.zhihu.com/column/c_1502374640542023680">xv6 源码剖析</a></p>
+<ul>
+<li>linux 不同目录功能介绍？？</li>
+</ul>
 <h2 id="linux-历史"><a href="#linux-历史" class="headerlink" title="linux 历史"></a>linux 历史</h2><p>发布时间线：<a target="_blank" rel="noopener" href="https://commons.wikimedia.org/wiki/File:Linux_Distribution_Timeline.svg">https://commons.wikimedia.org/wiki/File:Linux_Distribution_Timeline.svg</a></p>
 <p><img src="/2022/03/26/%E3%80%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E3%80%91linux/ff.png"></p>
 <h2 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h2><ul>
@@ -50,44 +53,6 @@
 <p><img src="/2022/03/26/%E3%80%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E3%80%91linux/a1.jpeg"></p>
 <p><img src="/2022/03/26/%E3%80%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E3%80%91linux/a2.jpeg"></p>
 <p><img src="/2022/03/26/%E3%80%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E3%80%91linux/345.jpeg"></p>
-<h2 id="shell"><a href="#shell" class="headerlink" title="shell"></a>shell</h2><p>shell 提供了一种用户调用操作系统内核的方式</p>
-<p>shell命令形式 : <code>命令名+选项/参数</code></p>
-<p><strong>命令名</strong></p>
-<ul>
-<li>shell 内建函数 (built-in function)</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pi@raspberrypi:/ $ type cd</span><br><span class="line">cd is a shell builtin</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>可执行文件 (executable file)</li>
-</ul>
-<p>保存在shell 之外的脚本</p>
-<p>有2种方式运行：</p>
-<p>1） 给出可执行文件所在位置</p>
-<p>2） 如果只给出命令名，而没有给出准确的位置，需要搜索<code>默认路径</code></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo $PATH   // 打印默认路径</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>别名 (alias)</li>
-</ul>
-<p><strong>选项/ 参数</strong></p>
-<blockquote>
-<p>短选项 -</p>
-<p>长选项 –</p>
-</blockquote>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">uname -a  // 选项-a 表示显示所有的相关信息</span><br><span class="line">sudo fdisk -l   // -l表示列出所有磁盘</span><br><span class="line">date --version   // --长选项</span><br><span class="line"></span><br><span class="line">vcgencmd measure_temp   //cpu温度</span><br></pre></td></tr></table></figure>
-
-
-
-<p><strong>其它命令</strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">whatis ls   // 简短的一句话介绍命令</span><br><span class="line">man ls</span><br><span class="line">info ls</span><br><span class="line">ctrl C   // 终止</span><br><span class="line">ctrl Z  // 暂停</span><br><span class="line">which xx  // 确定命令名xx对应的的是哪个可执行文件</span><br><span class="line">type xx  // 命令的类型</span><br><span class="line">man 2 syscalls    // Linux 下所有的系统调用</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
 <li><a target="_blank" rel="noopener" href="https://www.acfun.cn/u/45363348">Linux C&amp;C++网络编程实践-陈硕</a></li>
 </ol>
