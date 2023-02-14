@@ -23,6 +23,31 @@
     
     
     <entry>
+      <title>⭐️论文阅读</title>
+      <link href="/2023/02/12/%E3%80%90ML%E3%80%91%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/"/>
+      <url>/2023/02/12/%E3%80%90ML%E3%80%91%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/</url>
+      
+        <content type="html"><![CDATA[<span id="more"></span><h2 id="自动微分"><a href="#自动微分" class="headerlink" title="自动微分"></a><strong>自动微分</strong></h2><h3 id="Automatic-Differentiation-in-Machine-Learning-a-Survey"><a href="#Automatic-Differentiation-in-Machine-Learning-a-Survey" class="headerlink" title="Automatic Differentiation in Machine Learning: a Survey"></a>Automatic Differentiation in Machine Learning: a Survey</h3><p>分为：前向微分 和 <u>后向微分</u></p><p>里面提到3种计算方法：</p><ul><li><p>lib: library</p></li><li><p>OO: Operator overloading,  pytorch</p></li><li><p>ST: Source transformation</p></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 机器学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> paper </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>⭐️Linux学习</title>
       <link href="/2022/03/26/%E3%80%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E3%80%91linux/"/>
       <url>/2022/03/26/%E3%80%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E3%80%91linux/</url>
@@ -214,7 +239,7 @@
       <link href="/2021/09/09/README/"/>
       <url>/2021/09/09/README/</url>
       
-        <content type="html"><![CDATA[<h3 id="搜书"><a href="#搜书" class="headerlink" title="搜书"></a>搜书</h3><p><a href="https://sobooks.net/">https://sobooks.net/</a></p><p><a href="https://clibrary.cn/#/">https://clibrary.cn/#/</a></p><p><a href="https://itpanda.net/book/">https://itpanda.net/book/</a></p><h3 id="拓展"><a href="#拓展" class="headerlink" title="拓展"></a>拓展</h3><p><strong><a href="https://news.ycombinator.com/news"> Hacker News</a></strong></p><p><a href="https://www.technologyreview.com/">MIT Technology Review</a></p><p><a href="https://medium.com/">medium</a></p><p><del><a href="https://0xffff.one/">0xFFFF社区</a></del></p><p><a href="https://fwjmath.wordpress.com/">fwjmath的相空间</a></p><p><a href="https://www.bilibili.com/video/BV1X34y1o7zq/?spm_id_from=333.788&vd_source=abeb4ad4122e4eff23d97059cf088ab4">九曲阑干图解 CSAPP</a></p><p>linux 内核地图：<a href="https://makelinux.github.io/kernel/map/">https://makelinux.github.io/kernel/map/</a></p><h3 id="知乎话题"><a href="#知乎话题" class="headerlink" title="知乎话题"></a>知乎话题</h3><p><a href="https://www.zhihu.com/topic/19570894/hot">gpu</a></p><p><a href="https://www.zhihu.com/topic/19608622/hot">高性能计算</a></p><ul><li><a href="https://www.zhihu.com/topic/19570902/hot">GPU通用计算</a><ul><li><a href="https://www.zhihu.com/topic/19597236/hot">CUDA</a></li></ul></li></ul><p><a href="https://www.zhihu.com/topic/19607065/hot">神经网络</a></p><p><a href="https://www.zhihu.com/topic/19813032/hot">深度学习</a></p><p><a href="https://www.zhihu.com/topic/19554300/hot">linux操作系统</a></p><h3 id="AI学习"><a href="#AI学习" class="headerlink" title="AI学习"></a>AI学习</h3><p><strong>journal</strong></p><p><a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=71">IEEE Transactions on Parallel and Distributed Systems</a></p><p><strong>YouTube视频</strong></p><ul><li><p><a href="https://www.youtube.com/@zomi6222/playlists">ZOMI的算子优化、编译器，LLVM等</a>, </p><p> <a href="https://github.com/chenzomi12/DeepLearningSystem">PPT资源</a></p></li></ul><h3 id="GPU"><a href="#GPU" class="headerlink" title="GPU"></a>GPU</h3><p>CUDA Toolkit Documentation v12.0： <a href="https://docs.nvidia.com/cuda/index.html">https://docs.nvidia.com/cuda/index.html</a></p><p><a href="https://www.zhihu.com/column/c_1552001218175766528">GPU硬件与软件知识   &lt;——–</a></p>]]></content>
+        <content type="html"><![CDATA[<p><strong>搜书</strong></p><p><a href="https://sobooks.net/">https://sobooks.net/</a></p><p><a href="https://clibrary.cn/#/">https://clibrary.cn/#/</a></p><p><a href="https://itpanda.net/book/">https://itpanda.net/book/</a></p><p><strong>拓展</strong></p><p><strong><a href="https://news.ycombinator.com/news"> Hacker News</a></strong></p><p><a href="https://www.technologyreview.com/">MIT Technology Review</a></p><p><a href="https://medium.com/">medium</a></p><p><del><a href="https://0xffff.one/">0xFFFF社区</a></del></p><p><a href="https://fwjmath.wordpress.com/">fwjmath的相空间</a></p><p><a href="https://www.bilibili.com/video/BV1X34y1o7zq/?spm_id_from=333.788&vd_source=abeb4ad4122e4eff23d97059cf088ab4">九曲阑干图解 CSAPP</a></p><p>linux 内核地图：<a href="https://makelinux.github.io/kernel/map/">https://makelinux.github.io/kernel/map/</a></p><p><strong>知乎话题</strong></p><p><a href="https://www.zhihu.com/topic/19570894/hot">gpu</a></p><p><a href="https://www.zhihu.com/topic/19608622/hot">高性能计算</a></p><ul><li><a href="https://www.zhihu.com/topic/19570902/hot">GPU通用计算</a><ul><li><a href="https://www.zhihu.com/topic/19597236/hot">CUDA</a></li></ul></li></ul><p><a href="https://www.zhihu.com/topic/19607065/hot">神经网络</a></p><p><a href="https://www.zhihu.com/topic/19813032/hot">深度学习</a></p><p><a href="https://www.zhihu.com/topic/19554300/hot">linux操作系统</a></p><p><strong>AI学习</strong></p><p>journal：<a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=71">IEEE Transactions on Parallel and Distributed Systems</a></p><p><a href="https://www.youtube.com/@zomi6222/playlists">ZOMI的算子优化、编译器，LLVM等</a>, &amp;&amp;  <a href="https://github.com/chenzomi12/DeepLearningSystem">PPT资源</a></p><p><strong>GPU</strong></p><p>CUDA Toolkit Documentation v12.0： <a href="https://docs.nvidia.com/cuda/index.html">https://docs.nvidia.com/cuda/index.html</a></p><p><a href="https://www.zhihu.com/column/c_1552001218175766528">GPU硬件与软件知识   &lt;——–</a></p>]]></content>
       
       
       
