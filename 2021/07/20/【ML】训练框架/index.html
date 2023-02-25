@@ -26,10 +26,19 @@
 <p>IR的全称是Intermediate Representation，翻译为中间表示</p>
 </blockquote>
 <p><img src="/2021/07/20/%E3%80%90ML%E3%80%91%E8%AE%AD%E7%BB%83%E6%A1%86%E6%9E%B6/ccc.png"></p>
+<p><strong>LLVM</strong></p>
 <p>LLVM 架构：</p>
-<p><img src="/2021/07/20/%E3%80%90ML%E3%80%91%E8%AE%AD%E7%BB%83%E6%A1%86%E6%9E%B6/ddd.png"></p>
+<p><img src="/2021/07/20/%E3%80%90ML%E3%80%91%E8%AE%AD%E7%BB%83%E6%A1%86%E6%9E%B6/dufy/blog/source/_posts/%E3%80%90ML%E3%80%91%E8%AE%AD%E7%BB%83%E6%A1%86%E6%9E%B6/ddd.png"></p>
 <p>运行过程：</p>
-<p><img src="/2021/07/20/%E3%80%90ML%E3%80%91%E8%AE%AD%E7%BB%83%E6%A1%86%E6%9E%B6/eee.png"></p>
+<p><img src="/2021/07/20/%E3%80%90ML%E3%80%91%E8%AE%AD%E7%BB%83%E6%A1%86%E6%9E%B6/dufy/blog/source/_posts/%E3%80%90ML%E3%80%91%E8%AE%AD%E7%BB%83%E6%A1%86%E6%9E%B6/wes22.png"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">dufy@MBP chap7 % clang -ccc-print-phases elf_demo.c</span><br><span class="line">               +- 0: input, &quot;elf_demo.c&quot;, c</span><br><span class="line">            +- 1: preprocessor, &#123;0&#125;, cpp-output</span><br><span class="line">         +- 2: compiler, &#123;1&#125;, ir</span><br><span class="line">      +- 3: backend, &#123;2&#125;, assembler</span><br><span class="line">   +- 4: assembler, &#123;3&#125;, object</span><br><span class="line">+- 5: linker, &#123;4&#125;, image</span><br><span class="line">6: bind-arch, &quot;x86_64&quot;, &#123;5&#125;, image</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
 <h2 id="pytorch多卡训练"><a href="#pytorch多卡训练" class="headerlink" title="pytorch多卡训练"></a>pytorch多卡训练</h2><p>以数据并行为例， 参考哔站 <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1xZ4y1S7dG/?spm_id_from=pageDriver&vd_source=abeb4ad4122e4eff23d97059cf088ab4">33、完整讲解PyTorch多GPU分布式训练代码编写</a></p>
 <p><strong>单机单卡</strong></p>
 <p><a target="_blank" rel="noopener" href="https://github.com/dufy29/ai-frame/blob/5c5f2c89868ea916df8d97f2577a021eb210ad8c/pytorch/pytorch%20imdb-%E5%A4%9AGPU%E8%AE%AD%E7%BB%83%E4%BB%A3%E7%A0%81demo.py">github示例代码</a></p>

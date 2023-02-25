@@ -242,9 +242,11 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc -Og -o main main1.c sum.c</span><br></pre></td></tr></table></figure>
 
 <p>2）逐步通过链接 .o生成 main</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">gcc -E -o main.i main.c  # main.c ---&gt;  main.i</span><br><span class="line">gcc -S -o main.s main.i  # main.i ---&gt;  main.s</span><br><span class="line">gcc -c main.s -o main.o</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">gcc -E -o main.i main.c  # main.c ---&gt;  main.i</span><br><span class="line">gcc -S -o main.s main.i  # main.i ---&gt;  main.s</span><br><span class="line">gcc -c main.s -o main.o  </span><br></pre></td></tr></table></figure>
 
 <p>用同样的方式生成： sum.o</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">od -b xx.o  # 查看.o文件</span><br></pre></td></tr></table></figure>
+
 <p>通过如下命令链接生成可执行文件 main</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc -o main main.o sum.o</span><br></pre></td></tr></table></figure>
 
