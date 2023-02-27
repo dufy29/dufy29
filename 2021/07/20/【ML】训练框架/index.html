@@ -55,12 +55,37 @@
 <li>TVM</li>
 <li>Julia, HPC</li>
 </ul>
-<h2 id="pytorch-源码"><a href="#pytorch-源码" class="headerlink" title="pytorch 源码"></a>pytorch 源码</h2><p>核心文件夹主要是c10、aten、torch、caffe2.</p>
-<p>为什么将c10放到最前面呢？</p>
-<p>因为官方已经表明<strong>c10</strong>目录是最重要的源代码文件夹，也就是几乎所有的源代码都与这里的代码有关系,比如我们的类型定义，Pytorch最重要的<strong>Tensor</strong>的内存分配方式等等，都在这个文件夹中，官方也说到了，之后会慢慢将Aten中的代码移至这个文件夹，也就是说这个文件夹将包含Pytorch中最核心的代码。</p>
-<p>而<strong>Aten</strong>文件夹则包含了一些实现了<strong>Tensor</strong>的底层(和c10类似)，也包括了很多的层前向代码和后向实现的代码(例如卷积层的前向和后向操作代码),包括CPU和GPU端，总之都是C++的核心操作代码。</p>
-<p><strong>torch</strong>文件夹也同样重要，其中主要包含了一些稍微高层些的操作函数，例如<strong>torch.ones</strong>等，有C++和Python端，也包括了Python核心代码和包装代码，如果我们使用python版Pytorch的话，与这些代码接触就比较密切了。</p>
-<p>而<strong>Caffe2</strong>则不用多说，caffe2则主要针对移动端设计了很多优化后的运算代码，模型融合、模型量化等等的代码，其后端有QNNPACK等一些针对移动端的底层运算库(有开发人员说GLOW也在caffe2后端考虑之内)。</p>
+<h2 id="pytorch-源码"><a href="#pytorch-源码" class="headerlink" title="pytorch 源码"></a>pytorch 源码</h2><p><img src="/2021/07/20/%E3%80%90ML%E3%80%91%E8%AE%AD%E7%BB%83%E6%A1%86%E6%9E%B6/640.png" alt="图片"></p>
+<p>一共将PyTorch分成了四层，分别是</p>
+<ul>
+<li><p><strong>应用层（Python）</strong>。这应该是大家最熟悉的层，主要涉及到张量，Autograd以及神经网络。该层所有的源码都是由Python编写，这也符合前面所说的PyTorch设计思想-——将C++框架集成到Python里</p>
+</li>
+<li><p><strong>实现接口层（C++）</strong>。该层的主要功能我认为有两个：</p>
+</li>
+<li><ul>
+<li><strong>Python 扩展</strong>。通过Python提供的C API将Python应用层与C++实现层绑定起来，使用户在享受Python语言提供的便捷优势时也可以同时享受到C++语言提供的性能优势</li>
+<li><strong>Autograd系统实现</strong>。PyTorch并没有在实现层中实现Autograd系统。在此层中PyTorch定义了动态有向图的基本组件Node和Edge，以及在此基础上封装了Function类和Engine类来实现Autograd</li>
+</ul>
+</li>
+<li><p><strong>实现层（C++）</strong>。该层是PyTorch的核心层，定义了PyTorch运行过程中的核心库, 包括<strong>Tensor的具体实现</strong>，<strong>算子实现</strong>（前向与后向运算）以及<strong>动态调度系统</strong>（Tensor的布局，硬件设备，数据类型）。Storage类主要是针对不同硬件数据存储的一种抽象。</p>
+</li>
+<li><p><strong>硬件接口层</strong>。该层主要是硬件厂商基于自家硬件推出的运算接口。</p>
+</li>
+</ul>
+<p><strong>目录结构</strong></p>
+<p><strong>—-torch</strong>：我们“import torch”后最熟悉的PyTorch库。所有非csrc文件夹下的内容都是标准的Python模块，对应我们架构图中的<strong>应用层</strong></p>
+<p><strong>——–csrc</strong>：该目录下都是C++源码，Python绑定C++的相关code都在这个目录里面，同时也包含了对PyTorch核心库的一些封装，对应                    架构图中的<strong>实现接口层</strong></p>
+<p>————csrc/autograd：梯度自动计算系统的C++实现</p>
+<p>——–autograd, 梯度自动计算系统的Python前端源码，包含torch中支持的所有自动求导算子</p>
+<p>——–nn, 建立在autograd系统上的神经网络库，包含了深度学习中常用的一些基础神经网络层。</p>
+<p>——–optim, 机器学习中用到的优化算法库</p>
+<p><strong>—-aten</strong>：“<strong>a ten</strong>sor library”的缩写，对应我们结构图中的<strong>实现层</strong>。从名字上也能知道，这个库设计之初主要是为Tensor服务。因为在实现接口层下面，所以这里的Tensor并不支持autograd</p>
+<p>———— src/Aten/core：aten的核心基础库。目前这个库里面的代码正在逐渐地迁移到c10目录下面</p>
+<p>———— src/Aten/native：PyTorch的算子库，这个目录下面的算子都是CPU的算子。对于一些专门CPU指令优化的算子会在子目录里面</p>
+<p>———— src/Aten/native/cuda：cuda算子实现</p>
+<p><strong>—-c10：</strong>“<strong>c</strong>affe2 a<strong>ten</strong>”的缩写，PyTorch的核心库，支持服务端和移动端。因为官方已经表明<strong>c10</strong>目录是最重要的源代码文件夹，也就是                几乎所有的源代码都与这里的代码有关系,比如我们的类型定义，Pytorch最重要的<strong>Tensor</strong>的内存分配方式等等，都在这个文件                夹中，官方也说到了，之后会慢慢将Aten中的代码移至这个文件夹，也就是说这个文件夹将包含Pytorch中最核心的代码。</p>
+<p><strong>—-tools</strong>：PyTorch中很多相似源码都是脚本通过模板自动生成的，这个文件夹下面就放着自动生成代码的脚本</p>
+<p><strong>—-caffe2</strong>：caffe2则主要针对移动端设计了很多优化后的运算代码，模型融合、模型量化等等的代码，其后端有QNNPACK等一些针对移动端的底层运算库(有开发人员说GLOW也在caffe2后端考虑之内)。</p>
 <p>检查Pytorch安装是否成功：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">import torch</span><br><span class="line">print(torch.cuda.is_available())</span><br><span class="line">print(torch.backends.cudnn.is_acceptable(torch.cuda.FloatTensor(1)))</span><br><span class="line">print(torch.backends.cudnn.version())</span><br><span class="line">print(torch.version.cuda)</span><br><span class="line"></span><br><span class="line"># 输出</span><br><span class="line">True  # 出现Turn说明cuda正常</span><br><span class="line">Ture  # 出现Ture说明cudnn正常</span><br><span class="line">7301  # 这是我的版本号</span><br><span class="line">9.0.176</span><br></pre></td></tr></table></figure>
 
