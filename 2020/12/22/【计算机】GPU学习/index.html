@@ -7,12 +7,27 @@
 </ol>
 <span id="more"></span>
 
+<h2 id="名词解释"><a href="#名词解释" class="headerlink" title="名词解释"></a>名词解释</h2><p><strong>FLOPs</strong>：<code>floating point operations</code> 指的是浮点运算次数，理解为<strong>计算量</strong>，可以用来衡量<strong>算法/模型时间的复杂度</strong>。</p>
+<p><strong>FLOPS</strong>（<strong>全部大写</strong>）：，<code>Floating-point Operations Per Second</code>，每秒所执行的浮点运算次数，理解为计算速度, 是一个衡量硬件性能/模型速度的指标，即一个芯片的算力。</p>
+<p><strong>MACCs</strong>：<code>multiply-accumulate operations</code>，乘-加操作次数，<strong>MACCs 大约是 FLOPs 的一半</strong>。将 w[0]∗x[0]+… 视为一个乘法累加或 1 个 MACC。</p>
 <h2 id="不同计算架构特点"><a href="#不同计算架构特点" class="headerlink" title="不同计算架构特点"></a>不同计算架构特点</h2><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/413145211">英伟达GPU架构演进近十年，从费米到安培</a></p>
 <p><img src="/2020/12/22/%E3%80%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E3%80%91GPU%E5%AD%A6%E4%B9%A0/BBB.png"></p>
 <p>TPU:<img src="/2020/12/22/%E3%80%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E3%80%91GPU%E5%AD%A6%E4%B9%A0/aaa.png"></p>
 <h2 id="计算机图形学"><a href="#计算机图形学" class="headerlink" title="计算机图形学"></a>计算机图形学</h2><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1at411D7YV/?vd_source=abeb4ad4122e4eff23d97059cf088ab4">计算机图形学（清华大学胡事民教授）（共计28讲）</a></p>
 <p><a target="_blank" rel="noopener" href="https://shao.fun/blog/w/taichi-ray-tracing.html">Taichi: 从零开始的光线追踪</a></p>
 <p>NVIDIA® Turing™ GPU架构推出，为全球首款支持<strong>实时光线追踪</strong>的GPU提供动力，长期以来一直被视为计算机图形学的<strong>圣杯</strong>。</p>
+<blockquote>
+<p>GPU的工作过程，它从CPU处获得三维模型，这些模型是用顶点坐标和色彩信息组成的，GPU对这些顶点的位置进行一系列的变换，然后投影到帧缓存上。投影的同时，GPU根据显示其的大小和分辨率对投影结果进行裁减，光栅化，每个帧缓存里的像素或者像素多边形的色彩经过GPU的一系列变换，最后的结果被GPU输出到显示器上。</p>
+</blockquote>
+<p><img src="/2020/12/22/%E3%80%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E3%80%91GPU%E5%AD%A6%E4%B9%A0/resize,m_fixed,w_1184.png" alt="GPGPU&amp;&amp;渲染GPU的认知总结_缓存_02"></p>
+<img src="/2020/12/22/%E3%80%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E3%80%91GPU%E5%AD%A6%E4%B9%A0/image-20230313234502475.png" alt="image-20230313234502475" style="zoom:50%;">
+
+
+
+
+
+
+
 <h2 id="高性能与优化"><a href="#高性能与优化" class="headerlink" title="高性能与优化"></a>高性能与优化</h2><p><a target="_blank" rel="noopener" href="https://space.bilibili.com/3461562830424779">B站视频《北大未名超算队 高性能计算入门讲座》</a></p>
 <img src="/2020/12/22/%E3%80%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E3%80%91GPU%E5%AD%A6%E4%B9%A0/as.png" style="zoom:33%;">
 
