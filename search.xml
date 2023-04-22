@@ -600,7 +600,7 @@
       
       <categories>
           
-          <category> NLP </category>
+          <category> 机器学习 </category>
           
       </categories>
       
@@ -609,7 +609,9 @@
             
             <tag> nlp </tag>
             
-            <tag> 框架 </tag>
+            <tag> cv </tag>
+            
+            <tag> 多模态 </tag>
             
         </tags>
       
